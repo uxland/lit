@@ -1,0 +1,16 @@
+{
+  "packages": ["packages/*"],
+  "ignoreChanges": ["packages/*/test/**", "**/*.md", "**/*.mdx"],
+  "version": "independent",
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "command": {
+    "version": {
+      "allowBranch": ["master", "alpha", "beta"],
+      "message": "chore(release): publish new versions"
+    },
+    "publish": {
+      "conventionalCommits": true
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "extends": "../../node_modules/@uxland/project-tools/build/tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "./src",
+    "outDir": "./",
+    "composite": true
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["../../node_modules/*"]
+}

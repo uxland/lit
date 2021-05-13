@@ -1,0 +1,13 @@
+node_modules/
+coverage/
+es/
+lib/
+dist/
+tmp/
+*.tsbuildinfo
+lerna-debug.log
+.buildstatus
+.idea/
+packages/test-packages/
+packages/*/docs
+.DS_Store

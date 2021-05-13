@@ -1,0 +1,51 @@
+{
+  "name": "@uxland/lit-utilities",
+  "version": "0.0.0",
+  "description": "Lit Utilities",
+  "author": "UXLand <dev@uxland.es>",
+  "homepage": "https://github.com/uxland/lit/tree/master/packages/lit-utilities#readme",
+  "license": "BSD-4-Clause",
+  "main": "index.js",
+  "module": "index.js",
+  "types": "index.d.ts",
+  "files": [
+    "README.md",
+    "package.json",
+    "dedupe-mixin.js",
+    "properties-observer.js"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "http://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uxland/lit.git"
+  },
+  "scripts": {
+    "esbuild:dts": "tsc --emitDeclarationOnly --noEmit false --declaration --removeComments false --outDir .",
+    "esbuild:cjs": "esbuild src/index.ts --bundle --minify --target=es2018 --outfile=lib/index.js",
+    "esbuild:es": "esbuild src/*.ts --minify --format=esm --outdir=.",
+    "esbuild": "npm-run-all --parallel esbuild:es esbuild:dts",
+    "prebuild": "echo nok > .buildstatus",
+    "postbuild": "echo ok > .buildstatus",
+    "readme:coverage": "node_modules/.bin/jest-badges-readme",
+    "test": "web-test-runner test/**/*.spec.ts --node-resolve --coverage"
+  },
+  "bugs": {
+    "url": "https://github.com/uxland/lit/issues"
+  },
+  "dependencies": {
+    "@web/dev-server-esbuild": "^0.2.12",
+    "lit": "^2.0.0-rc.2",
+    "ramda": "^0.27.1"
+  },
+  "devDependencies": {
+    "@olavoparno/jest-badges-readme": "^1.5.1",
+    "@open-wc/testing": "^2.5.33",
+    "@web/test-runner": "^0.13.4",
+    "esbuild": "^0.11.20",
+    "npm-run-all": "^4.1.5",
+    "sinon": "^10.0.0"
+  }
+}
