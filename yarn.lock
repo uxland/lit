@@ -1085,6 +1085,11 @@
     unique-filename "^1.1.1"
     which "^1.3.1"
 
+"@import-maps/resolve@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@import-maps/resolve/-/resolve-1.0.1.tgz#1e9fcadcf23aa0822256a329aabca241879d37c9"
+  integrity sha512-tWZNBIS1CoekcwlMuyG2mr0a1Wo5lb5lEHwwWvZo+5GLgr3e9LLDTtmgtCWEwBpXMkxn9D+2W9j2FY6eZQq0tA==
+
 "@jest/types@^26.6.2":
   version "26.6.2"
   resolved "https://registry.yarnpkg.com/@jest/types/-/types-26.6.2.tgz#bef5a532030e1d88a2f5a6d933f84e97226ed48e"
@@ -2536,7 +2541,7 @@
   dependencies:
     semver "^7.3.4"
 
-"@web/dev-server-core@^0.3.10", "@web/dev-server-core@^0.3.12", "@web/dev-server-core@^0.3.3":
+"@web/dev-server-core@^0.3.0", "@web/dev-server-core@^0.3.10", "@web/dev-server-core@^0.3.12", "@web/dev-server-core@^0.3.3":
   version "0.3.12"
   resolved "https://registry.yarnpkg.com/@web/dev-server-core/-/dev-server-core-0.3.12.tgz#99b8ed1a3b6a797dd52e08b3e8d5e499e5c017b2"
   integrity sha512-PI7neqHvsgsE+GJnJNSjMGeWHSo8MgO99CAzVm6UtFeAjShmMGWp6WQTDJPzvsE4jnYhIg8EPwz2cqDIGnkU6A==
@@ -2571,6 +2576,18 @@
     parse5 "^6.0.1"
     ua-parser-js "^0.7.23"
 
+"@web/dev-server-import-maps@^0.0.5":
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/@web/dev-server-import-maps/-/dev-server-import-maps-0.0.5.tgz#98f8a8b7af4a60a13f7b6f1ea8e2a4ce0253658d"
+  integrity sha512-aAV+U6db9D3clfk2NmJkB4lPzL00MWmtYbAxrKNiQNrCWUFC0AsCG3EwrSXco2iF0WMdbbU2McLz/I9BHKyWFA==
+  dependencies:
+    "@import-maps/resolve" "^1.0.1"
+    "@types/parse5" "^5.0.3"
+    "@web/dev-server-core" "^0.3.0"
+    "@web/parse5-utils" "^1.1.2"
+    parse5 "^6.0.1"
+    picomatch "^2.2.2"
+
 "@web/dev-server-rollup@^0.3.3":
   version "0.3.3"
   resolved "https://registry.yarnpkg.com/@web/dev-server-rollup/-/dev-server-rollup-0.3.3.tgz#784235a58ce4585bc353a26aba82b3d4466bbb1f"
@@ -2603,7 +2620,7 @@
     open "^8.0.2"
     portfinder "^1.0.28"
 
-"@web/parse5-utils@^1.2.0":
+"@web/parse5-utils@^1.1.2", "@web/parse5-utils@^1.2.0":
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/@web/parse5-utils/-/parse5-utils-1.2.2.tgz#33eec93321eb07cf364651c131b980a7afd8c4d7"
   integrity sha512-B68DoJ5qF8Cu3o7nDA2RQTCf9bslVz2b0WHTk3qir5YCbWfhnPEGhDOedOjbE8xDiHqgzI1zXQsJ2+655aluLA==

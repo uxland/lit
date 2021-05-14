@@ -1,0 +1,66 @@
+{
+  "name": "@uxland/regions",
+  "version": "0.0.0",
+  "description": "Regions",
+  "author": "UXLand <dev@uxland.es>",
+  "homepage": "https://github.com/uxland/lit/tree/master/packages/regions#readme",
+  "license": "BSD-4-Clause",
+  "main": "index",
+  "module": "index.js",
+  "types": "index.d.ts",
+  "files": [
+    "README.md",
+    "package.json",
+    "adapters",
+    "behaviors",
+    "utilities",
+    "index.js",
+    "region-adapter-registry.ts",
+    "region-decorator.js",
+    "region-factory.js",
+    "region-host-mixin.js",
+    "region-manager.js",
+    "region-view.js",
+    "region.js",
+    "validate-view.js",
+    "view-definition.js",
+    "view-factory.js"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "http://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uxland/lit.git"
+  },
+  "scripts": {
+    "build:dts": "tsc --emitDeclarationOnly --noEmit false --declaration --removeComments false --outDir .",
+    "build:clean": "rimraf index.js dedupe-mixin.js properties-observer.js tsconfig.tsbuildinfo",
+    "build:cjs": "esbuild src/index.ts --bundle --minify --target=es2018 --outfile=lib/index.js",
+    "build:es": "esbuild src/**/*.ts --minify --format=esm --outdir=.",
+    "build": "npm-run-all --parallel build:es build:dts",
+    "prebuild": "echo nok > .buildstatus",
+    "postbuild": "echo ok > .buildstatus",
+    "readme:coverage": "node_modules/.bin/jest-badges-readme",
+    "test": "web-test-runner test/unit/**/*.spec.ts --node-resolve --coverage"
+  },
+  "bugs": {
+    "url": "https://github.com/uxland/lit/issues"
+  },
+  "dependencies": {
+    "@uxland/browser-utilities": "^1.0.0",
+    "@uxland/lit-utilities": "^0.0.0",
+    "@uxland/utilities": "^1.0.0",
+    "lit": "^2.0.0-rc.1",
+    "ramda": "^0.27.1"
+  },
+  "devDependencies": {
+    "@open-wc/testing": "^2.5.33",
+    "@web/dev-server-import-maps": "^0.0.5",
+    "@web/test-runner": "^0.13.4",
+    "esbuild": "^0.11.20",
+    "npm-run-all": "^4.1.5",
+    "sinon": "^10.0.0"
+  }
+}
