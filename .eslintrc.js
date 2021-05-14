@@ -15,6 +15,7 @@ module.exports = {
     "@typescript-eslint/no-var-requires": "warn",
     "@typescript-eslint/no-empty-interface": "warn",
     "@typescript-eslint/no-empty-function": "warn",
+    "no-useless-escape": "warn",
   },
   env: {
     node: true,
