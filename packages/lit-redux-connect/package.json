@@ -1,0 +1,60 @@
+{
+  "name": "@uxland/lit-redux-connect",
+  "version": "1.1.3",
+  "description": "Lit Redux Connect",
+  "author": "UXLand <dev@uxland.es>",
+  "homepage": "https://github.com/uxland/lit/tree/master/packages/lit-redux-connect#readme",
+  "license": "BSD-4-Clause",
+  "main": "index.js",
+  "module": "index.js",
+  "types": "index.d.ts",
+  "files": [
+    "README.md",
+    "package.json",
+    "index.js",
+    "dedupe-mixin.js",
+    "properties-observer.js"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "http://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uxland/lit.git"
+  },
+  "scripts": {
+    "build:dts": "tsc --emitDeclarationOnly --noEmit false --declaration --removeComments false --outDir .",
+    "build:clean": "rimraf index.js dedupe-mixin.js properties-observer.js tsconfig.tsbuildinfo",
+    "build:cjs": "esbuild src/index.ts --bundle --minify --target=es2018 --outfile=lib/index.js",
+    "build:es": "esbuild src/*.ts --minify --format=esm --outdir=.",
+    "build": "npm-run-all --parallel build:es build:dts",
+    "prebuild": "echo nok > .buildstatus",
+    "postbuild": "echo ok > .buildstatus",
+    "readme:coverage": "node_modules/.bin/jest-badges-readme",
+    "test": "web-test-runner test/**/*.spec.ts --node-resolve --coverage"
+  },
+  "bugs": {
+    "url": "https://github.com/uxland/lit/issues"
+  },
+  "dependencies": {
+    "@uxland/browser-utilities": "^1.0.0",
+    "@uxland/lit-utilities": "^0.0.0",
+    "@uxland/utilities": "^1.0.0",
+    "lit": "^2.0.0-rc.2",
+    "ramda": "^0.27.1",
+    "redux": "^4.1.0"
+  },
+  "devDependencies": {
+    "@olavoparno/jest-badges-readme": "^1.5.1",
+    "@open-wc/testing": "^2.5.33",
+    "@skatejs/bore": "^5.0.2",
+    "@web/dev-server-esbuild": "^0.2.12",
+    "@web/test-runner": "^0.13.4",
+    "esbuild": "^0.11.20",
+    "lodash": "^4.17.21",
+    "npm-run-all": "^4.1.5",
+    "redux-mock-store": "^1.5.4",
+    "sinon": "^10.0.0"
+  }
+}
