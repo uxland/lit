@@ -1,0 +1,27 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "> TODO: description",
+  "author": "Alex Vizcaino <avizcaino@uxland.es>",
+  "homepage": "https://github.com/uxland/lit/tree/master/demo/app#readme",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uxland/lit.git"
+  },
+  "scripts": {
+    "serve": "rimraf dist && node --experimental-worker start.js"
+  },
+  "bugs": {
+    "url": "https://github.com/uxland/lit/issues"
+  },
+  "dependencies": {
+    "@uxland/browser-utilities": "^1.0.0",
+    "@uxland/prism": "^0.0.0",
+    "@uxland/uxl-content-switcher": "^3.0.4",
+    "lit": "^2.0.0-rc.2"
+  },
+  "devDependencies": {
+    "@uxland/project-tools": "^1.0.0"
+  }
+}
