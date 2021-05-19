@@ -100,7 +100,7 @@ export class Region implements IRegion {
   }
 
   async activate(view: string | ViewDefinition) {
-    const vw: ViewDefinition = view as ViewDefinition;
+    let vw: ViewDefinition = view as ViewDefinition;
     if (typeof view === 'string') {
       vw = this.getView(view);
       invariant(vw, `Region does not contain a view with key ${view}`);

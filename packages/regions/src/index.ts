@@ -1,3 +1,5 @@
+export * from './adapters';
+export * from './behaviors';
 export * from './region';
 export * from './region-adapter-registry';
 export * from './region-decorator';
@@ -5,9 +7,7 @@ export * from './region-factory';
 export * from './region-host-mixin';
 export * from './region-manager';
 export * from './region-view';
+export * from './utilities';
 export * from './validate-view';
 export * from './view-definition';
 export * from './view-factory';
-export * from './adapters';
-export * from './behaviors';
-export * from './utilities';
