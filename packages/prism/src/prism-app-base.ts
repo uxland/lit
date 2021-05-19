@@ -1,5 +1,6 @@
+console.log('prismapp');
 import {watch} from '@uxland/lit-redux-connect';
-import {LitElement} from 'lit-element';
+import {LitElement} from 'lit';
 import {appInitializedSelector} from './app/initialized/app-initialized-selector';
 import {BootstrapOptions} from './bootstrapper';
 import {Redux} from './mixins/redux';

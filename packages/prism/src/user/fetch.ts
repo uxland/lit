@@ -1,10 +1,10 @@
-import {fetchClient} from '@uxland/fetch-client';
+import {doFetch as coreDoFetch} from '@uxland/fetch-client';
 import {store} from '../store';
 import {fetchUserAction} from './actions';
 import {fetchUserFunc} from './login';
 
 export const setUserFetch = (fetch: string | fetchUserFunc) => {
-  doFetch = typeof fetch === 'string' ? () => fetchClient.fetch(fetch) : fetch;
+  doFetch = typeof fetch === 'string' ? () => coreDoFetch(fetch) : fetch;
 };
 let doFetch: fetchUserFunc;
 export const fetchUser = async () => {

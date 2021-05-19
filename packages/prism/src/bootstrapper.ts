@@ -2,6 +2,7 @@ import {subscribe} from '@uxland/event-aggregator';
 import {setBaseUrl} from '@uxland/fetch-client';
 import {bind, PropertyWatch, watch} from '@uxland/lit-redux-connect';
 import {propertiesObserver} from '@uxland/lit-utilities';
+import {setLanguage, setLocales} from '@uxland/localization';
 import {regionManager} from '@uxland/regions';
 import equals from 'ramda/es/equals';
 import unary from 'ramda/es/unary';
@@ -9,7 +10,6 @@ import {Unsubscribe} from 'redux';
 import {init as initApp} from './app/init';
 import {appInitializedSelector, setAppInitialized} from './app/initialized';
 import {LOGOUT_EVENT} from './disconnect';
-import {setFormats, setLanguage, setLocales} from './mixins';
 import {apiUrlSelector, appsBaseRouteSelector, setOptions} from './options';
 import {init as initRouter, router} from './router';
 import {store} from './store';
@@ -143,3 +143,6 @@ subscribe(LOGOUT_EVENT, () => {
   regionManager.clear();
   router.navigate(window.location.href).then();
 });
+function setFormats(formats: any) {
+  throw new Error('Function not implemented.');
+}

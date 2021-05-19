@@ -1,4 +1,4 @@
-import {LocalizationState, reducer as localization} from '@uxland/localization';
+// import {LocalizationState, reducer as localization} from '@uxland/localization';
 import {Action} from '@uxland/redux';
 import {reducer as routing, RoutingState} from '@uxland/routing';
 import {pickAll} from 'ramda';
@@ -13,7 +13,7 @@ import {MainViewType, reducer as view} from './view/reducer';
 export interface PrismAppState {
   app: ApplicationState;
   user: UserState<any>;
-  localization: LocalizationState;
+  // localization: LocalizationState;
   routing: RoutingState;
   view: MainViewType;
   options: OptionsState;
@@ -24,7 +24,8 @@ let reducers: ReducerDictionary = {};
 export const DISCONNECT_ACTION = actionsBuilder('disconnect');
 const createReducer = (reducers: ReducerDictionary = {}) => {
   const mainReducer = combineReducers({
-    ...{localization, routing, user, view, app, options},
+    // ...{localization, routing, user, view, app, options},
+    ...{routing, user, view, app, options},
     ...reducers,
   });
   return (state: PrismAppState, action: Action) =>
@@ -32,7 +33,7 @@ const createReducer = (reducers: ReducerDictionary = {}) => {
       action.type === DISCONNECT_ACTION
         ? <any>{
             app: state.app,
-            localization: state.localization,
+            // localization: state.localization,
             options: state.options,
           }
         : state,

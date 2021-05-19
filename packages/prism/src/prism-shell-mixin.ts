@@ -1,13 +1,22 @@
-import {dedupeMixin} from '@uxland/lit-utilities';
-import {RoutingMixinConstructor} from '@uxland/routing';
-import {Routing} from './mixins';
+// import { dedupeMixin } from "@uxland/lit-utilities";
+// import { routingSelectors } from "@uxland/routing";
+// import { routing, RoutingMixinConstructor } from "./mixins/routing";
 
-interface MixinFunction<T> {}
-export type PrismShellMixinFunction = MixinFunction<RoutingMixinConstructor>;
-export const PrismShellMixin: PrismShellMixinFunction = dedupeMixin(parent => {
-  class mixin extends Routing(parent) {
-    subroute = '/';
-  }
+// interface MixinFunction<T> {}
+// export type PrismShellMixinFunction = MixinFunction<RoutingMixinConstructor>;
+// // export const PrismShellMixin: PrismShellMixinFunction = dedupeMixin(
+// //   (parent) => {
+// //     class mixin extends routing(parent, routingSelectors) {
+// //       subroute = "/";
+// //     }
 
-  return <any>mixin;
-});
+// //     return <any>mixin;
+// //   }
+// // );
+
+// export const prismShellMixin = (superClass) => {
+//   return dedupeMixin((superClass) => {
+//     class mixin extends routing(superClass, routingSelectors) {}
+//     return mixin;
+//   })(superClass);
+// };

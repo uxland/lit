@@ -1,5 +1,5 @@
 import {actionNameBuilder} from '@uxland/redux';
-import {constantBuilder} from '@uxland/uxl-utilities';
+import {constantBuilder} from '@uxland/utilities';
 const prefix = 'uxl-prism';
 export const actionsBuilder = (action: string) => {
   const builder = actionNameBuilder(prefix);

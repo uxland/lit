@@ -17,7 +17,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
  * @param {?Object} obj Reference object
  * @return {string} Potentially renamed property name
  */
-window.JSCompiler_renameProperty = function (prop, obj) {
+(window as any).JSCompiler_renameProperty = function (prop, obj) {
   return prop;
 };
 /* eslint-enable */
