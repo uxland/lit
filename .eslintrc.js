@@ -16,6 +16,8 @@ module.exports = {
     "@typescript-eslint/no-empty-interface": "warn",
     "@typescript-eslint/no-empty-function": "warn",
     "no-useless-escape": "warn",
+    "@typescript-eslint/no-this-alias": "warn",
+    "prefer-rest-params": "warn",
   },
   env: {
     node: true,

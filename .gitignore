@@ -11,3 +11,4 @@ lerna-debug.log
 packages/test-packages/
 packages/*/docs
 .DS_Store
+.cache
