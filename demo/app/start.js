@@ -5,13 +5,9 @@ fuse({
   baseStyles: "../styles/styles.scss",
   webIndex: "demo/index.html",
   devServer: true,
+  workspaces: ["demo", "packages"],
   env: {
-    API_URL_PRE: process.env.API_URL_PRE,
-    API_URL_PRO: process.env.API_URL_PRO,
-    API_URL_LOCAL: process.env.API_URL_LOCAL,
-    API_TOKEN: process.env.API_TOKEN,
+    API_URL: process.env.API_URL,
     NODE_ENV: "development",
-    USERNAME: process.env.USERNAME,
-    PASSWORD: process.env.PASSWORD,
   },
 }).runDev();

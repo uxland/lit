@@ -7,14 +7,8 @@ import {
   setView,
   UserInfo,
 } from '@uxland/prism';
-
-export const toCamelCase = (str: string): string =>
-  str
-    .replace(/(?:^\w|[A-Z]|\b\w)/g, function (word, index) {
-      return index === 0 ? word.toLowerCase() : word.toUpperCase();
-    })
-    .replace(/\s+/g, '')
-    .replace(/-/g, '');
+import {locales} from './locales';
+import {toCamelCase} from './utilities';
 
 const submodules = {
   // module: (): Promise<unknown> => import("@monorepo/module/src/main"),
@@ -43,7 +37,7 @@ export class AppBase extends PrismAppBase {
     this.options = {
       ...this.options,
       language: getBrowserLang(),
-      // locales,
+      locales,
       fetchUser: (): Promise<any> => this.doFetchUser(),
       fetchLogin: (username, password): Promise<any> => this.doLogin(username, password),
     };

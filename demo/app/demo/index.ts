@@ -15,18 +15,18 @@
   console.log(`Demo v%%APP_VERSION%% (SEM)`);
   // initializeResources();
   import('../src/app').then(app => {
-    console.log(app);
     document.body.innerHTML = '<demo-app></demo-app>';
-    const fonts = document.createElement('link');
-    fonts.href =
-      'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap';
-    fonts.rel = 'stylesheet';
+    // const fonts = document.createElement("link");
+    // fonts.href =
+    //   "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap";
+    // fonts.rel = "stylesheet";
 
-    const icons = document.createElement('link');
-    icons.href = 'https://fonts.googleapis.com/css?family=Material+Icons&display=block';
-    icons.rel = 'stylesheet';
+    // const icons = document.createElement("link");
+    // icons.href =
+    //   "https://fonts.googleapis.com/css?family=Material+Icons&display=block";
+    // icons.rel = "stylesheet";
 
-    document.head.appendChild(fonts);
-    document.head.appendChild(icons);
+    // document.head.appendChild(fonts);
+    // document.head.appendChild(icons);
   });
 })();

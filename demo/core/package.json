@@ -1,0 +1,30 @@
+{
+  "name": "@demo/core",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Core",
+  "keywords": [],
+  "author": "UXLand <dev@uxland.es>",
+  "homepage": "https://github.com/uxland/lit/tree/master/demo/core#readme",
+  "license": "GPL-3.0",
+  "main": "lib/index",
+  "publishConfig": {
+    "registry": "https://registry.yarnpkg.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uxland/lit.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/uxland/lit/issues"
+  },
+  "module": "es/index.js",
+  "types": "lib/index.d.ts",
+  "dependencies": {
+    "@uxland/browser-utilities": "^1.0.0",
+    "@uxland/prism": "^1.0.0-alpha.9"
+  }
+}

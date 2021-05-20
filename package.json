@@ -28,5 +28,9 @@
       "commit-msg": "commitlint --config node_modules/@uxland/project-tools/lint/commitlint.config.js -E HUSKY_GIT_PARAMS",
       "pre-commit": "lint-staged -c lint-staged.config.js"
     }
+  },
+  "scripts": {
+    "build:demo": "rimraf .cache && lerna run build --scope @demo/app --stream",
+    "serve:demo": "rimraf .cache && lerna run serve --scope @demo/app --stream"
   }
 }

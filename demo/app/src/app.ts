@@ -1,7 +1,9 @@
+import {AppBase} from '@demo/core';
 import '@uxland/uxl-content-switcher';
 import {html, TemplateResult} from 'lit';
 import {customElement} from 'lit/decorators';
-import {AppBase} from './app-base';
+(() => import('./views/login'))();
+(() => import('./views/shell'))();
 
 @customElement('demo-app')
 export default class DemoApp extends AppBase {
@@ -11,8 +13,8 @@ export default class DemoApp extends AppBase {
       attrForSelected="name"
       selected=${this.currentView}
     >
-      <monorepo-login name="login"></monorepo-login>
-      <monorepo-shell name="shell"></monorepo-shell>
+      <demo-login name="login"></demo-login>
+      <demo-shell name="shell"></demo-shell>
     </uxl-content-switcher>`;
   }
 }
