@@ -1,9 +1,8 @@
-console.log('prismapp');
 import {watch} from '@uxland/lit-redux-connect';
 import {LitElement} from 'lit';
 import {appInitializedSelector} from './app/initialized/app-initialized-selector';
 import {BootstrapOptions} from './bootstrapper';
-import {Redux} from './mixins/redux';
+import {redux} from './mixins/redux';
 import {isLoggedInSelector, userIsFetchingSelector} from './user/selectors';
 import {MainViewType} from './view';
 import {setView} from './view/set-view';
@@ -26,7 +25,7 @@ declare interface Window {
   uxlPrism: UxlPrism;
 }
 declare let uxlPrism: UxlPrism;
-export abstract class PrismAppBase extends Redux(LitElement) {
+export abstract class PrismAppBase extends redux(LitElement) {
   options: BootstrapOptions = {
     fetchUser: undefined,
     fetchLogin: undefined,
