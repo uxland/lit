@@ -1,0 +1,12 @@
+{
+  "extends": "../../node_modules/@uxland/project-tools/build/tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "./src",
+    "baseUrl": "./src",
+    "paths": {
+      "@monorepo/*": ["../../packages/*/src"],
+      "@uxland/*": ["../../node_modules/@uxland/*/lib"]
+    }
+  },
+  "include": ["src/**/*.ts"]
+}

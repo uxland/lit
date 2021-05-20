@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, maximum-scale=10" />
+    <title>NEW</title>
+    <meta name="theme-color" content="#8EBCF9" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="language" content="ca" />
+    <!-- <link href="https://fonts.googleapis.com" rel="preconnect" /> -->
+    <style>
+      html {
+        font-size: 14px;
+        min-height: 1px;
+        height: 100%;
+      }
+
+      body {
+        margin: 0;
+        font-size: 14px;
+        font-family: "Roboto", sans-serif;
+        min-height: 1px;
+        height: 100%;
+      }
+    </style>
+    $css
+  </head>
+
+  <body>
+    <noscript>
+      <h1>Please enable Javascript</h1>
+    </noscript>
+    <script>
+      if (!window["process"])
+        window["process"] = { env: { NODE_ENV: "production" } };
+      window.uxlPrism = window.uxlPrism || { settings: {} };
+    </script>
+    $bundles
+  </body>
+</html>

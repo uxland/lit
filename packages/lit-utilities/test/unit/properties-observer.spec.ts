@@ -1,6 +1,6 @@
 import {assert, expect} from '@open-wc/testing';
 import {spy} from 'sinon';
-import {propertiesObserver} from '../../src/properties-observer';
+import {propertiesObserver} from '../../properties-observer';
 
 describe('Given an instance of PropertiesObserver mixin', () => {
   class A extends propertiesObserver(<any>Object) {
