@@ -11,9 +11,8 @@
   "files": [
     "README.md",
     "package.json",
-    "index.js",
-    "routing-*.js",
-    "router-region-decorator.js"
+    "*.js",
+    "*.d.ts"
   ],
   "publishConfig": {
     "access": "public",

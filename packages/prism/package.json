@@ -12,13 +12,7 @@
     "README.md",
     "package.json",
     "*.js",
-    "app",
-    "mixins",
-    "options",
-    "polymer",
-    "state",
-    "user",
-    "view"
+    "*.d.ts"
   ],
   "publishConfig": {
     "access": "public",

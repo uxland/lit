@@ -11,15 +11,8 @@
   "files": [
     "README.md",
     "package.json",
-    "adapters",
-    "behaviors",
-    "utilities",
-    "index.js",
-    "region-*.js",
-    "region.js",
-    "validate-view.js",
-    "view-definition.js",
-    "view-factory.js"
+    "*.js",
+    "*.d.ts"
   ],
   "publishConfig": {
     "access": "public",

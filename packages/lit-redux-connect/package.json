@@ -11,12 +11,8 @@
   "files": [
     "README.md",
     "package.json",
-    "index.js",
-    "bind.js",
-    "connect.js",
-    "unbind.js",
-    "watch.js",
-    "watched-redux-property.js"
+    "*.js",
+    "*.d.ts"
   ],
   "publishConfig": {
     "access": "public",

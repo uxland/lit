@@ -11,9 +11,8 @@
   "files": [
     "README.md",
     "package.json",
-    "index.js",
-    "dedupe-mixin.js",
-    "properties-observer.js"
+    "*.js",
+    "*.d.ts"
   ],
   "publishConfig": {
     "access": "public",
