@@ -1,12 +1,6 @@
-import {
-  IRegion,
-  IRegionAdapter,
-  IRegionBehavior,
-  IRegionHost,
-  SelectableAdapter,
-  ViewComponent,
-  ViewDefinition,
-} from '@uxland/regions';
+import {SelectableAdapter} from '@uxland/regions/adapters/selectable-adapter';
+import {IRegion, IRegionAdapter, IRegionBehavior, IRegionHost} from '@uxland/regions/region';
+import {ViewComponent, ViewDefinition} from '@uxland/regions/view-definition';
 import {Router} from '@uxland/routing';
 import {Store} from 'redux';
 import {RouterRegionDefinition} from './router-region-decorator';

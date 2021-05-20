@@ -1,4 +1,4 @@
-import {watch} from '@uxland/lit-redux-connect';
+import {watch} from '@uxland/lit-redux-connect/watch';
 import {LitElement} from 'lit';
 import {appInitializedSelector} from './app/initialized/app-initialized-selector';
 import {BootstrapOptions} from './bootstrapper';

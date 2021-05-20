@@ -1,5 +1,6 @@
-import {connect, ConnectMixin, ConnectMixinConstructor, watch} from '@uxland/lit-redux-connect';
-import {dedupeMixin} from '@uxland/lit-utilities';
+import {connect, ConnectMixin, ConnectMixinConstructor} from '@uxland/lit-redux-connect/connect';
+import {watch} from '@uxland/lit-redux-connect/watch';
+import {dedupeMixin} from '@uxland/lit-utilities/dedupe-mixin';
 import {isRouteActive, Route, RoutingSelectors} from '@uxland/routing';
 import {LitElement, notEqual, PropertyValues} from 'lit';
 import {property} from 'lit/decorators';

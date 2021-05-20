@@ -12,7 +12,7 @@ fuse({
     NODE_ENV: "production",
   },
 }).runProd({
-  uglify: false,
+  uglify: true,
   target: "browser",
   bundles: {
     app: "./app.$hash.js",

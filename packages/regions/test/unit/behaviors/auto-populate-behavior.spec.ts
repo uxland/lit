@@ -1,6 +1,6 @@
 import {assert, expect} from '@open-wc/testing';
 import {stub} from 'sinon';
-import {AutoPopulateBehavior} from '../../../src/behaviors/auto-populate-behavior';
+import {AutoPopulateBehavior} from '../../../behaviors/auto-populate-behavior';
 
 describe('Given an instance of AutoPopulateBehavior', () => {
   describe('and `attach` method is invoked', () => {

@@ -11,9 +11,14 @@
   "files": [
     "README.md",
     "package.json",
-    "index.js",
-    "dedupe-mixin.js",
-    "properties-observer.js"
+    "*.js",
+    "app",
+    "mixins",
+    "options",
+    "polymer",
+    "state",
+    "user",
+    "view"
   ],
   "publishConfig": {
     "access": "public",
@@ -25,9 +30,9 @@
   },
   "scripts": {
     "build:dts": "tsc --emitDeclarationOnly --noEmit false --declaration --removeComments false --outDir .",
-    "build:clean": "rimraf index.js dedupe-mixin.js properties-observer.js tsconfig.tsbuildinfo",
+    "build:clean": "rimraf *.{js,d.ts} app/**/*.{js,d.ts} mixins/**/*.{js,d.ts} options/**/*.{js,d.ts} polymer/**/*.{js,d.ts} state/**/*.{js,d.ts} user/**/*.{js,d.ts} view/**/*.{js,d.ts} tsconfig.tsbuildinfo",
     "build:cjs": "esbuild src/index.ts --bundle --minify --target=es2018 --outfile=lib/index.js",
-    "build:es": "esbuild src/*.ts --minify --format=esm --outdir=.",
+    "build:es": "esbuild app/*.ts mixins/*.ts options/*.ts polymer/*.ts state/*.ts user/*.ts view/*.ts *.ts --minify --format=esm --outdir=.",
     "build": "npm-run-all --parallel build:es build:dts",
     "prebuild": "echo nok > .buildstatus",
     "postbuild": "echo ok > .buildstatus",

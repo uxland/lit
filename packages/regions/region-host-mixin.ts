@@ -1,5 +1,5 @@
 import {AsyncQueue} from '@uxland/browser-utilities';
-import {dedupeMixin} from '@uxland/lit-utilities';
+import {dedupeMixin} from '@uxland/lit-utilities/dedupe-mixin';
 import {LitElement} from 'lit';
 import * as R from 'ramda';
 import {factory} from './adapters/multiple-active-adapter';

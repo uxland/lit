@@ -1,4 +1,4 @@
-import {dedupeMixin} from '@uxland/lit-utilities';
+import {dedupeMixin} from '@uxland/lit-utilities/dedupe-mixin';
 import {routingSelectors} from '@uxland/routing';
 import {routing, RoutingMixinConstructor} from './routing';
 

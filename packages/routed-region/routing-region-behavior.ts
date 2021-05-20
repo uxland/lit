@@ -1,5 +1,5 @@
 import {bind, getWatchedProperties, PropertyWatch, unbind, watch} from '@uxland/lit-redux-connect';
-import {IRegionBehavior, IRegionHost} from '@uxland/regions';
+import {IRegionBehavior, IRegionHost} from '@uxland/regions/region';
 import {
   computePage,
   findMatchingRoutes,
