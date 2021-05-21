@@ -1,6 +1,6 @@
 import {dedupeMixin, propertiesObserver} from '@uxland/lit-utilities';
 import {LitElement} from 'lit';
-import {property} from 'lit/decorators';
+import {property} from 'lit/decorators.js';
 import {ViewDefinition} from './view-definition';
 
 type Constructor<T = Record<string, unknown>> = new (...args: any[]) => T;
