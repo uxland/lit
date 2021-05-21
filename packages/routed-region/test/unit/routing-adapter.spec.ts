@@ -1,10 +1,12 @@
 import {expect} from '@open-wc/testing';
-import createMockStore from 'redux-mock-store';
-import {RoutingAdapter} from '../../src/routing-adapter';
-import {RoutingRegionBehavior} from '../../src/routing-region-behavior';
+import {RoutingAdapter} from '../../routing-adapter';
+import {RoutingRegionBehavior} from '../../routing-region-behavior';
+import {configureStore} from '../utilities/redux-mock-store';
+
 describe('Given an instance of RoutingAdapter', () => {
   it('should return RoutingRegionBehavior in behaviors property', () => {
-    const store: any = createMockStore([])({routing: {}});
+    //@ts-ignore
+    const store: any = configureStore([])({routing: {}});
     const adapter = new RoutingAdapter(<any>{}, <any>{}, store, null);
     expect(adapter.behaviors.some(x => x.constructor === RoutingRegionBehavior)).true;
   });
