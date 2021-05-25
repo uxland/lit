@@ -1,6 +1,6 @@
 {
   "name": "@demo/core",
-  "version": "0.0.1-alpha.0",
+  "version": "0.0.1-alpha.1",
   "private": true,
   "description": "Core",
   "keywords": [],
@@ -23,6 +23,6 @@
   "types": "lib/index.d.ts",
   "dependencies": {
     "@uxland/browser-utilities": "^1.0.0",
-    "@uxland/prism": "^1.0.0-alpha.10"
+    "@uxland/prism": "^1.0.0-alpha.11"
   }
 }
