@@ -3,7 +3,7 @@ import {watch} from '@uxland/lit-redux-connect/watch';
 import {dedupeMixin} from '@uxland/lit-utilities/dedupe-mixin';
 import {isRouteActive, Route, RoutingSelectors} from '@uxland/routing';
 import {LitElement, notEqual, PropertyValues} from 'lit';
-import {property} from 'lit/decorators';
+import {property} from 'lit/decorators.js';
 import {Store} from 'redux';
 
 interface MixinFunction<T> {}
