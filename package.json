@@ -31,6 +31,7 @@
   },
   "scripts": {
     "build:demo": "rimraf .cache && lerna run build --scope @demo/app --stream",
-    "serve:demo": "rimraf .cache && lerna run serve --scope @demo/app --stream"
+    "serve:demo": "rimraf .cache && lerna run serve --scope @demo/app --stream",
+    "test": "lerna run test --stream"
   }
 }
