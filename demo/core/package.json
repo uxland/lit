@@ -15,9 +15,7 @@
     "type": "git",
     "url": "git+https://github.com/uxland/lit.git"
   },
-  "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
-  },
+  "scripts": {},
   "bugs": {
     "url": "https://github.com/uxland/lit/issues"
   },
