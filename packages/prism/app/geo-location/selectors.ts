@@ -1,6 +1,6 @@
 import {createSelector} from 'reselect';
-import {appSelector} from '../selector';
 import {PrismAppState} from '../../store';
+import {appSelector} from '../selector';
 import {GeoLocationState} from './reducer';
 
 export const geoLocationSelector: (state: PrismAppState) => GeoLocationState = createSelector(
@@ -11,5 +11,6 @@ export const lastKnownPositionSelector: (state: PrismAppState) => Position = cre
   geoLocationSelector,
   gl => (gl ? gl.lastKnownPosition : undefined)
 );
-export const registeredWatchersSelector: (state: PrismAppState) => {[key: string]: any} =
-  createSelector(geoLocationSelector, gl => (gl ? gl.registeredWatchers : undefined));
+export const registeredWatchersSelector: (state: PrismAppState) => {
+  [key: string]: any;
+} = createSelector(geoLocationSelector, gl => (gl ? gl.registeredWatchers : undefined));

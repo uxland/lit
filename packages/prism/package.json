@@ -30,8 +30,7 @@
     "build": "npm-run-all --parallel build:es build:dts",
     "prebuild": "echo nok > .buildstatus",
     "postbuild": "echo ok > .buildstatus",
-    "readme:coverage": "node_modules/.bin/jest-badges-readme",
-    "test": "web-test-runner test/**/*.spec.ts --node-resolve --coverage"
+    "readme:coverage": "node_modules/.bin/jest-badges-readme"
   },
   "bugs": {
     "url": "https://github.com/uxland/lit/issues"

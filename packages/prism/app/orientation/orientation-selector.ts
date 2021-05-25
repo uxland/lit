@@ -1,6 +1,6 @@
 import {createSelector} from 'reselect';
-import {appSelector} from '../selector';
 import {PrismAppState} from '../../store';
+import {appSelector} from '../selector';
 import {ScreenOrientationState} from './reducer';
 
 export const orientationSelector: (state: PrismAppState) => ScreenOrientationState = createSelector(

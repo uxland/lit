@@ -1,10 +1,10 @@
-import configureStore from 'redux-mock-store';
+import {configureStore} from '../../../../../../test/utilities/redux-mock-store';
 import {
   REGISTER_GEO_LOCATION_WATCHER,
   UNREGISTER_GEO_LOCATION_WATCHER,
-} from '../../../../src/app/geo-location';
-import * as geoLocationWatcherRegistry from '../../../../src/app/geo-location/geo-location-watcher-registry';
-import * as store from '../../../../src/store';
+} from '../../../../app/geo-location';
+import * as geoLocationWatcherRegistry from '../../../../app/geo-location/geo-location-watcher-registry';
+import * as store from '../../../../store';
 
 const mockStore = configureStore([]);
 

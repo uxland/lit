@@ -1,6 +1,6 @@
-import {GeoLocationState} from '../../../../src/app/geo-location';
-import * as selectors from '../../../../src/app/geo-location/selectors';
-import * as appSelector from '../../../../src/app/selector';
+import {GeoLocationState} from '../../../../app/geo-location';
+import * as selectors from '../../../../app/geo-location/selectors';
+import * as appSelector from '../../../../app/selector';
 
 describe('app geo location selectors', () => {
   beforeEach(() => {

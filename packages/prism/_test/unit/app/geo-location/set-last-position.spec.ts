@@ -1,6 +1,6 @@
-import configureStore from 'redux-mock-store';
-import {setLastPosition, SET_LAST_POSITION_ACTION} from '../../../../src/app/geo-location';
-import * as store from '../../../../src/store';
+import {configureStore} from '../../../../../../test/utilities/redux-mock-store';
+import {setLastPosition, SET_LAST_POSITION_ACTION} from '../../../../app/geo-location';
+import * as store from '../../../../store';
 const mockStore = configureStore([]);
 describe('set last position', () => {
   const position: Position = {

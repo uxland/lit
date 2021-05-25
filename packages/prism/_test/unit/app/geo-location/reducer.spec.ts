@@ -4,7 +4,7 @@ import {
   REGISTER_GEO_LOCATION_WATCHER,
   SET_LAST_POSITION_ACTION,
   UNREGISTER_GEO_LOCATION_WATCHER,
-} from '../../../../src/app/geo-location';
+} from '../../../../app/geo-location';
 const position: Position = {
   timestamp: Date.now(),
   coords: {
