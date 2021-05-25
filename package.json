@@ -32,6 +32,10 @@
   "scripts": {
     "build:demo": "rimraf .cache && lerna run build --scope @demo/app --stream",
     "serve:demo": "rimraf .cache && lerna run serve --scope @demo/app --stream",
-    "test": "lerna run test --stream"
+    "build": "lerna run build --scope @uxland/* --stream --parallel",
+    "clean": "lerna run clean --scope @uxland/* --stream --parallel",
+    "readme:coverage": "lerna run readme:coverage --stream --parallel",
+    "readme:coverage:commit": "yarn readme:coverage && git add packages/**/*.md && git commit -m 'docs: update README'",
+    "test": "lerna run test --scope @uxland/* --stream"
   }
 }

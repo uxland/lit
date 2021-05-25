@@ -25,8 +25,8 @@
   "scripts": {
     "build:dts": "tsc --emitDeclarationOnly --noEmit false --declaration --removeComments false --outDir .",
     "build:clean": "rimraf routing/**/*.{js,d.ts} *.{js,d.ts} tsconfig.tsbuildinfo",
-    "build:cjs": "esbuild src/index.ts --bundle --minify --target=es2018 --outfile=lib/index.js",
-    "build:es": "esbuild src/*.ts --minify --format=esm --outdir=.",
+    "build:cjs": "esbuild index.ts --bundle --minify --target=es2018 --outfile=lib/index.js",
+    "build:es": "esbuild *.ts --minify --format=esm --outdir=.",
     "build": "npm-run-all --parallel build:es build:dts",
     "prebuild": "echo nok > .buildstatus",
     "postbuild": "echo ok > .buildstatus",

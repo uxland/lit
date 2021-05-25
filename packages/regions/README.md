@@ -1,11 +1,4 @@
-# `@uxland/prism`
-
-> TODO: description
-
-## Usage
-
-```
-const prism = require('@uxland/prism');
+# `@uxlahttpshhttps://img.shields.io/badge/Build-Passing-brightgreen.svg "Building Status");
 
 // TODO: DEMONSTRATE API
 ```

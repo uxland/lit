@@ -6,5 +6,5 @@
     "composite": true
   },
   "include": ["**/*.ts"],
-  "exclude": ["../../node_modules/*", "test/*"]
+  "exclude": ["../../node_modules/*", "test/*", "_test/*"]
 }

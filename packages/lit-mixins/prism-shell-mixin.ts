@@ -16,6 +16,7 @@ export type PrismShellMixinFunction = MixinFunction<RoutingMixinConstructor>;
 
 export const prismShellMixin = superClass => {
   return dedupeMixin(superClass => {
+    //@ts-ignore
     class mixin extends routing(superClass, routingSelectors) {}
     return mixin;
   })(superClass);
