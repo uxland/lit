@@ -1,6 +1,7 @@
 {
   "name": "@demo/app",
   "version": "0.0.0",
+  "private": true,
   "description": "> TODO: description",
   "author": "Alex Vizcaino <avizcaino@uxland.es>",
   "homepage": "https://github.com/uxland/lit/tree/master/demo/app#readme",
