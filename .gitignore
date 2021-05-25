@@ -12,3 +12,5 @@ packages/test-packages/
 packages/*/docs
 .DS_Store
 .cache
+packages/**/*.js.map
+packages/**/*.js
