@@ -1,6 +1,6 @@
 {
   "name": "@uxland/lit-redux-connect",
-  "version": "1.1.3",
+  "version": "2.0.0-alpha.5",
   "description": "Lit Redux Connect",
   "author": "UXLand <dev@uxland.es>",
   "homepage": "https://github.com/uxland/lit/tree/master/packages/lit-redux-connect#readme",
