@@ -38,7 +38,7 @@
   "dependencies": {
     "@uxland/event-aggregator": "^1.0.0",
     "@uxland/fetch-client": "^1.0.0",
-    "@uxland/lit-redux-connect": "^1.1.4-alpha.0",
+    "@uxland/lit-redux-connect": "^2.0.0-alpha.6",
     "@uxland/lit-utilities": "^1.0.0-alpha.1",
     "@uxland/localization": "^1.0.0",
     "@uxland/redux": "^1.0.0",
