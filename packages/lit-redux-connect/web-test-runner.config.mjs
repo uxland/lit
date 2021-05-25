@@ -14,4 +14,5 @@ export default {
     report: true,
     reporters: ["json-summary", "text", "lcov"],
   },
+  port: 4000,
 };
