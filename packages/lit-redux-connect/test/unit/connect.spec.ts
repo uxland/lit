@@ -1,10 +1,13 @@
+import {assert, expect} from '@open-wc/testing';
 import {html, LitElement} from 'lit';
 import {stub} from 'sinon';
-import {customElement, query} from '../../../../node_modules/lit/decorators';
-import connect from '../../src/connect';
-import {watch} from '../../src/watch';
-import {configureStore} from '../utilities/mock-store';
+import {customElement, query} from '../../../../node_modules/lit/decorators.js';
+import {mount} from '../../../../test/utilities/mount/index';
+import {configureStore} from '../../../../test/utilities/redux-mock-store';
+import connect from '../../connect';
+import {watch} from '../../watch';
 
+//@ts-ignore
 const mockStore = configureStore([])();
 const defaultComponentName = 'custom-element';
 const getComponentName = (nameBase: string) => {
@@ -17,7 +20,7 @@ interface DefaultTestComponent {
   myProperty: string;
   header: HTMLHeadElement;
 }
-const propertySelector = stub(() => 'Hello from redux state');
+const propertySelector = stub().returns('Hello from redux state');
 const delay = () => new Promise(resolve => setTimeout(resolve, 300));
 // @ts-ignore
 const createDefaultComponent: (selector?: (state) => any) => DefaultTestComponent & LitElement = (
@@ -43,11 +46,11 @@ describe('connect mixin test suite', () => {
     //propertySelector.mockReset();
   });
   it('properties should be set when the component is created', async () => {
-    // let componentName = createDefaultComponent();
-    // const component = mount(`<${componentName}></${componentName}>`).node;
-    // await delay();
-    // assert(propertySelector.calledOnce);
-    // await component.updateComplete;
-    // expect(component.header.innerText).to.equal("Hello from redux state");
+    const componentName = createDefaultComponent();
+    const component = mount(`<${componentName}></${componentName}>`).node;
+    await delay();
+    assert(propertySelector.calledOnce);
+    await component.updateComplete;
+    expect(component.header.innerText).to.equal('Hello from redux state');
   });
 });

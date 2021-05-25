@@ -1,5 +1,5 @@
 import {PropertyDeclaration} from 'lit';
-import {property} from 'lit/decorators';
+import {property} from 'lit/decorators.js';
 import {always, is, isNil, lensPath, view, when} from 'ramda';
 import {Store} from 'redux';
 import {ConnectAddOn, Selector} from './connect';
