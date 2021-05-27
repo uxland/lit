@@ -26,7 +26,7 @@
     "build:dts": "tsc --emitDeclarationOnly --noEmit false --declaration --removeComments false --outDir .",
     "build:clean": "rimraf *.{js,d.ts} app/**/*.{js,d.ts} mixins/**/*.{js,d.ts} options/**/*.{js,d.ts} polymer/**/*.{js,d.ts} state/**/*.{js,d.ts} user/**/*.{js,d.ts} view/**/*.{js,d.ts} tsconfig.tsbuildinfo",
     "build:cjs": "esbuild src/index.ts --bundle --minify --target=es2018 --outfile=lib/index.js",
-    "build:es": "esbuild app/*.ts mixins/*.ts options/*.ts polymer/*.ts state/*.ts user/*.ts view/*.ts *.ts --minify --format=esm --outdir=.",
+    "build:es": "esbuild app/geo-location/*.ts app/initialized/*.ts app/online/*.ts app/orientation/*.ts app/*.ts mixins/*.ts options/*.ts polymer/*.ts state/*.ts user/*.ts view/*.ts *.ts --minify --format=esm --outdir=.",
     "build": "npm-run-all --parallel build:es build:dts",
     "prebuild": "echo nok > .buildstatus",
     "postbuild": "echo ok > .buildstatus",
