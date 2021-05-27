@@ -1,5 +1,5 @@
 import {AppBase} from '@demo/core';
-import '@uxland/uxl-content-switcher';
+import '@uxland/ui-content-switcher/content-switcher';
 import {html, TemplateResult} from 'lit';
 import {customElement} from 'lit/decorators';
 (() => import('./views/login'))();

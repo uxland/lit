@@ -1,0 +1,53 @@
+{
+  "name": "@uxland/ui-content-switcher",
+  "version": "0.0.0",
+  "description": "Content Switcher Component",
+  "author": "UXLand <dev@uxland.es>",
+  "homepage": "https://github.com/uxland/lit/tree/master/packages/ui-content-switcher#readme",
+  "license": "BSD-4-Clause",
+  "main": "index.js",
+  "module": "index.js",
+  "types": "index.d.ts",
+  "files": [
+    "README.md",
+    "package.json",
+    "*.js",
+    "*.d.ts"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "http://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uxland/lit.git"
+  },
+  "scripts": {
+    "build:dts": "tsc --emitDeclarationOnly --noEmit false --declaration --removeComments false --outDir .",
+    "build:clean": "rimraf *.{js,d.ts} tsconfig.tsbuildinfo",
+    "build:cjs": "esbuild src/index.ts --bundle --minify --target=es2018 --outfile=lib/index.js",
+    "build:es": "esbuild *.ts --minify --format=esm --outdir=.",
+    "build": "npm-run-all --parallel build:es build:dts",
+    "prebuild": "echo nok > .buildstatus",
+    "postbuild": "echo ok > .buildstatus",
+    "readme:coverage": "node_modules/.bin/jest-badges-readme"
+  },
+  "bugs": {
+    "url": "https://github.com/uxland/lit/issues"
+  },
+  "dependencies": {
+    "lit": "^2.0.0-rc.2"
+  },
+  "devDependencies": {
+    "@olavoparno/jest-badges-readme": "^1.5.1",
+    "@open-wc/testing": "^3.0.0-next.1",
+    "@rollup/plugin-commonjs": "^19.0.0",
+    "@web/dev-server-esbuild": "^0.2.12",
+    "@web/test-runner": "^0.13.4",
+    "@web/test-runner-chrome": "^0.10.0",
+    "esbuild": "^0.11.20",
+    "npm-run-all": "^4.1.5",
+    "puppeteer": "^9.1.1",
+    "sinon": "^10.0.0"
+  }
+}
