@@ -2610,10 +2610,10 @@
     reflect-metadata "^0.1.13"
     reselect "^4.0.0"
 
-"@uxland/routing@^1.0.3":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@uxland/routing/-/routing-1.0.3.tgz#bdd5eb5cde729169b6bcee4fe907eb2282710e48"
-  integrity sha512-ZbLSj9R9UmC+HYXy9k1rvO/nRLkzzwI1N5Ooyw1dQq/UWwsvj6ZCMjSwc501yLt+HWSVXeDm08MbRXMdwExeNg==
+"@uxland/routing@^1.0.4-alpha.0":
+  version "1.0.4-alpha.0"
+  resolved "https://registry.yarnpkg.com/@uxland/routing/-/routing-1.0.4-alpha.0.tgz#306d8fb8b49335e6f5364bcd6f4ac95a60742b21"
+  integrity sha512-dcRxU63vpMRvHWto17p6fyOfCj+Hu+uyDJoYnRS8unTK+PoWfqFOGh7DQf6qdr3NX5tKWlpCFJdTqSNJXNWFng==
   dependencies:
     "@uxland/ramda-extensions" "^1.0.0"
     "@uxland/redux" "^1.0.0"

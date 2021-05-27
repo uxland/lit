@@ -38,7 +38,7 @@
   "dependencies": {
     "@uxland/lit-redux-connect": "^1.1.4-alpha.0",
     "@uxland/lit-utilities": "^1.0.0-alpha.2",
-    "@uxland/routing": "^1.0.3",
+    "@uxland/routing": "^1.0.4-alpha.0",
     "lit": "^2.0.0-rc.2"
   },
   "devDependencies": {
