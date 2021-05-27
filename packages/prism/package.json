@@ -1,6 +1,6 @@
 {
   "name": "@uxland/prism",
-  "version": "1.0.0-alpha.15",
+  "version": "1.0.0-alpha.16",
   "description": "Prism",
   "author": "UXLand <dev@uxland.es>",
   "homepage": "https://github.com/uxland/lit/tree/master/packages/prism#readme",
@@ -42,9 +42,15 @@
     "@uxland/lit-utilities": "^1.0.0-alpha.2",
     "@uxland/localization": "^1.0.0",
     "@uxland/redux": "^1.0.0",
+<<<<<<< HEAD
     "@uxland/regions": "^1.0.0-alpha.12",
     "@uxland/routed-region": "^1.0.0-alpha.3",
     "@uxland/routing": "^1.0.4-alpha.0",
+=======
+    "@uxland/regions": "^1.0.0-alpha.13",
+    "@uxland/routed-region": "^1.0.0-alpha.4",
+    "@uxland/routing": "^1.0.3",
+>>>>>>> afb0e555976879f5f97bbc0787ac4fae71ff795d
     "@uxland/utilities": "^1.0.0",
     "lit": "^2.0.0-rc.2",
     "ramda": "^0.27.1",
