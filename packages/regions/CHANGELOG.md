@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.14](https://github.com/uxland/lit/compare/@uxland/regions@1.0.0-alpha.13...@uxland/regions@1.0.0-alpha.14) (2021-05-27)
+
+**Note:** Version bump only for package @uxland/regions
+
+
+
+
+
 # [1.0.0-alpha.13](https://github.com/uxland/lit/compare/@uxland/regions@1.0.0-alpha.12...@uxland/regions@1.0.0-alpha.13) (2021-05-27)
 
 
