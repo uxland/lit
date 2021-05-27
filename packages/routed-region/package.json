@@ -45,7 +45,7 @@
   },
   "devDependencies": {
     "@olavoparno/jest-badges-readme": "^1.5.1",
-    "@open-wc/testing": "^2.5.33",
+    "@open-wc/testing": "^3.0.0-next.1",
     "@types/lodash": "^4.14.169",
     "@web/dev-server-esbuild": "^0.2.12",
     "@web/test-runner": "^0.13.4",
