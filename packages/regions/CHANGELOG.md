@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.16](https://github.com/uxland/lit/compare/@uxland/regions@1.0.0-alpha.15...@uxland/regions@1.0.0-alpha.16) (2021-05-28)
+
+
+### Bug Fixes
+
+* update deps and imports ([0d4287b](https://github.com/uxland/lit/commit/0d4287b2b11bab8f8d6358dac57ce16ae5579bde))
+
+
+
+
+
 # [1.0.0-alpha.15](https://github.com/uxland/lit/compare/@uxland/regions@1.0.0-alpha.14...@uxland/regions@1.0.0-alpha.15) (2021-05-28)
 
 **Note:** Version bump only for package @uxland/regions
