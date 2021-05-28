@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.18](https://github.com/uxland/lit/compare/@uxland/prism@1.0.0-alpha.17...@uxland/prism@1.0.0-alpha.18) (2021-05-28)
+
+
+### Bug Fixes
+
+* **prism:** update routing imports ([a68cc62](https://github.com/uxland/lit/commit/a68cc62eb548423b5bb665fcc79b4084c11534c7))
+
+
+
+
+
 # [1.0.0-alpha.17](https://github.com/uxland/lit/compare/@uxland/prism@1.0.0-alpha.16...@uxland/prism@1.0.0-alpha.17) (2021-05-27)
 
 
