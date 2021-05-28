@@ -1,4 +1,4 @@
-import {invariant} from '@uxland/utilities';
+import {invariant} from '@uxland/utilities/invariant';
 import {Region, RegionDefinition} from './region';
 import {RegionAdapterRegistry} from './region-adapter-registry';
 import {IRegionManager} from './region-manager';

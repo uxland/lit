@@ -1,4 +1,4 @@
-import {nop} from '@uxland/utilities';
+import {nop} from '@uxland/utilities/nop';
 import * as R from 'ramda';
 import {IRegion, IRegionBehavior} from '../region';
 export class AutoPopulateBehavior implements IRegionBehavior {

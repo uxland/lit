@@ -1,5 +1,6 @@
-import {Debouncer, timeOut} from '@uxland/browser-utilities';
-import {nop} from '@uxland/utilities';
+import {Debouncer} from '@uxland/browser-utilities/async/debounce';
+import {timeOut} from '@uxland/browser-utilities/async/time-out';
+import {nop} from '@uxland/utilities/nop';
 import {LitElement} from 'lit';
 import {filter, hasIn, map, pipe, propEq, reject, uniq, values} from 'ramda';
 import {Store, Unsubscribe} from 'redux';

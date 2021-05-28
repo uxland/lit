@@ -1,4 +1,4 @@
-import {collect} from '@uxland/utilities';
+import {collect} from '@uxland/utilities/collect';
 import {WatchOptions} from './watch';
 
 const WATCHED_PROPERTIES_PROPERTY = 'watchedReduxProperties';

@@ -1,4 +1,4 @@
-import {invariant} from '@uxland/utilities';
+import {invariant} from '@uxland/utilities/invariant';
 import {adapterFactory} from './region-adapter-registry';
 import {IRegionManager} from './region-manager';
 import {validateView} from './validate-view';

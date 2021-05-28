@@ -1,4 +1,4 @@
-import {microTask} from '@uxland/browser-utilities';
+import {microTask} from '@uxland/browser-utilities/async/micro-task';
 import {dedupeMixin} from '@uxland/lit-utilities/dedupe-mixin';
 import {LitElement} from 'lit';
 import {Store, Unsubscribe} from 'redux';

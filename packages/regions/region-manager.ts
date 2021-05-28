@@ -1,4 +1,4 @@
-import {invariant} from '@uxland/utilities';
+import {invariant} from '@uxland/utilities/invariant';
 import {IRegion} from './region';
 import {ViewDefinition} from './view-definition';
 
