@@ -1,6 +1,6 @@
 import {IRegionHost} from '@uxland/regions/region';
 import {DynamicFactory} from '@uxland/regions/region-adapter-registry';
-import {Router} from '@uxland/routing';
+import {Router} from '@uxland/routing/router';
 import {Store} from 'redux';
 import {RouterRegionDefinition} from './router-region-decorator';
 import {RoutingAdapter} from './routing-adapter';

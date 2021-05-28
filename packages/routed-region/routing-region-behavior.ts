@@ -1,14 +1,10 @@
 import {bind, getWatchedProperties, PropertyWatch, unbind, watch} from '@uxland/lit-redux-connect';
 import {IRegionBehavior, IRegionHost} from '@uxland/regions/region';
-import {
-  computePage,
-  findMatchingRoutes,
-  isRouteActive,
-  Route,
-  RouteDefinition,
-  Router,
-  routingSelectors,
-} from '@uxland/routing';
+import {findMatchingRoutes} from '@uxland/routing/helpers/finding-matching-routes';
+import {isRouteActive} from '@uxland/routing/helpers/is-route-active';
+import {Route, RouteDefinition, Router} from '@uxland/routing/router';
+import {computePage} from '@uxland/routing/store/compute-page';
+import {routingSelectors} from '@uxland/routing/store/selectors';
 import {Store} from 'redux';
 import {RouterRegionDefinition} from './router-region-decorator';
 import {getFullRoute, RoutedViewDefinition} from './routing-adapter';
