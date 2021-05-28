@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.4](https://github.com/uxland/lit/compare/@uxland/lit-mixins@1.0.0-alpha.3...@uxland/lit-mixins@1.0.0-alpha.4) (2021-05-28)
+
+
+### Bug Fixes
+
+* **lit-mixins:** update routing imports ([fde66d0](https://github.com/uxland/lit/commit/fde66d0e10667d6c0f29ee73f7728da5c979ca39))
+
+
+
+
+
 # [1.0.0-alpha.3](https://github.com/uxland/lit/compare/@uxland/lit-mixins@1.0.0-alpha.2...@uxland/lit-mixins@1.0.0-alpha.3) (2021-05-27)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.6](https://github.com/uxland/lit/compare/@uxland/routed-region@1.0.0-alpha.5...@uxland/routed-region@1.0.0-alpha.6) (2021-05-28)
+
+
+### Bug Fixes
+
+* **lit-mixins:** update routing imports ([81fb497](https://github.com/uxland/lit/commit/81fb49729a61420a25825da9442863d81e3d090a))
+
+
+
+
+
 # [1.0.0-alpha.5](https://github.com/uxland/lit/compare/@uxland/routed-region@1.0.0-alpha.4...@uxland/routed-region@1.0.0-alpha.5) (2021-05-27)
 
 
