@@ -1,6 +1,8 @@
 import {regionAdapterRegistry} from '@uxland/regions/region-adapter-registry';
 import {routingAdapterFactory} from '@uxland/routed-region/routing-adapter-factory-factory';
-import {initializeLinkClickSupport, Router, RouterState} from '@uxland/routing';
+import {initializeLinkClickSupport} from '@uxland/routing/link-click-support';
+import {Router} from '@uxland/routing/router';
+import {RouterState} from '@uxland/routing/store/router-state';
 import {Store} from 'redux';
 import {PrismAppState, store} from './store';
 
