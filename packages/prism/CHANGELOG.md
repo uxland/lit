@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.20](https://github.com/uxland/lit/compare/@uxland/prism@1.0.0-alpha.19...@uxland/prism@1.0.0-alpha.20) (2021-05-31)
+
+
+### Bug Fixes
+
+* **prism:** update deps ([caa7c25](https://github.com/uxland/lit/commit/caa7c259a682f89208b721b719bf8286b81ccf51))
+
+
+
+
+
 # [1.0.0-alpha.19](https://github.com/uxland/lit/compare/@uxland/prism@1.0.0-alpha.18...@uxland/prism@1.0.0-alpha.19) (2021-05-28)
 
 
