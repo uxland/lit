@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.8](https://github.com/uxland/lit/compare/@demo/app@1.0.0-alpha.7...@demo/app@1.0.0-alpha.8) (2021-06-02)
+
+
+### Bug Fixes
+
+* correct dependency version ([fa0b3f4](https://github.com/uxland/lit/commit/fa0b3f49ff50e1102c986573fcc188ce8dc62999))
+
+
+
+
+
 # [1.0.0-alpha.7](https://github.com/uxland/lit/compare/@demo/app@1.0.0-alpha.6...@demo/app@1.0.0-alpha.7) (2021-05-31)
 
 **Note:** Version bump only for package @demo/app
