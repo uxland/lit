@@ -84,6 +84,7 @@ export class RegionManager implements IRegionManager {
       );
       if (regionName) {
         result = region;
+        region.removeViews();
         delete this._regions[regionName];
       }
     }

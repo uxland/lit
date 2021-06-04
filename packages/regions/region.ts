@@ -37,6 +37,7 @@ export interface IRegion {
   context?: any;
 
   removeView(view: string): void;
+  removeViews(): void;
 
   activate(view: string | ViewDefinition): Promise<IRegion>;
 
@@ -82,6 +83,10 @@ export class Region implements IRegion {
     await this.deactivate(view);
     this.remove(view);
     delete this.views[view as string];
+  }
+
+  async removeViews() {
+    Object.keys(this.views).forEach(v => this.removeView(v));
   }
 
   private _context: any;
