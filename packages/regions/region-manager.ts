@@ -70,7 +70,7 @@ export class RegionManager implements IRegionManager {
     return this._regions[name];
   }
 
-  remove(region: string | IRegion): IRegion {
+  remove(region: string | IRegion, clear?: boolean): IRegion {
     let result: IRegion;
     let regionName: string;
     if (typeof region === 'string') {
@@ -84,7 +84,7 @@ export class RegionManager implements IRegionManager {
       );
       if (regionName) {
         result = region;
-        region.removeViews();
+        clear && region.removeViews();
         delete this._regions[regionName];
       }
     }
@@ -114,7 +114,7 @@ export class RegionManager implements IRegionManager {
   }
 
   clear(): IRegionManager {
-    Object.keys(this._regions).forEach(k => this.remove(k));
+    Object.keys(this._regions).forEach(k => this.remove(k, true));
     this._regions = {};
     return this;
   }
