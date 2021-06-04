@@ -38,6 +38,7 @@ export interface BootstrapOptions {
   moduleBaseRoute?: string;
   apiUrl?: string;
   appsBaseRoute?: string;
+  appHostSelector?: string;
 }
 
 const initializeLocalization = (language: string, locales: unknown, formats?: any) => {

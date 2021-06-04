@@ -1,7 +1,9 @@
+import {subscribe} from '@uxland/event-aggregator/event-aggregator';
 import {watch} from '@uxland/lit-redux-connect/watch';
 import {LitElement} from 'lit';
 import {appInitializedSelector} from './app/initialized/app-initialized-selector';
 import {BootstrapOptions} from './bootstrapper';
+import {LOGOUT_EVENT} from './disconnect';
 import {redux} from './mixins/redux';
 import {isLoggedInSelector, userIsFetchingSelector} from './user/selectors';
 import {MainViewType} from './view';
@@ -34,10 +36,23 @@ export abstract class PrismAppBase extends redux(LitElement) {
     language: 'ca',
     appsBaseRoute: uxlPrism.settings.appsBaseRoute,
     moduleBaseRoute: '/',
+    appHostSelector: undefined,
   };
+
   connectedCallback() {
     super.connectedCallback();
     this.initApp();
+    subscribe(LOGOUT_EVENT, () => {
+      if (this.options.appHostSelector) {
+        const host = this.renderRoot.querySelector(this.options.appHostSelector);
+        Array.from(host.children).forEach((c: HTMLElement) => {
+          host.removeChild(c);
+          const element = document.createElement(c.localName);
+          element.setAttribute('name', c.getAttribute('name'));
+          host.appendChild(element);
+        });
+      }
+    });
   }
   protected abstract initApp();
   protected getPagePath(page: any): string {
