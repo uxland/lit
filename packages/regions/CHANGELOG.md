@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.17](https://github.com/uxland/lit/compare/@uxland/regions@1.0.0-alpha.16...@uxland/regions@1.0.0-alpha.17) (2021-06-04)
+
+
+### Bug Fixes
+
+* **regions:** remove all views from region when region is removed ([f40ac30](https://github.com/uxland/lit/commit/f40ac30e5d454fa88680a1c0f502e326c6ad9b39))
+
+
+
+
+
 # [1.0.0-alpha.16](https://github.com/uxland/lit/compare/@uxland/regions@1.0.0-alpha.15...@uxland/regions@1.0.0-alpha.16) (2021-05-28)
 
 
