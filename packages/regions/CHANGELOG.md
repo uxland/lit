@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.19](https://github.com/uxland/lit/compare/@uxland/regions@1.0.0-alpha.18...@uxland/regions@1.0.0-alpha.19) (2021-06-16)
+
+
+### Bug Fixes
+
+* import ramda dependencies for specific function ([cb0d853](https://github.com/uxland/lit/commit/cb0d8530ac56848fddb99eea10165a66526d51e5))
+
+
+
+
+
 # [1.0.0-alpha.18](https://github.com/uxland/lit/compare/@uxland/regions@1.0.0-alpha.17...@uxland/regions@1.0.0-alpha.18) (2021-06-04)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.9](https://github.com/uxland/lit/compare/@uxland/lit-redux-connect@2.0.0-alpha.8...@uxland/lit-redux-connect@2.0.0-alpha.9) (2021-06-16)
+
+
+### Bug Fixes
+
+* import ramda dependencies for specific function ([cb0d853](https://github.com/uxland/lit/commit/cb0d8530ac56848fddb99eea10165a66526d51e5))
+
+
+
+
+
 # [2.0.0-alpha.8](https://github.com/uxland/lit/compare/@uxland/lit-redux-connect@2.0.0-alpha.7...@uxland/lit-redux-connect@2.0.0-alpha.8) (2021-05-28)
 
 

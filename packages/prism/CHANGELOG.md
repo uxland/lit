@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.23](https://github.com/uxland/lit/compare/@uxland/prism@1.0.0-alpha.22...@uxland/prism@1.0.0-alpha.23) (2021-06-16)
+
+
+### Bug Fixes
+
+* import ramda dependencies for specific function ([cb0d853](https://github.com/uxland/lit/commit/cb0d8530ac56848fddb99eea10165a66526d51e5))
+* **prism:** reinitialize host on logout ([41366ca](https://github.com/uxland/lit/commit/41366ca0f3c92a3b45a33f0f76ff36097c0f55e9))
+
+
+
+
+
 # [1.0.0-alpha.22](https://github.com/uxland/lit/compare/@uxland/prism@1.0.0-alpha.21...@uxland/prism@1.0.0-alpha.22) (2021-06-04)
 
 **Note:** Version bump only for package @uxland/prism

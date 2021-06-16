@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.11](https://github.com/uxland/lit/compare/@demo/app@1.0.0-alpha.10...@demo/app@1.0.0-alpha.11) (2021-06-16)
+
+
+### Bug Fixes
+
+* import ramda dependencies for specific function ([cb0d853](https://github.com/uxland/lit/commit/cb0d8530ac56848fddb99eea10165a66526d51e5))
+
+
+
+
+
 # [1.0.0-alpha.10](https://github.com/uxland/lit/compare/@demo/app@1.0.0-alpha.9...@demo/app@1.0.0-alpha.10) (2021-06-04)
 
 **Note:** Version bump only for package @demo/app
