@@ -1,5 +1,7 @@
 import {Action, AsyncState, createAsyncActions} from '@uxland/redux';
-import * as R from 'ramda';
+import lensPath from 'ramda/es/lensPath';
+import mergeDeepLeft from 'ramda/es/mergeDeepLeft';
+import set from 'ramda/es/set';
 import {actionsBuilder} from '../constants';
 export type ModuleType = 'remote' | 'local' | 'demo';
 export interface ModuleInfo {
@@ -72,15 +74,15 @@ export const reducer: (state: UserState<any>, action: Action) => UserState<any> 
     case FETCH_ACTIONS.succeeded:
       return {
         ...state,
-        state: R.mergeDeepLeft(action.payload, state.state || {}),
+        state: mergeDeepLeft(action.payload, state.state || {}),
         isLoggedIn: true,
       };
     case FETCH_ACTIONS.ended:
     case LOGIN_ACTIONS.ended:
       return {...state, elapsed: action.elapsed, isFetching: false};
     case SET_MODULES:
-      modulesLens = R.lensPath(['state', 'modules']);
-      return R.set(modulesLens, action.payload, state);
+      modulesLens = lensPath(['state', 'modules']);
+      return set(modulesLens, action.payload, state);
     default:
       return state;
   }

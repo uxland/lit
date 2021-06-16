@@ -1,6 +1,11 @@
 import {PropertyDeclaration} from 'lit';
 import {property} from 'lit/decorators.js';
-import {always, is, isNil, lensPath, view, when} from 'ramda';
+import always from 'ramda/es/always';
+import is from 'ramda/es/is';
+import isNil from 'ramda/es/isNil';
+import lensPath from 'ramda/es/lensPath';
+import view from 'ramda/es/view';
+import when from 'ramda/es/when';
 import {Store} from 'redux';
 import {ConnectAddOn, Selector} from './connect';
 import {createWatchedReduxProperty} from './watched-redux-property';

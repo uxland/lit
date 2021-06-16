@@ -1,7 +1,18 @@
 import {AsyncQueue} from '@uxland/browser-utilities/async/async-queue';
 import {dedupeMixin} from '@uxland/lit-utilities/dedupe-mixin';
 import {LitElement} from 'lit';
-import * as R from 'ramda';
+import always from 'ramda/es/always';
+import andThen from 'ramda/es/andThen';
+import bind from 'ramda/es/bind';
+import cond from 'ramda/es/cond';
+import forEach from 'ramda/es/forEach';
+import isNil from 'ramda/es/isNil';
+import keys from 'ramda/es/keys';
+import map from 'ramda/es/map';
+import pipe from 'ramda/es/pipe';
+import prop from 'ramda/es/prop';
+import reject from 'ramda/es/reject';
+import T from 'ramda/es/T';
 import {factory} from './adapters/multiple-active-adapter';
 import {IRegion, IRegionBehavior, RegionDefinition} from './region';
 import {regionAdapterRegistry, RegionAdapterRegistry} from './region-adapter-registry';
@@ -30,13 +41,13 @@ interface RegionDefinitionArgs {
 const requiresCreation: (
   component: RegionHostMixin
 ) => (definition: RegionDefinitionArgs) => boolean = component => definition =>
-  R.pipe(R.prop(definition.key), R.isNil)(component);
+  pipe(prop(definition.key), isNil)(component);
 
 const requiresDeletion: (
   component: RegionHostMixin
 ) => (definition: RegionDefinitionArgs) => boolean = component => definition =>
   !requiresCreation(component)(definition) &&
-  R.isNil(component.shadowRoot.querySelector(`#${definition.definition.targetId}`));
+  isNil(component.shadowRoot.querySelector(`#${definition.definition.targetId}`));
 
 const deleteRegion: (
   component: RegionHostMixin
@@ -45,11 +56,11 @@ const deleteRegion: (
   region.regionManager.remove(region);
   const behaviors = region.adapter ? region.adapter.behaviors || [] : [];
   delete component[args.key];
-  return R.pipe(
-    R.map((b: IRegionBehavior) => b.detach),
-    R.bind(Promise.all, Promise),
-    R.andThen(() => delete component[args.key]),
-    R.andThen(R.always(undefined))
+  return pipe(
+    map((b: IRegionBehavior) => b.detach),
+    bind(Promise.all, Promise),
+    andThen(() => delete component[args.key]),
+    andThen(always(undefined))
   )(behaviors);
 };
 
@@ -64,19 +75,19 @@ const createRegion: (
         if (region) {
           component[definitionArgs.key] = region;
           const behaviors = region.adapter ? region.adapter.behaviors || [] : [];
-          return R.pipe(
-            R.map((b: IRegionBehavior) => b.attach()),
-            R.bind(Promise.all, Promise),
-            R.andThen(R.always(region))
+          return pipe(
+            map((b: IRegionBehavior) => b.attach()),
+            bind(Promise.all, Promise),
+            andThen(always(region))
           )(behaviors);
         } else return undefined;
       })
-      .catch(R.always(undefined));
+      .catch(always(undefined));
 
 const toRegionDefinitionArgs: (regions: RegionDefinitions) => RegionDefinitionArgs[] = regions =>
-  R.pipe(
-    R.keys,
-    R.map(key => <RegionDefinitionArgs>{key, definition: regions[key]})
+  pipe(
+    keys,
+    map(key => <RegionDefinitionArgs>{key, definition: regions[key]})
   )(regions);
 
 type RegionDefinitions = {[key: string]: RegionDefinition};
@@ -93,10 +104,10 @@ const handleRegionCreation = (
   const deletion = deleteRegion(component);
   const creation = createRegion(component, regionManager1, registry);
   return (args: RegionDefinitionArgs) =>
-    R.cond([
+    cond([
       [creationRequired, creation],
       [deletionRequired, deletion],
-      [R.T, R.always(Promise.resolve(undefined))],
+      [T, always(Promise.resolve(undefined))],
     ])(args);
 };
 
@@ -118,12 +129,12 @@ export const regionHostMixin = (
       private createRegions(): Promise<any> {
         const regions = getUxlRegions(this);
         const handleCreation = handleRegionCreation(this as any, regionManager, adapterRegistry);
-        return R.pipe(
+        return pipe(
           toRegionDefinitionArgs,
-          R.forEach(handleCreation),
-          R.bind(Promise.all, Promise),
-          R.andThen(R.reject(R.isNil)),
-          R.andThen(R.bind(this.regionsCreated, this))
+          forEach(handleCreation),
+          bind(Promise.all, Promise),
+          andThen(reject(isNil)),
+          andThen(bind(this.regionsCreated, this))
         )(regions);
       }
       private create() {

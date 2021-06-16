@@ -15,7 +15,7 @@
   "devDependencies": {
     "@commitlint/cli": "^9.1.2",
     "@commitlint/config-conventional": "^9.1.2",
-    "@uxland/project-tools": "^1.0.0",
+    "@uxland/project-tools": "^1.0.1-alpha.6",
     "husky": "^4.2.1",
     "lerna": "^3.22.1"
   },

@@ -7,6 +7,13 @@ import {customElement} from 'lit/decorators';
 
 @customElement('demo-app')
 export default class DemoApp extends AppBase {
+  constructor() {
+    super();
+    this.options = {
+      ...this.options,
+      appHostSelector: '#pages',
+    };
+  }
   render(): TemplateResult {
     return html`<uxl-content-switcher
       id="pages"
