@@ -34,7 +34,7 @@ export abstract class PrismAppBase extends redux(LitElement) {
     apiUrl: uxlPrism.settings.apiUrl,
     locales: {ca: {}},
     language: 'ca',
-    appsBaseRoute: uxlPrism.settings.appsBaseRoute,
+    appsBaseRoute: uxlPrism?.settings?.appsBaseRoute,
     moduleBaseRoute: '/',
     appHostSelector: undefined,
   };
