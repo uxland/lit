@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.13](https://github.com/uxland/lit/compare/@demo/app@1.0.0-alpha.12...@demo/app@1.0.0-alpha.13) (2021-06-18)
+
+**Note:** Version bump only for package @demo/app
+
+
+
+
+
 # [1.0.0-alpha.12](https://github.com/uxland/lit/compare/@demo/app@1.0.0-alpha.11...@demo/app@1.0.0-alpha.12) (2021-06-17)
 
 **Note:** Version bump only for package @demo/app
