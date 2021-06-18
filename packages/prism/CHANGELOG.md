@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.24](https://github.com/uxland/lit/compare/@uxland/prism@1.0.0-alpha.23...@uxland/prism@1.0.0-alpha.24) (2021-06-17)
+
+
+### Bug Fixes
+
+* **prism:** uxlPrism options optional ([091a5d0](https://github.com/uxland/lit/commit/091a5d094607f8aaf9c5ec75551d4047d179f2a8))
+
+
+
+
+
 # [1.0.0-alpha.23](https://github.com/uxland/lit/compare/@uxland/prism@1.0.0-alpha.22...@uxland/prism@1.0.0-alpha.23) (2021-06-16)
 
 
