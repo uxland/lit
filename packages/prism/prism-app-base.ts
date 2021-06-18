@@ -31,7 +31,7 @@ export abstract class PrismAppBase extends redux(LitElement) {
   options: BootstrapOptions = {
     fetchUser: undefined,
     fetchLogin: undefined,
-    apiUrl: uxlPrism.settings.apiUrl,
+    apiUrl: uxlPrism?.settings?.apiUrl,
     locales: {ca: {}},
     language: 'ca',
     appsBaseRoute: uxlPrism?.settings?.appsBaseRoute,
