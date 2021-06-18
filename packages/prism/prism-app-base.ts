@@ -26,7 +26,7 @@ export interface UxlPrism {
 declare interface Window {
   uxlPrism: UxlPrism;
 }
-declare let uxlPrism: UxlPrism;
+const uxlPrism: UxlPrism = (window as any)?.uxlPrism;
 export abstract class PrismAppBase extends redux(LitElement) {
   options: BootstrapOptions = {
     fetchUser: undefined,
