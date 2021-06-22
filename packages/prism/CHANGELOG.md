@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.27](https://github.com/uxland/lit/compare/@uxland/prism@1.0.0-alpha.26...@uxland/prism@1.0.0-alpha.27) (2021-06-22)
+
+**Note:** Version bump only for package @uxland/prism
+
+
+
+
+
 # [1.0.0-alpha.26](https://github.com/uxland/lit/compare/@uxland/prism@1.0.0-alpha.25...@uxland/prism@1.0.0-alpha.26) (2021-06-18)
 
 
