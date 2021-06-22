@@ -2535,6 +2535,13 @@
   dependencies:
     ramda "^0.27.0"
 
+"@uxland/event-aggregator@^1.0.1-alpha.20":
+  version "1.0.1-alpha.20"
+  resolved "https://registry.yarnpkg.com/@uxland/event-aggregator/-/event-aggregator-1.0.1-alpha.20.tgz#9c004fb4ccc98bfdf6404b6adfaf59e2c01717f1"
+  integrity sha512-5pUzXRlaryz8LBavgFWBlzkEEaBVvorxkZbaKGzcD38pTj387zvALEdnDEAQ6xt5UXO8mBVnsvR5OKH46cMiog==
+  dependencies:
+    ramda "^0.27.0"
+
 "@uxland/fetch-client@^1.0.1-alpha.13":
   version "1.0.1-alpha.19"
   resolved "https://registry.yarnpkg.com/@uxland/fetch-client/-/fetch-client-1.0.1-alpha.19.tgz#2f3fe609f87e86a60a67d8bfa371483181ef0eb1"
@@ -2562,6 +2569,16 @@
   dependencies:
     "@uxland/event-aggregator" "^1.0.1-alpha.19"
     "@uxland/utilities" "^1.0.1-alpha.21"
+    intl-messageformat "^7.8.4"
+    ramda "^0.27.0"
+
+"@uxland/localization@^1.0.1-alpha.24":
+  version "1.0.1-alpha.24"
+  resolved "https://registry.yarnpkg.com/@uxland/localization/-/localization-1.0.1-alpha.24.tgz#056b93a6871726ab71738f636ea045a93d3199af"
+  integrity sha512-BP/YOcafDlL6gd9YG2He8Hwp8VKkZy8wkfF15iwbcX22EmoRxpA6jYDk89NuMRaREaZA57WIeDRofCnelcrSTw==
+  dependencies:
+    "@uxland/event-aggregator" "^1.0.1-alpha.20"
+    "@uxland/utilities" "^1.0.1-alpha.24"
     intl-messageformat "^7.8.4"
     ramda "^0.27.0"
 
@@ -2637,6 +2654,13 @@
   dependencies:
     ramda "^0.27.1"
 
+"@uxland/ramda-extensions@^1.0.1-alpha.20":
+  version "1.0.1-alpha.20"
+  resolved "https://registry.yarnpkg.com/@uxland/ramda-extensions/-/ramda-extensions-1.0.1-alpha.20.tgz#e23637066c0533d1d00a689d4ba6be5d1656df60"
+  integrity sha512-bKEYTHfHhUr9SQeAzSZ9RsmexsHuHNSXuhynXzQPqhUTF88ruuwnN1/QkTM3zteIYTEZYCYaZiqp7E+it54tWw==
+  dependencies:
+    ramda "^0.27.1"
+
 "@uxland/redux@^1.0.1-alpha.13", "@uxland/redux@^1.0.1-alpha.20":
   version "1.0.1-alpha.20"
   resolved "https://registry.yarnpkg.com/@uxland/redux/-/redux-1.0.1-alpha.20.tgz#0fbb9ed8a0ee03694fe08d131152e177a8e015ca"
@@ -2674,6 +2698,13 @@
   integrity sha512-BaaPga9YITzt9hHdF3Rf+xaxrlpjdage+M4Eo4E9Brr4TBanDr0V5H743bh+FXgS/IrzaOZfZuqRV1e3iyh9cQ==
   dependencies:
     "@uxland/ramda-extensions" "^1.0.1-alpha.19"
+
+"@uxland/utilities@^1.0.1-alpha.24":
+  version "1.0.1-alpha.24"
+  resolved "https://registry.yarnpkg.com/@uxland/utilities/-/utilities-1.0.1-alpha.24.tgz#fcd824c17b4ea579e5fc40a06caf61c453d5e955"
+  integrity sha512-zl035dEU1D6uyq3T19Cb7Qdv7DdPO30HkYPTIH3F+ZONOcuCdqlqTs0BLVJlKaQxzRb5yk9/dtr5XRiApiT4VA==
+  dependencies:
+    "@uxland/ramda-extensions" "^1.0.1-alpha.20"
 
 "@web/browser-logs@^0.2.1", "@web/browser-logs@^0.2.2":
   version "0.2.3"
