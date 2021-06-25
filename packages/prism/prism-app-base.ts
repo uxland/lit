@@ -27,7 +27,7 @@ declare interface Window {
   uxlPrism: UxlPrism;
 }
 const uxlPrism: UxlPrism = (window as any)?.uxlPrism;
-export abstract class PrismAppBase extends redux(LitElement) {
+export class PrismAppBase extends redux(LitElement) {
   options: BootstrapOptions = {
     fetchUser: undefined,
     fetchLogin: undefined,
@@ -54,7 +54,10 @@ export abstract class PrismAppBase extends redux(LitElement) {
       }
     });
   }
-  protected abstract initApp();
+  protected initApp() {
+    throw new Error('Method not implemented');
+  }
+
   protected getPagePath(page: any): string {
     return null;
   }
