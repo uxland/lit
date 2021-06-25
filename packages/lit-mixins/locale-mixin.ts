@@ -7,9 +7,8 @@ import {
 import {dedupeMixin} from '@uxland/utilities/dedupe-mixin';
 import {LitElement} from 'lit';
 
-export interface LocalizationMixinConstructor extends LitElement {
-  new (...args: any[]): LocalizationMixin & LitElement;
-}
+export type LocalizationMixinConstructor = LocalizationMixin & typeof LitElement;
+
 export type LitLocaleMixinFunction = (
   superClass: typeof LitElement
 ) => LocalizationMixinConstructor;

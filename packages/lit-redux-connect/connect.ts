@@ -23,10 +23,7 @@ export interface PropertyWatch {
   name: string;
 }
 
-export interface ConnectMixinConstructor extends LitElement {
-  new (...args: any[]): ConnectMixin & LitElement;
-}
-
+export type ConnectMixinConstructor = ConnectMixin & typeof LitElement;
 export type ConnectMixinFunction = (superClass: typeof LitElement) => ConnectMixinConstructor;
 
 export function connect(defaultStore?: Store<any, any>): ConnectMixinFunction {
