@@ -5,10 +5,6 @@ import {Store, Unsubscribe} from 'redux';
 import {bind} from './bind';
 import {unbind} from './unbind';
 
-// type Constructor<T = Record<string, unknown>> = new (...args: any[]) => T;
-type FunctionConstructor = new (...args: any) => FunctionConstructor;
-type Constructor<T> = FunctionConstructor & {prototype: T};
-
 export interface ConnectMixin {
   __reduxStoreSubscriptions__: Unsubscribe[];
 }
@@ -31,7 +27,7 @@ export interface ConnectMixinConstructor extends LitElement {
   new (...args: any[]): ConnectMixin & LitElement;
 }
 
-export type ConnectMixinFunction = (superClass: Constructor<LitElement>) => ConnectMixinConstructor;
+export type ConnectMixinFunction = (superClass: typeof LitElement) => ConnectMixinConstructor;
 
 export function connect(defaultStore?: Store<any, any>): ConnectMixinFunction {
   return dedupeMixin((superClass: typeof LitElement) => {
