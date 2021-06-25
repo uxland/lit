@@ -16,7 +16,7 @@ export type LitLocaleMixinFunction = (
 ) => LocalizationMixinConstructor;
 
 export function litLocaleMixin(factory: LocalizerFactory): LitLocaleMixinFunction {
-  return dedupeMixin((superClass: Constructor<LitElement>) => localeMixin(factory)(superClass));
+  return dedupeMixin((superClass: typeof LitElement) => localeMixin(factory)(superClass));
 }
 
 export const litLocale = litLocaleMixin(localizerFactory);

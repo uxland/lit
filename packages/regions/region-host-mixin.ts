@@ -1,5 +1,5 @@
 import {AsyncQueue} from '@uxland/browser-utilities/async/async-queue';
-import {dedupeMixin} from '@uxland/lit-utilities/dedupe-mixin';
+import {dedupeMixin} from '@uxland/utilities/dedupe-mixin';
 import {LitElement} from 'lit';
 import always from 'ramda/es/always';
 import andThen from 'ramda/es/andThen';
@@ -114,8 +114,8 @@ const handleRegionCreation = (
 export const regionHostMixin = (
   RegionManager: IRegionManager,
   adapterRegistry: RegionAdapterRegistry
-) =>
-  dedupeMixin(<T extends Constructor<LitElement>>(superClass: T) => {
+): RegionHostMixinFunction =>
+  dedupeMixin((superClass: typeof LitElement) => {
     class RegionHostMixinClass extends superClass implements RegionHostMixin {
       constructor(...args: any[]) {
         super();

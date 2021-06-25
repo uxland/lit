@@ -1,5 +1,5 @@
-import {dedupeMixin} from '@uxland/lit-utilities/dedupe-mixin';
 import {routingSelectors} from '@uxland/routing/store/selectors';
+import {dedupeMixin} from '@uxland/utilities/dedupe-mixin';
 import {routing, RoutingMixinConstructor} from './routing';
 
 interface MixinFunction<T> {}

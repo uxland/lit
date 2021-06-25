@@ -1,11 +1,13 @@
 import {microTask} from '@uxland/browser-utilities/async/micro-task';
-import {dedupeMixin} from '@uxland/lit-utilities/dedupe-mixin';
+import {dedupeMixin} from '@uxland/utilities/dedupe-mixin';
 import {LitElement} from 'lit';
 import {Store, Unsubscribe} from 'redux';
 import {bind} from './bind';
 import {unbind} from './unbind';
 
-type Constructor<T = Record<string, unknown>> = new (...args: any[]) => T;
+// type Constructor<T = Record<string, unknown>> = new (...args: any[]) => T;
+type FunctionConstructor = new (...args: any) => FunctionConstructor;
+type Constructor<T> = FunctionConstructor & {prototype: T};
 
 export interface ConnectMixin {
   __reduxStoreSubscriptions__: Unsubscribe[];
@@ -32,7 +34,7 @@ export interface ConnectMixinConstructor extends LitElement {
 export type ConnectMixinFunction = (superClass: Constructor<LitElement>) => ConnectMixinConstructor;
 
 export function connect(defaultStore?: Store<any, any>): ConnectMixinFunction {
-  return dedupeMixin((superClass: Constructor<LitElement>) => {
+  return dedupeMixin((superClass: typeof LitElement) => {
     class connectMixin extends superClass implements ConnectMixin {
       __reduxStoreSubscriptions__: Unsubscribe[];
 
