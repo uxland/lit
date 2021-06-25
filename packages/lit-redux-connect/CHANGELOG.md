@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.10](https://github.com/uxland/lit/compare/@uxland/lit-redux-connect@2.0.0-alpha.9...@uxland/lit-redux-connect@2.0.0-alpha.10) (2021-06-25)
+
+
+### Bug Fixes
+
+* refactor mixins declaration ([ef8f449](https://github.com/uxland/lit/commit/ef8f449337f416c54e3196109656a72d0e836dbc))
+* solves issue with typings in mixins ([ce77db1](https://github.com/uxland/lit/commit/ce77db16e4d7f413d3a39ba986941905b78e1614))
+
+
+
+
+
 # [2.0.0-alpha.9](https://github.com/uxland/lit/compare/@uxland/lit-redux-connect@2.0.0-alpha.8...@uxland/lit-redux-connect@2.0.0-alpha.9) (2021-06-16)
 
 

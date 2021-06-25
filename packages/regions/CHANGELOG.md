@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.20](https://github.com/uxland/lit/compare/@uxland/regions@1.0.0-alpha.19...@uxland/regions@1.0.0-alpha.20) (2021-06-25)
+
+
+### Bug Fixes
+
+* refactor mixins declaration ([ef8f449](https://github.com/uxland/lit/commit/ef8f449337f416c54e3196109656a72d0e836dbc))
+
+
+
+
+
 # [1.0.0-alpha.19](https://github.com/uxland/lit/compare/@uxland/regions@1.0.0-alpha.18...@uxland/regions@1.0.0-alpha.19) (2021-06-16)
 
 
