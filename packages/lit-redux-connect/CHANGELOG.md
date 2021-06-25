@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.11](https://github.com/uxland/lit/compare/@uxland/lit-redux-connect@2.0.0-alpha.10...@uxland/lit-redux-connect@2.0.0-alpha.11) (2021-06-25)
+
+
+### Bug Fixes
+
+* correct mixin typings ([3f7d9ab](https://github.com/uxland/lit/commit/3f7d9abca478328e4b06ab2a908f2c3b34b0a78f))
+
+
+
+
+
 # [2.0.0-alpha.10](https://github.com/uxland/lit/compare/@uxland/lit-redux-connect@2.0.0-alpha.9...@uxland/lit-redux-connect@2.0.0-alpha.10) (2021-06-25)
 
 

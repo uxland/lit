@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.8](https://github.com/uxland/lit/compare/@uxland/lit-mixins@1.0.0-alpha.7...@uxland/lit-mixins@1.0.0-alpha.8) (2021-06-25)
+
+
+### Bug Fixes
+
+* correct mixin typings ([3f7d9ab](https://github.com/uxland/lit/commit/3f7d9abca478328e4b06ab2a908f2c3b34b0a78f))
+
+
+
+
+
 # [1.0.0-alpha.7](https://github.com/uxland/lit/compare/@uxland/lit-mixins@1.0.0-alpha.6...@uxland/lit-mixins@1.0.0-alpha.7) (2021-06-25)
 
 
