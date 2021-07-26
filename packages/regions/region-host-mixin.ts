@@ -26,12 +26,15 @@ export interface RegionHostMixin extends LitElement {
   regionsCreated(newRegions: IRegion[]): void;
 }
 
-export interface RegionHostMixinConstructor extends Constructor<LitElement> {
-  new (...args: any[]): RegionHostMixin;
-}
+// export interface RegionHostMixinConstructor extends Constructor<LitElement> {
+//   new (...args: any[]): RegionHostMixin;
+// }
+
+export type RegionHostMixinConstructor = RegionHostMixin & typeof LitElement;
 
 interface MixinFunction<T> {}
-export type RegionHostMixinFunction = MixinFunction<RegionHostMixinConstructor>;
+// export type RegionHostMixinFunction = MixinFunction<RegionHostMixinConstructor>;
+export type RegionHostMixinFunction = (superClass: typeof LitElement) => RegionHostMixinConstructor;
 
 interface RegionDefinitionArgs {
   key: string;
@@ -111,11 +114,11 @@ const handleRegionCreation = (
     ])(args);
 };
 
-export const regionHostMixin = (
+export function regionHostMixin(
   RegionManager: IRegionManager,
   adapterRegistry: RegionAdapterRegistry
-): RegionHostMixinFunction =>
-  dedupeMixin((superClass: typeof LitElement) => {
+): RegionHostMixinFunction {
+  return dedupeMixin((superClass: typeof LitElement) => {
     class RegionHostMixinClass extends superClass implements RegionHostMixin {
       constructor(...args: any[]) {
         super();
@@ -161,10 +164,8 @@ export const regionHostMixin = (
     }
     return RegionHostMixinClass;
   });
+}
 
 regionAdapterRegistry.registerDefaultAdapterFactory(factory);
 
-export const regionHost: RegionHostMixinFunction = regionHostMixin(
-  regionManager,
-  regionAdapterRegistry
-);
+export const regionHost = regionHostMixin(regionManager, regionAdapterRegistry);
