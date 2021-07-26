@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.21](https://github.com/uxland/lit/compare/@uxland/regions@1.0.0-alpha.20...@uxland/regions@1.0.0-alpha.21) (2021-07-26)
+
+
+### Bug Fixes
+
+* update region-host-mixin typings ([7680d4e](https://github.com/uxland/lit/commit/7680d4e178f9865aa555d9495465c593a7dd243a))
+
+
+
+
+
 # [1.0.0-alpha.20](https://github.com/uxland/lit/compare/@uxland/regions@1.0.0-alpha.19...@uxland/regions@1.0.0-alpha.20) (2021-06-25)
 
 
