@@ -18,3 +18,10 @@ export interface ViewComponent {
   active: boolean;
   regionContext: any;
 }
+
+export interface RegisteredViews {
+  region: string;
+  key: string;
+  view: ViewDefinition;
+  defer?: boolean;
+}
