@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.22](https://github.com/uxland/lit/compare/@uxland/regions@1.0.0-alpha.21...@uxland/regions@1.0.0-alpha.22) (2021-07-26)
+
+
+### Bug Fixes
+
+* **regions:** add view-factory and registeredViews typing ([546ed83](https://github.com/uxland/lit/commit/546ed83f49a142602d8c2b561303d1caff2d9002))
+
+
+
+
+
 # [1.0.0-alpha.21](https://github.com/uxland/lit/compare/@uxland/regions@1.0.0-alpha.20...@uxland/regions@1.0.0-alpha.21) (2021-07-26)
 
 
