@@ -32,7 +32,7 @@ jobs:
         continue-on-error: true
       - name: Publish Prerelease
         if: github.ref == 'refs/heads/alpha'
-        run: npx lerna publish --conventional-commits --conventional-prerelease --yes
+        run: npx lerna publish --conventional-commits --conventional-prerelease --dist-tag alpha --yes
       - name: Publish Release
         if: github.ref == 'refs/heads/master'
         run: npx lerna publish --conventional-commits --conventional-graduate --create-release github --yes
