@@ -8,7 +8,7 @@ export interface ScreenOrientationState {
   type: ScreenOrientationType;
 }
 
-export const SET_ORIENTATION_ACTION = actionsBuilder('set-orientation');
+export const SET_ORIENTATION_ACTION = actionsBuilder('SET-ORIENTATION');
 export const reducer: Reducer<ScreenOrientationState> = createBasicReducer<ScreenOrientationState>(
   SET_ORIENTATION_ACTION,
   {

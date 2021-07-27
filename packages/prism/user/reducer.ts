@@ -22,9 +22,9 @@ export interface UserInfo {
 export interface UserState<T extends UserInfo> extends AsyncState<T> {
   isLoggedIn: boolean;
 }
-export const FETCH_USER_ACTION = actionsBuilder('fetch-user');
-export const LOGIN_USER_ACTION = actionsBuilder('login-user');
-export const SET_MODULES = actionsBuilder('set-modules');
+export const FETCH_USER_ACTION = actionsBuilder('FETCH-USER');
+export const LOGIN_USER_ACTION = actionsBuilder('LOGIN-USER');
+export const SET_MODULES = actionsBuilder('SET-MODULES');
 const FETCH_ACTIONS = createAsyncActions(FETCH_USER_ACTION);
 const LOGIN_ACTIONS = createAsyncActions(LOGIN_USER_ACTION);
 /* const getLoginActionMessage = (error: any) => {
