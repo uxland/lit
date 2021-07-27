@@ -3,9 +3,11 @@ import {LitElement} from 'lit';
 import {property} from 'lit/decorators.js';
 import {ViewDefinition} from './view-definition';
 
-type Constructor<T = Record<string, unknown>> = new (...args: any[]) => T;
+export type RegionViewMixinConstructor = RegionViewMixin & typeof LitElement;
 
-export interface RegionView {
+export type RegionViewMixinFunction = (superClass: typeof LitElement) => RegionViewMixinConstructor;
+
+export interface RegionView extends LitElement {
   active: boolean;
   activeChanged(current: boolean, previous: boolean);
   view: ViewDefinition;
@@ -15,15 +17,19 @@ export interface RegionView {
 
 export interface RegionViewMixin extends RegionView {}
 
-export const regionView = dedupeMixin(<T extends Constructor<LitElement>>(superClass: T) => {
-  class RegionView extends propertiesObserver(superClass as any) implements RegionViewMixin {
-    @property({type: Boolean})
-    active: boolean;
-    activeChanged(current: boolean, previous: boolean) {}
-    view: ViewDefinition;
-    @property()
-    regionContext: any;
-    regionContextChanged(newContext: any, oldContext: any) {}
-  }
-  return RegionView;
-});
+export function regionViewMixin(): RegionViewMixinFunction {
+  return dedupeMixin((superClass: typeof LitElement) => {
+    class RegionView extends propertiesObserver(superClass) implements RegionViewMixin {
+      @property({type: Boolean})
+      active: boolean;
+      activeChanged(current: boolean, previous: boolean) {}
+      view: ViewDefinition;
+      @property()
+      regionContext: any;
+      regionContextChanged(newContext: any, oldContext: any) {}
+    }
+    return RegionView;
+  });
+}
+
+export const regionView = regionViewMixin();
