@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.25](https://github.com/uxland/lit/compare/@uxland/regions@1.0.0-alpha.24...@uxland/regions@1.0.0-alpha.25) (2021-07-27)
+
+
+### Bug Fixes
+
+* **regions:** expose view-factory ([136d89f](https://github.com/uxland/lit/commit/136d89f556d35e7bddc9bc57fd9bc48371f3dae2))
+* **regions:** rename view-factory-importer ([f8b9a4f](https://github.com/uxland/lit/commit/f8b9a4f49b251634430b230e1b06e706cfd2705b))
+
+
+
+
+
 # [1.0.0-alpha.24](https://github.com/uxland/lit/compare/@uxland/regions@1.0.0-alpha.23...@uxland/regions@1.0.0-alpha.24) (2021-07-27)
 
 **Note:** Version bump only for package @uxland/regions
