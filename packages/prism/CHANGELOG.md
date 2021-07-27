@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.33](https://github.com/uxland/lit/compare/@uxland/prism@1.0.0-alpha.32...@uxland/prism@1.0.0-alpha.33) (2021-07-27)
+
+
+### Bug Fixes
+
+* **prism:** update actions ids ([426121f](https://github.com/uxland/lit/commit/426121f6d97a46ea0c5e9801f2138813ddd11fcd))
+
+
+
+
+
 # [1.0.0-alpha.32](https://github.com/uxland/lit/compare/@uxland/prism@1.0.0-alpha.31...@uxland/prism@1.0.0-alpha.32) (2021-07-26)
 
 **Note:** Version bump only for package @uxland/prism
