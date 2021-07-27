@@ -1,2 +1,2 @@
-export * from './view-factory';
+export * from './view-factory-importer';
 export * from './view-sort-hint-comparer';
