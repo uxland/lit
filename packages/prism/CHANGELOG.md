@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.37](https://github.com/uxland/lit/compare/@uxland/prism@1.0.0-alpha.36...@uxland/prism@1.0.0-alpha.37) (2021-07-28)
+
+
+### Bug Fixes
+
+* **prism:** improve modules api with refresh option ([54549b3](https://github.com/uxland/lit/commit/54549b3ce82f03430bc13db8ebecc37524ede1e2))
+
+
+
+
+
 # [1.0.0-alpha.36](https://github.com/uxland/lit/compare/@uxland/prism@1.0.0-alpha.35...@uxland/prism@1.0.0-alpha.36) (2021-07-27)
 
 **Note:** Version bump only for package @uxland/prism
