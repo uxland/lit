@@ -29,6 +29,8 @@ export interface IBootstrapper {
   run(): Promise<any>;
 }
 
+export type ModuleInfoRefresh = ModuleInfo[] | {modules: ModuleInfo[]; refresh: boolean};
+
 export interface BootstrapOptions {
   language: string;
   locales?: any;
@@ -48,15 +50,18 @@ const initializeLocalization = (language: string, locales: unknown, formats?: an
 };
 
 export interface IModule {
-  initialize(moduleInfo: ModuleInfo): Promise<any>;
+  initialize(moduleInfo: ModuleInfo, refresh?: boolean): Promise<any>;
 
-  dispose(moduleInfo: ModuleInfo): Promise<any>;
+  dispose(moduleInfo: ModuleInfo, refresh?: boolean): Promise<any>;
 }
 
-export type ModulePostFn = <T = any>(mi: ModuleInfo) => (module: IModule) => Promise<T>;
+export type ModulePostFn = <T = any>(
+  mi: ModuleInfo,
+  refresh?: boolean
+) => (module: IModule) => Promise<T>;
 
-const moduleInitializer: ModulePostFn = mi => module => module.initialize(mi);
-const moduleDisposer: ModulePostFn = mi => module => module.dispose(mi);
+const moduleInitializer: ModulePostFn = (mi, refresh) => module => module.initialize(mi, refresh);
+const moduleDisposer: ModulePostFn = (mi, refresh) => module => module.dispose(mi, refresh);
 
 export abstract class Bootstrapper
   extends propertiesObserver(<any>Object)
@@ -65,7 +70,7 @@ export abstract class Bootstrapper
   private static __uxlReduxWatchedProperties: {[key: string]: PropertyWatch};
   __reduxStoreSubscriptions__: Unsubscribe[];
   @watch(modulesSelector, {store})
-  modules: ModuleInfo[];
+  modules: ModuleInfoRefresh;
   @watch(appInitializedSelector, {store})
   appInitialized: boolean;
   @watch(appsBaseRouteSelector, {store})
@@ -106,7 +111,7 @@ export abstract class Bootstrapper
     await router.navigate(window.location.href);
   }
 
-  modulesChanged(modules: ModuleInfo[], old: ModuleInfo[]) {
+  modulesChanged(modules: ModuleInfoRefresh, old: ModuleInfoRefresh) {
     if (this.appInitialized) this.handleModulesChanged(modules, old);
   }
 
@@ -116,7 +121,8 @@ export abstract class Bootstrapper
 
   protected abstract moduleLoader(
     postFn: ModulePostFn,
-    appsBaseRout: string
+    appsBaseRout: string,
+    refresh?: boolean
   ): (moduleInfo: ModuleInfo) => Promise<any>;
 
   private async initializeUser() {
@@ -129,15 +135,27 @@ export abstract class Bootstrapper
     }
   }
 
-  protected async handleModulesChanged(modules: ModuleInfo[], oldModules?: ModuleInfo[]) {
+  protected async handleModulesChanged(modules: ModuleInfoRefresh, oldModules?: ModuleInfoRefresh) {
     if (!equals(modules, oldModules)) {
-      await this.runModules(oldModules, moduleDisposer);
-      await this.runModules(modules, moduleInitializer);
+      await this.runModules(
+        Array.isArray(oldModules) ? oldModules : oldModules?.modules,
+        moduleDisposer,
+        (oldModules as {modules: ModuleInfo[]; refresh: boolean})?.refresh
+      );
+      await this.runModules(
+        Array.isArray(modules) ? modules : modules?.modules,
+        moduleInitializer,
+        (modules as {modules: ModuleInfo[]; refresh: boolean})?.refresh
+      );
     }
   }
 
-  private runModules(modules: ModuleInfo[] = [], postFn: ModulePostFn): Promise<any> {
-    const loader = this.moduleLoader(postFn, this.appsBaseRoute);
+  private runModules(
+    modules: ModuleInfo[] = [],
+    postFn: ModulePostFn,
+    refresh = false
+  ): Promise<any> {
+    const loader = this.moduleLoader(postFn, this.appsBaseRoute, refresh);
     return Promise.all(modules.map(unary(loader))).catch(e => console.log(e));
   }
 }

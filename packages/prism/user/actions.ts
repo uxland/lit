@@ -6,4 +6,5 @@ export const fetchUserAction: (action: () => any) => any = action =>
 export const loginUserAction: <T>(
   action: (username: string, password: string) => Promise<T>
 ) => any = action => createActionThunk(LOGIN_USER_ACTION, action);
-export const setModulesAction = createAction<ModuleInfo[]>(SET_MODULES);
+export const setModulesAction =
+  createAction<ModuleInfo[] | {modules: ModuleInfo[]; refresh: boolean}>(SET_MODULES);
