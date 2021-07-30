@@ -1,5 +1,6 @@
 import {Debouncer} from '@uxland/browser-utilities/async/debounce';
 import {timeOut} from '@uxland/browser-utilities/async/time-out';
+import {PropertyWatch} from '@uxland/redux/connect';
 import {nop} from '@uxland/utilities/nop';
 import {LitElement} from 'lit';
 import filter from 'ramda/es/filter';
@@ -11,7 +12,6 @@ import reject from 'ramda/es/reject';
 import uniq from 'ramda/es/uniq';
 import values from 'ramda/es/values';
 import {Store, Unsubscribe} from 'redux';
-import {PropertyWatch} from './connect';
 import {getWatchedProperties} from './watched-redux-property';
 
 const mapWatches = (watchesMap: {[key: string]: PropertyWatch}) => values(watchesMap);
