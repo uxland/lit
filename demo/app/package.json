@@ -1,6 +1,6 @@
 {
   "name": "@demo/app",
-  "version": "1.0.0-alpha.27",
+  "version": "1.0.0-alpha.28",
   "private": true,
   "description": "> TODO: description",
   "author": "Alex Vizcaino <avizcaino@uxland.es>",
@@ -18,9 +18,9 @@
     "url": "https://github.com/uxland/lit/issues"
   },
   "dependencies": {
-    "@demo/core": "^0.0.1-alpha.30",
+    "@demo/core": "^0.0.1-alpha.31",
     "@uxland/browser-utilities": "^1.0.1-alpha.13",
-    "@uxland/prism": "^1.0.0-alpha.39",
+    "@uxland/prism": "^1.0.0-alpha.40",
     "@uxland/ui-content-switcher": "^1.0.0-alpha.0",
     "lit": "^2.0.0-rc.2"
   },

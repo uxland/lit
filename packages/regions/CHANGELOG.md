@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.29](https://github.com/uxland/lit/compare/@uxland/regions@1.0.0-alpha.28...@uxland/regions@1.0.0-alpha.29) (2021-07-30)
+
+
+### Bug Fixes
+
+* **regions:** delete "refactor" suffix ([c939e0f](https://github.com/uxland/lit/commit/c939e0fd27e66326ecee5ad5c6bf2dee98074334))
+* **regions:** validate region-host mixin refactorization ([4306b16](https://github.com/uxland/lit/commit/4306b167e335904630f5c0cc0bc14447aed47868))
+
+
+
+
+
 # [1.0.0-alpha.28](https://github.com/uxland/lit/compare/@uxland/regions@1.0.0-alpha.27...@uxland/regions@1.0.0-alpha.28) (2021-07-30)
 
 
