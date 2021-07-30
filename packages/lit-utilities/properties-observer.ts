@@ -1,8 +1,7 @@
+import {Constructor} from '@uxland/utilities/dedupe-mixin';
 import {LitElement, notEqual} from 'lit';
 import defaultTo from 'ramda/es/defaultTo';
 import pipe from 'ramda/es/pipe';
-
-type Constructor<T = Record<string, unknown>> = new (...args: any[]) => T;
 
 export interface PropertiesObserverMixin {}
 
