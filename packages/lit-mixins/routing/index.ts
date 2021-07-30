@@ -7,7 +7,6 @@ import {property} from 'lit/decorators.js';
 import {Store} from 'redux';
 
 interface MixinFunction<T> {}
-type Constructor<T = Record<string, unknown>> = new (...args: any[]) => T;
 
 export interface RoutingMixin<TParams = any> {
   isRouteActive: boolean;
