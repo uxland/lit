@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.10](https://github.com/uxland/lit/compare/@uxland/lit-mixins@1.0.0-alpha.9...@uxland/lit-mixins@1.0.0-alpha.10) (2021-07-30)
+
+**Note:** Version bump only for package @uxland/lit-mixins
+
+
+
+
+
 # [1.0.0-alpha.9](https://github.com/uxland/lit/compare/@uxland/lit-mixins@1.0.0-alpha.8...@uxland/lit-mixins@1.0.0-alpha.9) (2021-06-25)
 
 **Note:** Version bump only for package @uxland/lit-mixins
