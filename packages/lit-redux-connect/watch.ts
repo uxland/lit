@@ -1,3 +1,4 @@
+import {ConnectAddOn, Selector} from '@uxland/redux/connect';
 import {PropertyDeclaration} from 'lit';
 import {property} from 'lit/decorators.js';
 import always from 'ramda/es/always';
@@ -7,7 +8,6 @@ import lensPath from 'ramda/es/lensPath';
 import view from 'ramda/es/view';
 import when from 'ramda/es/when';
 import {Store} from 'redux';
-import {ConnectAddOn, Selector} from './connect';
 import {createWatchedReduxProperty} from './watched-redux-property';
 
 const toLensSelector = (path: string) => view(lensPath(path.split('.')));
