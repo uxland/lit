@@ -1,4 +1,5 @@
 import {AsyncQueue} from '@uxland/browser-utilities/async/async-queue';
+import {Constructor} from '@uxland/utilities/dedupe-mixin';
 import {LitElement} from 'lit';
 import always from 'ramda/es/always';
 import andThen from 'ramda/es/andThen';
@@ -18,8 +19,6 @@ import {regionAdapterRegistry, RegionAdapterRegistry} from './region-adapter-reg
 import {regionsProperty} from './region-decorator';
 import {regionFactory} from './region-factory';
 import {IRegionManager, regionManager} from './region-manager';
-
-type Constructor<I = Record<string, unknown>> = new (...args: any[]) => I;
 
 export interface RegionHostMixin extends LitElement {
   regionsCreated(newRegions: IRegion[]): void;

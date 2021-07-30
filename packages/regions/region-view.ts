@@ -1,9 +1,8 @@
 import {propertiesObserver} from '@uxland/lit-utilities';
+import {Constructor} from '@uxland/utilities/dedupe-mixin';
 import {LitElement} from 'lit';
 import {property} from 'lit/decorators.js';
 import {ViewDefinition} from './view-definition';
-
-type Constructor<T = Record<string, unknown>> = new (...args: any[]) => T;
 
 export interface RegionView extends LitElement {
   active: boolean;
