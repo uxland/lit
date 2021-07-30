@@ -21,7 +21,7 @@ import {IRegionManager, regionManager} from './region-manager';
 
 type Constructor<I = Record<string, unknown>> = new (...args: any[]) => I;
 
-export interface RegionHostMixinRefactor extends LitElement {
+export interface RegionHostMixin extends LitElement {
   regionsCreated(newRegions: IRegion[]): void;
 }
 
@@ -31,18 +31,18 @@ interface RegionDefinitionArgs {
 }
 
 const requiresCreation: (
-  component: RegionHostMixinRefactor
+  component: RegionHostMixin
 ) => (definition: RegionDefinitionArgs) => boolean = component => definition =>
   pipe(prop(definition.key), isNil)(component);
 
 const requiresDeletion: (
-  component: RegionHostMixinRefactor
+  component: RegionHostMixin
 ) => (definition: RegionDefinitionArgs) => boolean = component => definition =>
   !requiresCreation(component)(definition) &&
   isNil(component.shadowRoot.querySelector(`#${definition.definition.targetId}`));
 
 const deleteRegion: (
-  component: RegionHostMixinRefactor
+  component: RegionHostMixin
 ) => (definition: RegionDefinitionArgs) => Promise<RegionDefinitionArgs> = component => args => {
   const region: IRegion = component[args.key];
   region.regionManager.remove(region);
@@ -57,7 +57,7 @@ const deleteRegion: (
 };
 
 const createRegion: (
-  component: RegionHostMixinRefactor,
+  component: RegionHostMixin,
   rm: IRegionManager,
   registry: RegionAdapterRegistry
 ) => (definitionArgs: RegionDefinitionArgs) => Promise<RegionDefinitionArgs> =
@@ -87,7 +87,7 @@ const getUxlRegions: (item: any) => RegionDefinitions = item =>
   item.constructor[regionsProperty] || {};
 
 const handleRegionCreation = (
-  component: RegionHostMixinRefactor,
+  component: RegionHostMixin,
   regionManager1: IRegionManager,
   registry: RegionAdapterRegistry
 ) => {
@@ -103,13 +103,13 @@ const handleRegionCreation = (
     ])(args);
 };
 
-export const regionHostMixinRefactor =
+export const regionHostMixin =
   <I extends Constructor<LitElement>>(
     RegionManager: IRegionManager,
     adapterRegistry: RegionAdapterRegistry
   ) =>
   (superClass: I) => {
-    class RegionHostMixinRefactorClass extends superClass implements RegionHostMixinRefactor {
+    class RegionHostMixinClass extends superClass implements RegionHostMixin {
       constructor(...args: any[]) {
         super();
         this.enqueuer = new AsyncQueue(this.runRegionCreation.bind(this));
@@ -152,9 +152,9 @@ export const regionHostMixinRefactor =
         });
       }
     }
-    return RegionHostMixinRefactorClass as Constructor<RegionHostMixinRefactor> & I;
+    return RegionHostMixinClass as Constructor<RegionHostMixin> & I;
   };
 
 regionAdapterRegistry.registerDefaultAdapterFactory(factory);
 
-export const regionHostRefactor = regionHostMixinRefactor(regionManager, regionAdapterRegistry);
+export const regionHost = regionHostMixin(regionManager, regionAdapterRegistry);
