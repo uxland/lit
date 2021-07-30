@@ -1,5 +1,4 @@
 import {AsyncQueue} from '@uxland/browser-utilities/async/async-queue';
-import {dedupeMixin} from '@uxland/utilities/dedupe-mixin';
 import {LitElement} from 'lit';
 import always from 'ramda/es/always';
 import andThen from 'ramda/es/andThen';
@@ -20,21 +19,11 @@ import {regionsProperty} from './region-decorator';
 import {regionFactory} from './region-factory';
 import {IRegionManager, regionManager} from './region-manager';
 
-type Constructor<T = Record<string, unknown>> = new (...args: any[]) => T;
+type Constructor<I = Record<string, unknown>> = new (...args: any[]) => I;
 
-export interface RegionHostMixin extends LitElement {
+export interface RegionHostMixinRefactor extends LitElement {
   regionsCreated(newRegions: IRegion[]): void;
 }
-
-// export interface RegionHostMixinConstructor extends Constructor<LitElement> {
-//   new (...args: any[]): RegionHostMixin;
-// }
-
-export type RegionHostMixinConstructor = RegionHostMixin & typeof LitElement;
-
-interface MixinFunction<T> {}
-// export type RegionHostMixinFunction = MixinFunction<RegionHostMixinConstructor>;
-export type RegionHostMixinFunction = (superClass: typeof LitElement) => RegionHostMixinConstructor;
 
 interface RegionDefinitionArgs {
   key: string;
@@ -42,18 +31,18 @@ interface RegionDefinitionArgs {
 }
 
 const requiresCreation: (
-  component: RegionHostMixin
+  component: RegionHostMixinRefactor
 ) => (definition: RegionDefinitionArgs) => boolean = component => definition =>
   pipe(prop(definition.key), isNil)(component);
 
 const requiresDeletion: (
-  component: RegionHostMixin
+  component: RegionHostMixinRefactor
 ) => (definition: RegionDefinitionArgs) => boolean = component => definition =>
   !requiresCreation(component)(definition) &&
   isNil(component.shadowRoot.querySelector(`#${definition.definition.targetId}`));
 
 const deleteRegion: (
-  component: RegionHostMixin
+  component: RegionHostMixinRefactor
 ) => (definition: RegionDefinitionArgs) => Promise<RegionDefinitionArgs> = component => args => {
   const region: IRegion = component[args.key];
   region.regionManager.remove(region);
@@ -68,7 +57,7 @@ const deleteRegion: (
 };
 
 const createRegion: (
-  component: RegionHostMixin,
+  component: RegionHostMixinRefactor,
   rm: IRegionManager,
   registry: RegionAdapterRegistry
 ) => (definitionArgs: RegionDefinitionArgs) => Promise<RegionDefinitionArgs> =
@@ -98,7 +87,7 @@ const getUxlRegions: (item: any) => RegionDefinitions = item =>
   item.constructor[regionsProperty] || {};
 
 const handleRegionCreation = (
-  component: RegionHostMixin,
+  component: RegionHostMixinRefactor,
   regionManager1: IRegionManager,
   registry: RegionAdapterRegistry
 ) => {
@@ -114,12 +103,13 @@ const handleRegionCreation = (
     ])(args);
 };
 
-export function regionHostMixin(
-  RegionManager: IRegionManager,
-  adapterRegistry: RegionAdapterRegistry
-): RegionHostMixinFunction {
-  return dedupeMixin((superClass: typeof LitElement) => {
-    class RegionHostMixinClass extends superClass implements RegionHostMixin {
+export const regionHostMixinRefactor =
+  <I extends Constructor<LitElement>>(
+    RegionManager: IRegionManager,
+    adapterRegistry: RegionAdapterRegistry
+  ) =>
+  (superClass: I) => {
+    class RegionHostMixinRefactorClass extends superClass implements RegionHostMixinRefactor {
       constructor(...args: any[]) {
         super();
         this.enqueuer = new AsyncQueue(this.runRegionCreation.bind(this));
@@ -162,10 +152,9 @@ export function regionHostMixin(
         });
       }
     }
-    return RegionHostMixinClass;
-  });
-}
+    return RegionHostMixinRefactorClass as Constructor<RegionHostMixinRefactor> & I;
+  };
 
 regionAdapterRegistry.registerDefaultAdapterFactory(factory);
 
-export const regionHost = regionHostMixin(regionManager, regionAdapterRegistry);
+export const regionHostRefactor = regionHostMixinRefactor(regionManager, regionAdapterRegistry);

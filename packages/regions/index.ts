@@ -5,7 +5,6 @@ export * from './region-adapter-registry';
 export * from './region-decorator';
 export * from './region-factory';
 export * from './region-host-mixin';
-export * from './region-host-mixin-refactor';
 export * from './region-manager';
 export * from './region-view';
 export * from './utilities';
