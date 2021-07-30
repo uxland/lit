@@ -104,7 +104,7 @@ const handleRegionCreation = (
 
 export const regionHostMixin =
   <I extends Constructor<LitElement>>(
-    RegionManager: IRegionManager,
+    regionManager: IRegionManager,
     adapterRegistry: RegionAdapterRegistry
   ) =>
   (superClass: I) => {
