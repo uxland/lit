@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.14](https://github.com/uxland/lit/compare/@uxland/lit-redux-connect@2.0.0-alpha.13...@uxland/lit-redux-connect@2.0.0-alpha.14) (2021-07-30)
+
+**Note:** Version bump only for package @uxland/lit-redux-connect
+
+
+
+
+
 # [2.0.0-alpha.13](https://github.com/uxland/lit/compare/@uxland/lit-redux-connect@2.0.0-alpha.12...@uxland/lit-redux-connect@2.0.0-alpha.13) (2021-07-30)
 
 **Note:** Version bump only for package @uxland/lit-redux-connect

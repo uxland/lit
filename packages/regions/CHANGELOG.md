@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.28](https://github.com/uxland/lit/compare/@uxland/regions@1.0.0-alpha.27...@uxland/regions@1.0.0-alpha.28) (2021-07-30)
+
+
+### Bug Fixes
+
+* **regions:** change regionView mixin typing ([221e0e6](https://github.com/uxland/lit/commit/221e0e66b94b0f4e85e8e937ea864065dcc78687))
+* **regions:** refactor region-host mixin ([047e8fe](https://github.com/uxland/lit/commit/047e8fec63fedf65829ef82f4824800263d3578c))
+
+
+
+
+
 # [1.0.0-alpha.27](https://github.com/uxland/lit/compare/@uxland/regions@1.0.0-alpha.26...@uxland/regions@1.0.0-alpha.27) (2021-07-30)
 
 **Note:** Version bump only for package @uxland/regions
