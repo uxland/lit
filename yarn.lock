@@ -2528,6 +2528,11 @@
   resolved "https://registry.yarnpkg.com/@uxland/browser-utilities/-/browser-utilities-1.0.1-alpha.20.tgz#fc3531f81c4c680809334a71097939df559bfa64"
   integrity sha512-m5aN3IpX2aN4ZCuB71oAlNKzQig2zZqaeDAyN5VQdHFDLjVago9mRkWCEfhyKHN1B8Pr4NbSbUuf+Aq9l+rxOA==
 
+"@uxland/browser-utilities@^1.0.1-alpha.21":
+  version "1.0.1-alpha.21"
+  resolved "https://registry.yarnpkg.com/@uxland/browser-utilities/-/browser-utilities-1.0.1-alpha.21.tgz#57ccdbc7e77cc4251dff17c4fea0b8e67cd19cef"
+  integrity sha512-f87a8ZVeZXtbEqDF4ctG2EOgQQWQWi9eCRvRw1WAwHW7YNkiPdckkKwNQCzIK0rfnlp6c3tX7MO90g2WFceZgQ==
+
 "@uxland/event-aggregator@^1.0.1-alpha.13", "@uxland/event-aggregator@^1.0.1-alpha.19":
   version "1.0.1-alpha.19"
   resolved "https://registry.yarnpkg.com/@uxland/event-aggregator/-/event-aggregator-1.0.1-alpha.19.tgz#00a5a6fce040ec4e7ea611e8a28e1c9cbdada0ac"
@@ -2562,20 +2567,10 @@
     ramda "^0.27.1"
     redux "^4.1.0"
 
-"@uxland/localization@^1.0.1-alpha.13":
-  version "1.0.1-alpha.20"
-  resolved "https://registry.yarnpkg.com/@uxland/localization/-/localization-1.0.1-alpha.20.tgz#6135890f532c800906879aa1c19da9682e14b835"
-  integrity sha512-CCL2j6AMugOWiKuLrEXCqoGlAg6Lc9FsNSuMeOErssd6gS+vUr7QDW75k5YKnAnd/ZY2kMd/C0L6TNXuCTRFVg==
-  dependencies:
-    "@uxland/event-aggregator" "^1.0.1-alpha.19"
-    "@uxland/utilities" "^1.0.1-alpha.21"
-    intl-messageformat "^7.8.4"
-    ramda "^0.27.0"
-
-"@uxland/localization@^1.0.1-alpha.24":
-  version "1.0.1-alpha.24"
-  resolved "https://registry.yarnpkg.com/@uxland/localization/-/localization-1.0.1-alpha.24.tgz#056b93a6871726ab71738f636ea045a93d3199af"
-  integrity sha512-BP/YOcafDlL6gd9YG2He8Hwp8VKkZy8wkfF15iwbcX22EmoRxpA6jYDk89NuMRaREaZA57WIeDRofCnelcrSTw==
+"@uxland/localization@^1.0.1-alpha.25":
+  version "1.0.1-alpha.25"
+  resolved "https://registry.yarnpkg.com/@uxland/localization/-/localization-1.0.1-alpha.25.tgz#770362c305b42a4da395fb4a0cd0c4fdcc9b13e0"
+  integrity sha512-W2G9OhWWfy0F0Gp56H7psRQ9Eu4BZ3UTEd5xT9RjlEnnvcIBQFZsRTfH8hyOdw6VDVLpvgkwmdGVxvnQZiqg8A==
   dependencies:
     "@uxland/event-aggregator" "^1.0.1-alpha.20"
     "@uxland/utilities" "^1.0.1-alpha.24"
@@ -2661,7 +2656,7 @@
   dependencies:
     ramda "^0.27.1"
 
-"@uxland/redux@^1.0.1-alpha.13", "@uxland/redux@^1.0.1-alpha.20":
+"@uxland/redux@^1.0.1-alpha.20":
   version "1.0.1-alpha.20"
   resolved "https://registry.yarnpkg.com/@uxland/redux/-/redux-1.0.1-alpha.20.tgz#0fbb9ed8a0ee03694fe08d131152e177a8e015ca"
   integrity sha512-qTNFo15oN6KauTZ3o41JF8aC+3UR0MKl6I1IrSJBEMzxaG7DiVGAYt5huyvl2iU41LCZrHtvVhuHu+mygk+tig==
@@ -2669,6 +2664,20 @@
     "@uxland/browser-utilities" "^1.0.1-alpha.20"
     "@uxland/ramda-extensions" "^1.0.1-alpha.19"
     "@uxland/utilities" "^1.0.1-alpha.21"
+    date-fns "^2.10.0"
+    ramda "^0.27.0"
+    redux "^4.0.5"
+    reflect-metadata "^0.1.13"
+    reselect "^4.0.0"
+
+"@uxland/redux@^1.0.1-alpha.28":
+  version "1.0.1-alpha.28"
+  resolved "https://registry.yarnpkg.com/@uxland/redux/-/redux-1.0.1-alpha.28.tgz#0fdd0ef25e0f265535bfa918b76ab7493cf15417"
+  integrity sha512-B4Q8LjkGJbbNIUSSQMFIFz0rMNcdsnCNwX1xHtaprQFaoEvKBGsq9RqySQqM5+W8g7QS5IrFd2mhCFRsABBDLA==
+  dependencies:
+    "@uxland/browser-utilities" "^1.0.1-alpha.21"
+    "@uxland/ramda-extensions" "^1.0.1-alpha.20"
+    "@uxland/utilities" "^1.0.1-alpha.24"
     date-fns "^2.10.0"
     ramda "^0.27.0"
     redux "^4.0.5"
