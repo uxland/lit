@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.15](https://github.com/uxland/lit/compare/@uxland/lit-redux-connect@2.0.0-alpha.14...@uxland/lit-redux-connect@2.0.0-alpha.15) (2021-08-02)
+
+
+### Bug Fixes
+
+* update imports and typing ([f6b6420](https://github.com/uxland/lit/commit/f6b6420e4e1f68f15d4bb8f18d4935aaf15a90ff))
+* **lit-redux-connect:** update bind typing ([45d6b3e](https://github.com/uxland/lit/commit/45d6b3e0e578d506b10b84b49c0395e90a17e50e))
+* **lit-redux-connect:** update connect mixin ([e8e6a2d](https://github.com/uxland/lit/commit/e8e6a2d31436663d668886092e5ee455f24b10e5))
+* **lit-redux-connect:** update import ([52e1af8](https://github.com/uxland/lit/commit/52e1af8f6bff22f649a3bb3b9deab1de163dfbc1))
+
+
+
+
+
 # [2.0.0-alpha.14](https://github.com/uxland/lit/compare/@uxland/lit-redux-connect@2.0.0-alpha.13...@uxland/lit-redux-connect@2.0.0-alpha.14) (2021-07-30)
 
 **Note:** Version bump only for package @uxland/lit-redux-connect

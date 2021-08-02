@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.12](https://github.com/uxland/lit/compare/@uxland/lit-mixins@1.0.0-alpha.11...@uxland/lit-mixins@1.0.0-alpha.12) (2021-08-02)
+
+
+### Bug Fixes
+
+* update imports and typing ([f6b6420](https://github.com/uxland/lit/commit/f6b6420e4e1f68f15d4bb8f18d4935aaf15a90ff))
+* **lit-mixins:** refactor locale-mixin typing ([9f33307](https://github.com/uxland/lit/commit/9f33307b48b9b67de45bada78ea835138450e9da))
+* **lit-mixins:** refactor locale-mixin typing ([b3844ba](https://github.com/uxland/lit/commit/b3844ba82b3665293e77f9fe4bfd990875d25791))
+* **lit-mixins:** use constructor typing from @uxland/utilities ([64fa32a](https://github.com/uxland/lit/commit/64fa32a0b34b6ad0d8ccee89c842b5adf2cc241d))
+
+
+
+
+
 # [1.0.0-alpha.11](https://github.com/uxland/lit/compare/@uxland/lit-mixins@1.0.0-alpha.10...@uxland/lit-mixins@1.0.0-alpha.11) (2021-07-30)
 
 **Note:** Version bump only for package @uxland/lit-mixins

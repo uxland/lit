@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.21](https://github.com/uxland/lit/compare/@uxland/routed-region@1.0.0-alpha.20...@uxland/routed-region@1.0.0-alpha.21) (2021-08-02)
+
+
+### Bug Fixes
+
+* update imports and typing ([f6b6420](https://github.com/uxland/lit/commit/f6b6420e4e1f68f15d4bb8f18d4935aaf15a90ff))
+
+
+
+
+
 # [1.0.0-alpha.20](https://github.com/uxland/lit/compare/@uxland/routed-region@1.0.0-alpha.19...@uxland/routed-region@1.0.0-alpha.20) (2021-07-30)
 
 **Note:** Version bump only for package @uxland/routed-region

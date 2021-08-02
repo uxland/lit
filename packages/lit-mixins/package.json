@@ -1,6 +1,6 @@
 {
   "name": "@uxland/lit-mixins",
-  "version": "1.0.0-alpha.11",
+  "version": "1.0.0-alpha.12",
   "description": "Lit Mixins",
   "author": "UXLand <dev@uxland.es>",
   "homepage": "https://github.com/uxland/lit/tree/master/packages/lit-mixins#readme",
@@ -38,16 +38,16 @@
   "dependencies": {
     "@uxland/event-aggregator": "^1.0.1-alpha.20",
     "@uxland/lit-redux-connect": "^1.1.4-alpha.0",
-    "@uxland/lit-utilities": "^1.0.0-alpha.4",
+    "@uxland/lit-utilities": "^1.0.0-alpha.5",
     "@uxland/localization": "^1.0.1-alpha.25",
     "@uxland/routing": "^1.0.4-alpha.0",
     "@uxland/utilities": "^1.0.1-alpha.24",
     "lit": "^2.0.0-rc.2"
   },
   "devDependencies": {
-    "@types/ramda": "^0.26.41",
     "@olavoparno/jest-badges-readme": "^1.5.1",
     "@open-wc/testing": "^3.0.0-next.1",
+    "@types/ramda": "^0.26.41",
     "@web/dev-server-esbuild": "^0.2.12",
     "@web/test-runner": "^0.13.4",
     "esbuild": "^0.11.20",

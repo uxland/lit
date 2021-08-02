@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.30](https://github.com/uxland/lit/compare/@uxland/regions@1.0.0-alpha.29...@uxland/regions@1.0.0-alpha.30) (2021-08-02)
+
+
+### Bug Fixes
+
+* update imports and typing ([f6b6420](https://github.com/uxland/lit/commit/f6b6420e4e1f68f15d4bb8f18d4935aaf15a90ff))
+* **regions:** use Constructor typing from @uxland/utilities ([18a10b2](https://github.com/uxland/lit/commit/18a10b29deb065c2ec4ef156ccc0f663b029f10e))
+* **regions:** use provided regionManager in region-host-mixin ([931148b](https://github.com/uxland/lit/commit/931148b547766e26b9d259296c040c3be13c1603))
+
+
+
+
+
 # [1.0.0-alpha.29](https://github.com/uxland/lit/compare/@uxland/regions@1.0.0-alpha.28...@uxland/regions@1.0.0-alpha.29) (2021-07-30)
 
 

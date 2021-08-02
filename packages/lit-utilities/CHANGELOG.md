@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.5](https://github.com/uxland/lit/compare/@uxland/lit-utilities@1.0.0-alpha.4...@uxland/lit-utilities@1.0.0-alpha.5) (2021-08-02)
+
+
+### Bug Fixes
+
+* **lit-utilities:** use constructor typing from @uxland/utilities ([2d17c3f](https://github.com/uxland/lit/commit/2d17c3f2fca8f80f2772c535b4a759fc9787daed))
+
+
+
+
+
 # [1.0.0-alpha.4](https://github.com/uxland/lit/compare/@uxland/lit-utilities@1.0.0-alpha.3...@uxland/lit-utilities@1.0.0-alpha.4) (2021-07-30)
 
 **Note:** Version bump only for package @uxland/lit-utilities
