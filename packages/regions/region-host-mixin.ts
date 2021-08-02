@@ -52,7 +52,7 @@ const deleteRegion: (
     bind(Promise.all, Promise),
     andThen(() => delete component[args.key]),
     andThen(always(undefined))
-  )(behaviors);
+  )(behaviors) as Promise<RegionDefinitionArgs>;
 };
 
 const createRegion: (
@@ -70,7 +70,7 @@ const createRegion: (
             map((b: IRegionBehavior) => b.attach()),
             bind(Promise.all, Promise),
             andThen(always(region))
-          )(behaviors);
+          )(behaviors) as Promise<RegionDefinitionArgs>;
         } else return undefined;
       })
       .catch(always(undefined));
@@ -127,7 +127,7 @@ export const regionHostMixin =
           bind(Promise.all, Promise),
           andThen(reject(isNil)),
           andThen(bind(this.regionsCreated, this))
-        )(regions);
+        )(regions) as Promise<any>;
       }
       private create() {
         this.enqueuer.enqueueItem();

@@ -28,7 +28,7 @@ export const watch =
     createWatchedReduxProperty(
       {
         name: String(name),
-        selector: getSelector(selector),
+        selector: getSelector(selector) as unknown as string,
         store: getStore(options.store, proto),
       },
       proto,

@@ -1,10 +1,10 @@
 import {subscribe} from '@uxland/event-aggregator';
 import {setBaseUrl} from '@uxland/fetch-client';
 import {bind} from '@uxland/lit-redux-connect/bind';
-import {PropertyWatch} from '@uxland/lit-redux-connect/connect';
 import {watch} from '@uxland/lit-redux-connect/watch';
 import {propertiesObserver} from '@uxland/lit-utilities/properties-observer';
 import {setLanguage, setLocales} from '@uxland/localization';
+import {PropertyWatch} from '@uxland/redux/connect';
 import {regionManager} from '@uxland/regions/region-manager';
 import equals from 'ramda/es/equals';
 import unary from 'ramda/es/unary';

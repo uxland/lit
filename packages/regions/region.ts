@@ -9,8 +9,8 @@ export interface IRegionHost extends Element {
   uxlRegion: IRegion;
 }
 export interface IRegionBehavior {
-  attach(): Promise<void>;
-  detach(): Promise<void>;
+  attach(): Promise<unknown>;
+  detach(): Promise<unknown>;
 }
 export interface IRegionAdapter {
   activateView(view: HTMLElement & ViewComponent): Promise<any>;

@@ -6,7 +6,7 @@ import pipe from 'ramda/es/pipe';
 import {IRegion, IRegionBehavior} from '../region';
 export class AutoPopulateBehavior implements IRegionBehavior {
   constructor(private targetRegion: IRegion) {}
-  async attach(): Promise<void> {
+  async attach(): Promise<unknown> {
     const views = this.targetRegion.regionManager.getRegisteredViews(this.targetRegion.name);
     return pipe(
       map<any, Promise<any>>(view => this.targetRegion.addView(view.key, view.view)),
@@ -15,7 +15,7 @@ export class AutoPopulateBehavior implements IRegionBehavior {
     )(views);
   }
 
-  detach(): Promise<void> {
+  detach(): Promise<unknown> {
     return Promise.resolve();
   }
 }

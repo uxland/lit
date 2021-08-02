@@ -1,4 +1,5 @@
-import {bind, getWatchedProperties, PropertyWatch, unbind, watch} from '@uxland/lit-redux-connect';
+import {bind, getWatchedProperties, unbind, watch} from '@uxland/lit-redux-connect';
+import {PropertyWatch} from '@uxland/redux/connect';
 import {IRegionBehavior, IRegionHost} from '@uxland/regions/region';
 import {findMatchingRoutes} from '@uxland/routing/helpers/finding-matching-routes';
 import {isRouteActive} from '@uxland/routing/helpers/is-route-active';

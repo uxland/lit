@@ -45,6 +45,7 @@
     "lit": "^2.0.0-rc.2"
   },
   "devDependencies": {
+    "@types/ramda": "^0.26.41",
     "@olavoparno/jest-badges-readme": "^1.5.1",
     "@open-wc/testing": "^3.0.0-next.1",
     "@web/dev-server-esbuild": "^0.2.12",
