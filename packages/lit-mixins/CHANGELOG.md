@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.13](https://github.com/uxland/lit/compare/@uxland/lit-mixins@1.0.0-alpha.12...@uxland/lit-mixins@1.0.0-alpha.13) (2021-08-02)
+
+
+### Bug Fixes
+
+* **lit-mixins:** update litLocale mixin typing ([30179d1](https://github.com/uxland/lit/commit/30179d15fe394a1e6544aab222ebf5108f3108c2))
+
+
+
+
+
 # [1.0.0-alpha.12](https://github.com/uxland/lit/compare/@uxland/lit-mixins@1.0.0-alpha.11...@uxland/lit-mixins@1.0.0-alpha.12) (2021-08-02)
 
 
