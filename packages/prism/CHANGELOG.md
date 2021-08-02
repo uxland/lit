@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.42](https://github.com/uxland/lit/compare/@uxland/prism@1.0.0-alpha.41...@uxland/prism@1.0.0-alpha.42) (2021-08-02)
+
+
+### Bug Fixes
+
+* **prism:** protected _currentView ([9d57644](https://github.com/uxland/lit/commit/9d57644118ee1342fe41df847024442089e8ae92))
+
+
+
+
+
 # [1.0.0-alpha.41](https://github.com/uxland/lit/compare/@uxland/prism@1.0.0-alpha.40...@uxland/prism@1.0.0-alpha.41) (2021-08-02)
 
 
