@@ -61,7 +61,7 @@ export class PrismAppBase extends redux(LitElement) {
   protected getPagePath(page: any): string {
     return null;
   }
-  private _currentView: string;
+  protected _currentView: string;
 
   @watch(isLoggedInSelector)
   loggedIn: boolean;
