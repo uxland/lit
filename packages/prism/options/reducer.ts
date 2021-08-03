@@ -1,4 +1,4 @@
-import {createBasicReducer} from '@uxland/redux';
+import {createBasicReducer} from '@uxland/redux/create-basic-reducer';
 import {Reducer} from 'redux';
 import {actionsBuilder} from '../constants';
 

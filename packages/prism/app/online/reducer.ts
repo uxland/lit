@@ -1,4 +1,4 @@
-import {Action} from '@uxland/redux';
+import {Action} from '@uxland/redux/create-action';
 import {actionsBuilder} from '../../constants';
 
 export const SET_APP_ONLINE_ACTION = actionsBuilder('SET-APP-ONLINE');

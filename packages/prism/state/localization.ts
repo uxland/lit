@@ -7,7 +7,9 @@ import {
   LOCALES_RESET,
   LOCALES_UPDATED,
 } from '@uxland/localization';
-import {Action, actionNameBuilder, createAction, createBasicReducer} from '@uxland/redux';
+import {actionNameBuilder} from '@uxland/redux/action-name-builder';
+import {Action, createAction} from '@uxland/redux/create-action';
+import {createBasicReducer} from '@uxland/redux/create-basic-reducer';
 import {combineReducers, Reducer} from 'redux';
 import {store} from '../store';
 

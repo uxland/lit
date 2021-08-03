@@ -1,4 +1,4 @@
-import {doFetch} from '@uxland/fetch-client';
+import {doFetch} from '@uxland/fetch-client/fetch-client';
 import {store} from '../store';
 import {loginUserAction} from './actions';
 import {LoginInfo, UserInfo} from './reducer';

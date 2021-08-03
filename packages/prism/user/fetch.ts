@@ -1,4 +1,4 @@
-import {doFetch as coreDoFetch} from '@uxland/fetch-client';
+import {doFetch as coreDoFetch} from '@uxland/fetch-client/fetch-client';
 import {store} from '../store';
 import {fetchUserAction} from './actions';
 import {fetchUserFunc} from './login';

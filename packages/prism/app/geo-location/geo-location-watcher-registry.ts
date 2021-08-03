@@ -1,4 +1,4 @@
-import {createAction} from '@uxland/redux';
+import {createAction} from '@uxland/redux/create-action';
 import always from 'ramda/es/always';
 import identity from 'ramda/es/identity';
 import isEmpty from 'ramda/es/isEmpty';

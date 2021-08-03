@@ -1,4 +1,4 @@
-import {Action} from '@uxland/redux';
+import {Action} from '@uxland/redux/create-action';
 import {Dispatch} from 'redux';
 import {init as initAppOnline} from './online/init';
 import {init as initOrientation} from './orientation/init';

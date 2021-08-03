@@ -1,4 +1,4 @@
-import {Action} from '@uxland/redux';
+import {Action} from '@uxland/redux/create-action';
 import {reducer as routing, RoutingState} from '@uxland/routing/store/reducer';
 import pickAll from 'ramda/es/pickAll';
 import {applyMiddleware, combineReducers, compose, createStore, Reducer, Store} from 'redux';

@@ -1,4 +1,4 @@
-import {Action} from '@uxland/redux';
+import {Action} from '@uxland/redux/create-action';
 import {actionsBuilder} from '../../constants';
 
 export interface GeoLocationState {

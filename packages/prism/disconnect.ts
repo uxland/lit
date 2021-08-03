@@ -1,5 +1,5 @@
 import {publish} from '@uxland/event-aggregator';
-import {createAction} from '@uxland/redux';
+import {createAction} from '@uxland/redux/create-action';
 import {eventsBuilder} from './constants';
 import {DISCONNECT_ACTION, resetReducers, store} from './store';
 

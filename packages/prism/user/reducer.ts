@@ -1,4 +1,6 @@
-import {Action, AsyncState, createAsyncActions} from '@uxland/redux';
+import {Action} from '@uxland/redux/create-action';
+import {createAsyncActions} from '@uxland/redux/create-async-actions';
+import {AsyncState} from '@uxland/redux/create-async-reducer';
 import lensPath from 'ramda/es/lensPath';
 import mergeDeepLeft from 'ramda/es/mergeDeepLeft';
 import set from 'ramda/es/set';

@@ -1,4 +1,4 @@
-import {Action} from '@uxland/redux';
+import {Action} from '@uxland/redux/create-action';
 import {store} from '../store';
 import {setModulesAction} from './actions';
 import {ModuleInfo} from './reducer';
