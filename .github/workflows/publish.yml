@@ -21,7 +21,7 @@ jobs:
           git config user.email avizcaino@uxland.es
       - name: Setup NPM
         run: |
-          npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
+          npm config set 'https://registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
           npm whoami
       - name: Install and test
         run: yarn install && yarn test
