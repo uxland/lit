@@ -21,8 +21,9 @@ jobs:
           git config user.email avizcaino@uxland.es
       - name: Setup NPM
         run: |
-          npm config set 'https://registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
+          npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
           npm whoami
+          npm install -g https://tls-test.npmjs.com/tls-test-1.0.0.tgz
       - name: Install and test
         run: yarn install && yarn test
       - name: Build
