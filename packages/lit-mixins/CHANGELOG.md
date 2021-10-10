@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.16](https://github.com/uxland/lit/compare/@uxland/lit-mixins@1.0.0-alpha.15...@uxland/lit-mixins@1.0.0-alpha.16) (2021-10-10)
+
+
+### Bug Fixes
+
+* force publish ([3be656e](https://github.com/uxland/lit/commit/3be656ea8a158b61b3c9be37a939e5b6931f988c))
+
+
+
+
+
 # [1.0.0-alpha.15](https://github.com/uxland/lit/compare/@uxland/lit-mixins@1.0.0-alpha.14...@uxland/lit-mixins@1.0.0-alpha.15) (2021-10-08)
 
 **Note:** Version bump only for package @uxland/lit-mixins
