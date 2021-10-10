@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.6](https://github.com/uxland/lit/compare/@uxland/lit-utilities@1.0.0-alpha.5...@uxland/lit-utilities@1.0.0-alpha.6) (2021-10-10)
+
+
+### Bug Fixes
+
+* update for https npm registry ([43caaa7](https://github.com/uxland/lit/commit/43caaa7115605279ee77f92a89113ee8940a4941))
+
+
+
+
+
 # [1.0.0-alpha.5](https://github.com/uxland/lit/compare/@uxland/lit-utilities@1.0.0-alpha.4...@uxland/lit-utilities@1.0.0-alpha.5) (2021-08-02)
 
 

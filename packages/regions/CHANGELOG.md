@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.31](https://github.com/uxland/lit/compare/@uxland/regions@1.0.0-alpha.30...@uxland/regions@1.0.0-alpha.31) (2021-10-10)
+
+
+### Bug Fixes
+
+* update for https npm registry ([43caaa7](https://github.com/uxland/lit/commit/43caaa7115605279ee77f92a89113ee8940a4941))
+
+
+
+
+
 # [1.0.0-alpha.30](https://github.com/uxland/lit/compare/@uxland/regions@1.0.0-alpha.29...@uxland/regions@1.0.0-alpha.30) (2021-08-02)
 
 
