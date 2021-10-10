@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.20](https://github.com/uxland/lit/compare/@uxland/lit-mixins@1.0.0-alpha.19...@uxland/lit-mixins@1.0.0-alpha.20) (2021-10-10)
+
+
+### Bug Fixes
+
+* **lit-mixins:** export routing in build ([7145f58](https://github.com/uxland/lit/commit/7145f582339875bc3248f467a19c0e8532edd7ba))
+
+
+
+
+
 # [1.0.0-alpha.19](https://github.com/uxland/lit/compare/@uxland/lit-mixins@1.0.0-alpha.18...@uxland/lit-mixins@1.0.0-alpha.19) (2021-10-10)
 
 
