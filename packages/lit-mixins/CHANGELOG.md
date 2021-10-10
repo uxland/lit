@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.17](https://github.com/uxland/lit/compare/@uxland/lit-mixins@1.0.0-alpha.16...@uxland/lit-mixins@1.0.0-alpha.17) (2021-10-10)
+
+
+### Bug Fixes
+
+* change registry ([12cc4b1](https://github.com/uxland/lit/commit/12cc4b16cf6c46268d7c848535e184c1794ec04b))
+
+
+
+
+
 # [1.0.0-alpha.16](https://github.com/uxland/lit/compare/@uxland/lit-mixins@1.0.0-alpha.15...@uxland/lit-mixins@1.0.0-alpha.16) (2021-10-10)
 
 
