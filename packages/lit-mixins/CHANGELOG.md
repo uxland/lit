@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.21](https://github.com/uxland/lit/compare/@uxland/lit-mixins@1.0.0-alpha.20...@uxland/lit-mixins@1.0.0-alpha.21) (2021-10-10)
+
+
+### Bug Fixes
+
+* **lit-mixins:** export all resources ([6d1cedb](https://github.com/uxland/lit/commit/6d1cedbdb3846550abd2c62c2c83dabf1866ad83))
+
+
+
+
+
 # [1.0.0-alpha.20](https://github.com/uxland/lit/compare/@uxland/lit-mixins@1.0.0-alpha.19...@uxland/lit-mixins@1.0.0-alpha.20) (2021-10-10)
 
 
