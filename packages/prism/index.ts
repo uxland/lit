@@ -8,6 +8,7 @@ export * from './options';
 export * from './prism-app-base';
 // export * from './prism-shell-mixin';
 export {init as initRouter, router} from './router';
+export {formatsSelector, languageSelector, localesSelector} from './state/localization';
 export {
   customResetReducers,
   disconnect as storeDisconnect,

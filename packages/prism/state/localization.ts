@@ -11,7 +11,8 @@ import {actionNameBuilder} from '@uxland/redux/action-name-builder';
 import {Action, createAction} from '@uxland/redux/create-action';
 import {createBasicReducer} from '@uxland/redux/create-basic-reducer';
 import {combineReducers, Reducer} from 'redux';
-import {store} from '../store';
+import {createSelector} from 'reselect';
+import {PrismAppState, store} from '../store';
 
 export interface LocalizationState {
   formats: Record<string, any>;
@@ -53,3 +54,19 @@ subscribe(FORMATTERS_UPDATED, formats => store.dispatch(setFormattersActionCreat
 subscribe(FORMATTERS_RESET, formats => store.dispatch(setFormattersActionCreator(formats)));
 subscribe(LOCALES_UPDATED, locales => store.dispatch(setLocalesActionCreator(locales)));
 subscribe(LOCALES_RESET, locales => store.dispatch(setLocalesActionCreator(locales)));
+
+export const localizationSelector: (state: PrismAppState) => LocalizationState = (
+  state: PrismAppState
+) => (state ? state.localization : undefined);
+export const languageSelector: (state: PrismAppState) => string = createSelector(
+  localizationSelector,
+  app => app.language
+);
+export const localesSelector: (state: PrismAppState) => Record<string, any> = createSelector(
+  localizationSelector,
+  app => app.locales
+);
+export const formatsSelector: (state: PrismAppState) => Record<string, any> = createSelector(
+  localizationSelector,
+  app => app.formats
+);
