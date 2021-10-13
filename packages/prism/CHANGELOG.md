@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.48](https://github.com/uxland/lit/compare/@uxland/prism@1.0.0-alpha.47...@uxland/prism@1.0.0-alpha.48) (2021-10-13)
+
+
+### Bug Fixes
+
+* **prism:** add localization selectors ([337e866](https://github.com/uxland/lit/commit/337e866d0788768d167813c1b6a16d4c27c5be52))
+
+
+
+
+
 # [1.0.0-alpha.47](https://github.com/uxland/lit/compare/@uxland/prism@1.0.0-alpha.46...@uxland/prism@1.0.0-alpha.47) (2021-10-11)
 
 **Note:** Version bump only for package @uxland/prism
