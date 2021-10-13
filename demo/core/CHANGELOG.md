@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.1-alpha.41](https://github.com/uxland/lit/compare/@demo/core@0.0.1-alpha.40...@demo/core@0.0.1-alpha.41) (2021-10-13)
+
+**Note:** Version bump only for package @demo/core
+
+
+
+
+
 ## [0.0.1-alpha.40](https://github.com/uxland/lit/compare/@demo/core@0.0.1-alpha.39...@demo/core@0.0.1-alpha.40) (2021-10-13)
 
 **Note:** Version bump only for package @demo/core

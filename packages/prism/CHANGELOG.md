@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.50](https://github.com/uxland/lit/compare/@uxland/prism@1.0.0-alpha.49...@uxland/prism@1.0.0-alpha.50) (2021-10-13)
+
+
+### Bug Fixes
+
+* **prism:** export locale mixin ([c79a930](https://github.com/uxland/lit/commit/c79a930edeb4d003f85a19688d804b60040f1a35))
+
+
+
+
+
 # [1.0.0-alpha.49](https://github.com/uxland/lit/compare/@uxland/prism@1.0.0-alpha.48...@uxland/prism@1.0.0-alpha.49) (2021-10-13)
 
 
