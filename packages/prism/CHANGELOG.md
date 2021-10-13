@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.49](https://github.com/uxland/lit/compare/@uxland/prism@1.0.0-alpha.48...@uxland/prism@1.0.0-alpha.49) (2021-10-13)
+
+
+### Bug Fixes
+
+* **prism:** prismLocale mixin with redux integration ([afc1cbf](https://github.com/uxland/lit/commit/afc1cbfa29a1274e8ab96cbe92c019eb527932e9))
+
+
+
+
+
 # [1.0.0-alpha.48](https://github.com/uxland/lit/compare/@uxland/prism@1.0.0-alpha.47...@uxland/prism@1.0.0-alpha.48) (2021-10-13)
 
 
