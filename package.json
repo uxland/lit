@@ -1,0 +1,21 @@
+{
+  "name": "@uxland/uxl-regions-react-demo",
+  "version": "0.0.1",
+  "description": "UXLand Regions React Demo",
+  "author": "UXLand <dev@uxland.es> (http://www.uxland.es)",
+  "dependencies": {
+    "@types/react": "^18.0.15",
+    "@types/react-dom": "^18.0.6",
+    "@uxland/regions": "^1.0.0-alpha.23",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^2.0.0",
+    "typescript": "^3.3.3333",
+    "vite": "^3.0.0"
+  },
+  "scripts": {
+    "serve": "vite serve --host"
+  }
+}
