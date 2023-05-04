@@ -22,7 +22,7 @@
   "module": "es/index.js",
   "types": "lib/index.d.ts",
   "dependencies": {
-    "@uxland/browser-utilities": "^1.0.1-alpha.13",
+    "@uxland/browser-utilities": "^1.0.2",
     "@uxland/prism": "^1.0.0-alpha.50"
   }
 }

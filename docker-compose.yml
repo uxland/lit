@@ -1,0 +1,24 @@
+---
+version: "3.3"
+services:
+  front:
+    image: node:18
+    working_dir: /code
+    # ports:
+    # - 127.0.0.1:5173:5173  # Used by 'vite serve'
+    # - 127.0.0.1:5174:5174  # Used by 'vite serve' once the default port is used
+    # - 127.0.0.1:4173:4173  # Used by 'vite preview'
+    # - 127.0.0.1:4174:4174  # Used by 'vite preview' once the default port is used
+    volumes:
+      - ./:/code:Z
+      # Prevent installation of git hooks during npm/yarn install
+      - ./.git:/code/.git:Z,ro
+      - front-yarn-cache:/yarn-cache
+    environment:
+      - VITE_HOST=0.0.0.0
+      - YARN_CACHE_FOLDER=/yarn-cache
+    init: true
+    command: tail -f /dev/null
+
+volumes:
+  front-yarn-cache:
