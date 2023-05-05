@@ -37,7 +37,7 @@
   },
   "dependencies": {
     "@uxland/event-aggregator": "^1.0.1",
-    "@uxland/lit-redux-connect": "^2.0.2",
+    "@uxland/lit-redux-connect": "^3.0.0-alpha.0",
     "@uxland/lit-utilities": "^1.0.0-alpha.9",
     "@uxland/localization": "^1.0.1",
     "@uxland/routing": "^1.0.5",

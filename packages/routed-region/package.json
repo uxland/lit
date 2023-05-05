@@ -37,7 +37,7 @@
     "url": "https://github.com/uxland/lit/issues"
   },
   "dependencies": {
-    "@uxland/redux": "^2.0.4",
+    "@uxland/redux": "^1.0.2",
     "@uxland/regions": "^1.0.0-alpha.34",
     "@uxland/routing": "^1.0.5",
     "lit": "^2.7.3",
