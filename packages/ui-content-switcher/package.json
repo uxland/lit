@@ -36,7 +36,7 @@
     "url": "https://github.com/uxland/lit/issues"
   },
   "dependencies": {
-    "lit": "^2.7.3"
+    "lit": "^2.7.4"
   },
   "devDependencies": {
     "@olavoparno/jest-badges-readme": "^1.5.1",

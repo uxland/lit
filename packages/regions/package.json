@@ -40,7 +40,7 @@
     "@uxland/browser-utilities": "^1.0.2",
     "@uxland/lit-utilities": "^1.0.0-alpha.9",
     "@uxland/utilities": "^1.0.1",
-    "lit": "^2.7.3",
+    "lit": "^2.7.4",
     "ramda": "^0.27.1"
   },
   "devDependencies": {

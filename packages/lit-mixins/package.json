@@ -42,7 +42,7 @@
     "@uxland/localization": "^1.0.1",
     "@uxland/routing": "^1.0.5",
     "@uxland/utilities": "^1.0.1",
-    "lit": "^2.7.3"
+    "lit": "^2.7.4"
   },
   "devDependencies": {
     "@olavoparno/jest-badges-readme": "^1.5.1",

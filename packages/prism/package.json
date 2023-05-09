@@ -46,7 +46,7 @@
     "@uxland/routed-region": "^1.0.0-alpha.25",
     "@uxland/routing": "^1.0.5",
     "@uxland/utilities": "^1.0.1",
-    "lit": "^2.7.3",
+    "lit": "^2.7.4",
     "ramda": "^0.27.1",
     "redux": "^4.1.0",
     "redux-thunk": "^2.3.0",
