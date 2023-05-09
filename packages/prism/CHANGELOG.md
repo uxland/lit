@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.51](https://github.com/uxland/lit/compare/@uxland/prism@1.0.0-alpha.50...@uxland/prism@1.0.0-alpha.51) (2023-05-09)
+
+
+### Bug Fixes
+
+* setup demo ([4aec722](https://github.com/uxland/lit/commit/4aec722760c267ef14396d2f7d2a0af3a5b6478f))
+* update dependencies and fix issues with typing generation ([70fe417](https://github.com/uxland/lit/commit/70fe4175dfe186384898a4e243128f3948fe44c4))
+* upgrade libraries ([c968288](https://github.com/uxland/lit/commit/c9682888a3d3fc2e730fdabcda1e84be633cb2c7))
+* upgrade lit version ([557a525](https://github.com/uxland/lit/commit/557a525f3ceae6525b2bd2d336ea3feb52e6e26a))
+
+
+
+
+
 # [1.0.0-alpha.50](https://github.com/uxland/lit/compare/@uxland/prism@1.0.0-alpha.49...@uxland/prism@1.0.0-alpha.50) (2021-10-13)
 
 

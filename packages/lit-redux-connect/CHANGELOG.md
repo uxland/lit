@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-alpha.1](https://github.com/uxland/lit/compare/@uxland/lit-redux-connect@2.0.0-alpha.19...@uxland/lit-redux-connect@3.0.0-alpha.1) (2023-05-09)
+
+
+### Bug Fixes
+
+* update dependencies and fix issues with typing generation ([70fe417](https://github.com/uxland/lit/commit/70fe4175dfe186384898a4e243128f3948fe44c4))
+* upgrade libraries ([c968288](https://github.com/uxland/lit/commit/c9682888a3d3fc2e730fdabcda1e84be633cb2c7))
+* upgrade lit version ([557a525](https://github.com/uxland/lit/commit/557a525f3ceae6525b2bd2d336ea3feb52e6e26a))
+* **lit-redux-connect:** change major alpha version due to last major release in old lit-redux-connect package ([db58992](https://github.com/uxland/lit/commit/db5899254e603c6b4c96a8093bfeed730c67eceb))
+
+
+
+
+
 # [2.0.0-alpha.19](https://github.com/uxland/lit/compare/@uxland/lit-redux-connect@2.0.0-alpha.18...@uxland/lit-redux-connect@2.0.0-alpha.19) (2021-10-11)
 
 **Note:** Version bump only for package @uxland/lit-redux-connect

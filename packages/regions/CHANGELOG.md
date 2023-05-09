@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.35](https://github.com/uxland/lit/compare/@uxland/regions@1.0.0-alpha.34...@uxland/regions@1.0.0-alpha.35) (2023-05-09)
+
+
+### Bug Fixes
+
+* update dependencies and fix issues with typing generation ([70fe417](https://github.com/uxland/lit/commit/70fe4175dfe186384898a4e243128f3948fe44c4))
+* upgrade libraries ([c968288](https://github.com/uxland/lit/commit/c9682888a3d3fc2e730fdabcda1e84be633cb2c7))
+* upgrade lit version ([557a525](https://github.com/uxland/lit/commit/557a525f3ceae6525b2bd2d336ea3feb52e6e26a))
+
+
+
+
+
 # [1.0.0-alpha.34](https://github.com/uxland/lit/compare/@uxland/regions@1.0.0-alpha.33...@uxland/regions@1.0.0-alpha.34) (2021-10-11)
 
 **Note:** Version bump only for package @uxland/regions
