@@ -1,9 +1,9 @@
 import {routingSelectors} from '@uxland/routing/store/selectors';
 import {dedupeMixin} from '@uxland/utilities/dedupe-mixin';
-import {routing, RoutingMixinConstructor} from './routing';
+import {RoutingMixinFunction, routing} from './routing';
 
 interface MixinFunction<T> {}
-export type PrismShellMixinFunction = MixinFunction<RoutingMixinConstructor>;
+export type PrismShellMixinFunction = MixinFunction<RoutingMixinFunction>;
 // export const PrismShellMixin: PrismShellMixinFunction = dedupeMixin(
 //   (parent) => {
 //     class mixin extends routing(parent, routingSelectors) {

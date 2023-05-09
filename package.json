@@ -17,11 +17,12 @@
     "@commitlint/config-conventional": "^9.1.2",
     "@uxland/project-tools": "^2.1.2",
     "husky": "^4.2.1",
-    "lerna": "^3.22.1"
+    "lerna": "^3.22.1",
+    "rimraf": "^5.0.0",
+    "typescript": "^4.0.2"
   },
   "workspaces": [
-    "packages/*",
-    "demo/*"
+    "packages/*"
   ],
   "husky": {
     "hooks": {
@@ -36,6 +37,7 @@
     "clean": "lerna run build:clean --scope @uxland/* --stream --parallel",
     "readme:coverage": "lerna run readme:coverage --stream --parallel",
     "readme:coverage:commit": "yarn readme:coverage && git add packages/**/*.md && git commit -m 'docs: update README'",
-    "test": "lerna run test --scope @uxland/* --stream"
+    "test": "lerna run test --scope @uxland/* --stream",
+    "clean:deps": "rimraf packages/*/node_modules demo/*/node_modules node_modules yarn.lock"
   }
 }

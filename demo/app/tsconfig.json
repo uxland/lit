@@ -4,6 +4,7 @@
     "rootDir": "./src",
     "outDir": "./",
     "composite": true,
+    "skipLibCheck": true,
     "paths": {
       "@uxland/*": ["../../node_modules/@uxland/*/lib", "../../packages/*/src"]
     }

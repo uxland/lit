@@ -1,6 +1,8 @@
 import {store} from '../../store';
 import {lastKnownPositionSelector} from './selectors';
 
+export interface Position {}
+
 export const getLastLocation: (
   maxAge: number,
   timeout?: number,

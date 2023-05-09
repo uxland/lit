@@ -1,6 +1,7 @@
 import {createSelector} from 'reselect';
 import {PrismAppState} from '../../store';
 import {appSelector} from '../selector';
+import {Position} from './get-last-location';
 import {GeoLocationState} from './reducer';
 
 export const geoLocationSelector: (state: PrismAppState) => GeoLocationState = createSelector(

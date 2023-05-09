@@ -1,7 +1,7 @@
-import {connect, ConnectMixin, ConnectMixinConstructor} from '@uxland/lit-redux-connect/connect';
+import {connect} from '@uxland/lit-redux-connect';
 import {watch} from '@uxland/lit-redux-connect/watch';
 import {isRouteActive, Route, RoutingSelectors} from '@uxland/routing';
-import {dedupeMixin} from '@uxland/utilities/dedupe-mixin';
+import {Constructor, dedupeMixin} from '@uxland/utilities/dedupe-mixin';
 import {LitElement, notEqual, PropertyValues} from 'lit';
 import {property} from 'lit/decorators.js';
 import {Store} from 'redux';
@@ -20,17 +20,19 @@ export interface RoutingMixin<TParams = any> {
   routeChanged(current: Route, previous: Route): any;
 }
 
-export interface RoutingMixinConstructor<TParams = any> extends ConnectMixinConstructor {
-  new (...args: any[]): RoutingMixin<TParams> & ConnectMixin & LitElement;
-}
+// export interface RoutingMixinConstructor<TParams = any> extends ConnectMixinConstructor {
+//   new (...args: any[]): RoutingMixin<TParams> & ConnectMixinFunction & LitElement;
+// }
 
 // export type RoutingMixinFunction<TParams = any> = MixinFunction<
 //   RoutingMixinConstructor<TParams>
 // >;
 
-type RoutingMixinFunction = <TParams = any>(
-  superClass: ConnectMixinConstructor
-) => RoutingMixinConstructor<TParams>;
+// type RoutingMixinFunction = <TParams = any>(
+//   superClass: typeof ConnectMixin
+// ) => RoutingMixinConstructor<TParams>;
+
+export type RoutingMixinFunction = (superClass: typeof LitElement) => Constructor<LitElement>;
 
 export function routing<TParams>(store: Store, selectors: RoutingSelectors): RoutingMixinFunction {
   return dedupeMixin((superClass: typeof LitElement) => {
