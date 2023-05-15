@@ -1,6 +1,6 @@
 {
   "name": "@uxland/prism",
-  "version": "1.0.0-alpha.51",
+  "version": "1.0.0-alpha.52",
   "description": "Prism",
   "author": "UXLand <dev@uxland.es>",
   "homepage": "https://github.com/uxland/lit/tree/master/packages/prism#readme",
@@ -38,7 +38,7 @@
   "dependencies": {
     "@uxland/event-aggregator": "^1.0.1",
     "@uxland/fetch-client": "^1.0.1",
-    "@uxland/lit-redux-connect": "^3.0.0-alpha.1",
+    "@uxland/lit-redux-connect": "^3.0.0-alpha.2",
     "@uxland/lit-utilities": "^1.0.0-alpha.10",
     "@uxland/localization": "^1.0.1",
     "@uxland/redux": "^1.0.2",
