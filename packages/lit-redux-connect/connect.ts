@@ -1,5 +1,5 @@
 import {microTask} from '@uxland/browser-utilities/async/micro-task';
-import {connectMixin} from '@uxland/redux/connect';
+import {connectMixin} from '@uxland/redux/legacy/connect';
 import {Constructor} from '@uxland/utilities/dedupe-mixin';
 import {LitElement} from 'lit';
 import {Store} from 'redux';
