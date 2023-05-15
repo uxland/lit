@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-alpha.2](https://github.com/uxland/lit/compare/@uxland/lit-redux-connect@3.0.0-alpha.1...@uxland/lit-redux-connect@3.0.0-alpha.2) (2023-05-15)
+
+
+### Bug Fixes
+
+* upgrade redux version dependency ([d9bc9cb](https://github.com/uxland/lit/commit/d9bc9cb119f8f857b2e55962af64f6185dc484c6))
+
+
+
+
+
 # [3.0.0-alpha.1](https://github.com/uxland/lit/compare/@uxland/lit-redux-connect@2.0.0-alpha.19...@uxland/lit-redux-connect@3.0.0-alpha.1) (2023-05-09)
 
 
