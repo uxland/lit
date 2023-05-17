@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.38](https://github.com/uxland/lit/compare/@uxland/regions@1.0.0-alpha.37...@uxland/regions@1.0.0-alpha.38) (2023-05-17)
+
+
+### Bug Fixes
+
+* solves typings ([4e774aa](https://github.com/uxland/lit/commit/4e774aaaf294d1e39ef1a84c556ba327e0668678))
+
+
+
+
+
 # [1.0.0-alpha.37](https://github.com/uxland/lit/compare/@uxland/regions@1.0.0-alpha.36...@uxland/regions@1.0.0-alpha.37) (2023-05-17)
 
 
