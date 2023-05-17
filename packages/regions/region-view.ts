@@ -1,4 +1,4 @@
-import {propertiesObserver} from '@uxland/lit-utilities';
+import {dedupeMixin, propertiesObserver} from '@uxland/lit-utilities';
 import {Constructor} from '@uxland/utilities/dedupe-mixin';
 import {LitElement} from 'lit';
 import {property} from 'lit/decorators.js';
@@ -14,7 +14,7 @@ export interface RegionView extends LitElement {
 
 export interface RegionViewMixin extends RegionView {}
 
-export const regionView = <T extends Constructor<LitElement>>(superClass: T) => {
+export const regionView = dedupeMixin(<T extends Constructor<LitElement>>(superClass: T) => {
   class RegionView extends propertiesObserver(superClass) implements RegionViewMixin {
     @property({type: Boolean})
     active: boolean;
@@ -25,4 +25,4 @@ export const regionView = <T extends Constructor<LitElement>>(superClass: T) => 
     regionContextChanged(newContext: any, oldContext: any) {}
   }
   return RegionView as Constructor<RegionViewMixin> & T;
-};
+});
