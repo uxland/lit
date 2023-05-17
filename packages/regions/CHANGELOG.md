@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.37](https://github.com/uxland/lit/compare/@uxland/regions@1.0.0-alpha.36...@uxland/regions@1.0.0-alpha.37) (2023-05-17)
+
+
+### Bug Fixes
+
+* dedupe regionView mixin ([6ca451d](https://github.com/uxland/lit/commit/6ca451df12d4b22223a768d0e033e4a68e584ac8))
+
+
+
+
+
 # [1.0.0-alpha.36](https://github.com/uxland/lit/compare/@uxland/regions@1.0.0-alpha.35...@uxland/regions@1.0.0-alpha.36) (2023-05-17)
 
 
