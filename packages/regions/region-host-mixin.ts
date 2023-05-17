@@ -1,6 +1,7 @@
 import {AsyncQueue} from '@uxland/browser-utilities/async/async-queue';
-import {Constructor} from '@uxland/utilities/dedupe-mixin';
+import {Constructor, dedupeMixin} from '@uxland/utilities/dedupe-mixin';
 import {LitElement} from 'lit';
+import T from 'ramda/es/T';
 import always from 'ramda/es/always';
 import andThen from 'ramda/es/andThen';
 import bind from 'ramda/es/bind';
@@ -12,10 +13,9 @@ import map from 'ramda/es/map';
 import pipe from 'ramda/es/pipe';
 import prop from 'ramda/es/prop';
 import reject from 'ramda/es/reject';
-import T from 'ramda/es/T';
 import {factory} from './adapters/multiple-active-adapter';
 import {IRegion, IRegionBehavior, RegionDefinition} from './region';
-import {regionAdapterRegistry, RegionAdapterRegistry} from './region-adapter-registry';
+import {RegionAdapterRegistry, regionAdapterRegistry} from './region-adapter-registry';
 import {regionsProperty} from './region-decorator';
 import {regionFactory} from './region-factory';
 import {IRegionManager, regionManager} from './region-manager';
@@ -102,12 +102,11 @@ const handleRegionCreation = (
     ])(args);
 };
 
-export const regionHostMixin =
-  <I extends Constructor<LitElement>>(
-    regionManager: IRegionManager,
-    adapterRegistry: RegionAdapterRegistry
-  ) =>
-  (superClass: I) => {
+export const regionHostMixin = <I extends Constructor<LitElement>>(
+  regionManager: IRegionManager,
+  adapterRegistry: RegionAdapterRegistry
+) =>
+  dedupeMixin((superClass: I) => {
     class RegionHostMixinClass extends superClass implements RegionHostMixin {
       constructor(...args: any[]) {
         super();
@@ -152,7 +151,7 @@ export const regionHostMixin =
       }
     }
     return RegionHostMixinClass as Constructor<RegionHostMixin> & I;
-  };
+  });
 
 regionAdapterRegistry.registerDefaultAdapterFactory(factory);
 
