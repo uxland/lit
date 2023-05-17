@@ -1,6 +1,6 @@
 {
   "name": "@uxland/lit-mixins",
-  "version": "1.0.0-alpha.25",
+  "version": "1.0.0-alpha.26",
   "description": "Lit Mixins",
   "author": "UXLand <dev@uxland.es>",
   "homepage": "https://github.com/uxland/lit/tree/master/packages/lit-mixins#readme",
@@ -37,7 +37,7 @@
   },
   "dependencies": {
     "@uxland/event-aggregator": "^1.0.1",
-    "@uxland/lit-redux-connect": "^3.0.0-alpha.3",
+    "@uxland/lit-redux-connect": "^3.0.0-alpha.4",
     "@uxland/lit-utilities": "^1.0.0-alpha.10",
     "@uxland/localization": "^1.0.1",
     "@uxland/routing": "^1.0.5",
