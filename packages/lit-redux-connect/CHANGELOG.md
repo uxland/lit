@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-alpha.3](https://github.com/uxland/lit/compare/@uxland/lit-redux-connect@3.0.0-alpha.2...@uxland/lit-redux-connect@3.0.0-alpha.3) (2023-05-15)
+
+
+### Bug Fixes
+
+* connect import fix ([9a4bb6d](https://github.com/uxland/lit/commit/9a4bb6d014687264df8653a80726f9d0f6cda7c6))
+
+
+
+
+
 # [3.0.0-alpha.2](https://github.com/uxland/lit/compare/@uxland/lit-redux-connect@3.0.0-alpha.1...@uxland/lit-redux-connect@3.0.0-alpha.2) (2023-05-15)
 
 
