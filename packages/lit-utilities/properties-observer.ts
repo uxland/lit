@@ -13,7 +13,9 @@ const getPropertyComponentComparer = (name: PropertyKey, component: any) =>
 const comparer = pipe(getPropertyComponentComparer, defaultTo(notEqual));
 
 export const propertiesObserver = dedupeMixin(
-  <T extends Constructor<LitElement>>(superClass: T): T & Constructor<PropertiesObserverMixin> => {
+  <T extends Constructor<LitElement>>(
+    superClass: T
+  ): T & Constructor<PropertiesObserverMixin & LitElement> => {
     class PropertiesObserver extends superClass {
       updated(changedProperties) {
         super.updated(changedProperties);
