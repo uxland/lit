@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.30](https://github.com/uxland/lit/compare/@uxland/routed-region@1.0.0-alpha.29...@uxland/routed-region@1.0.0-alpha.30) (2023-05-18)
+
+**Note:** Version bump only for package @uxland/routed-region
+
+
+
+
+
 # [1.0.0-alpha.29](https://github.com/uxland/lit/compare/@uxland/routed-region@1.0.0-alpha.28...@uxland/routed-region@1.0.0-alpha.29) (2023-05-17)
 
 **Note:** Version bump only for package @uxland/routed-region
