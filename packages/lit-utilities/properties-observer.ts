@@ -17,15 +17,15 @@ export const propertiesObserver = dedupeMixin(
     superClass: T
   ): T & Constructor<PropertiesObserverMixin & LitElement> => {
     class PropertiesObserver extends superClass {
-      updated(changedProperties) {
-        super.updated(changedProperties);
-        changedProperties.forEach((oldValue, propName) => {
-          if (comparer(propName, this)(this[propName], oldValue)) {
-            if (this[`${String(propName)}Changed`])
-              this[`${String(propName)}Changed`](this[propName], oldValue);
-          }
-        });
-      }
+      // updated(changedProperties) {
+      //   super.updated(changedProperties);
+      //   changedProperties.forEach((oldValue, propName) => {
+      //     if (comparer(propName, this)(this[propName], oldValue)) {
+      //       if (this[`${String(propName)}Changed`])
+      //         this[`${String(propName)}Changed`](this[propName], oldValue);
+      //     }
+      //   });
+      // }
       requestUpdate(name, oldValue) {
         const result = super.requestUpdate
           ? super.requestUpdate(name, oldValue)
