@@ -10,10 +10,8 @@ const isDomElement = (element: HTMLElement) =>
       typeof element.nodeName === 'string';
 
 export const validateView = (view: ViewDefinition) => {
-  invariant(
-    view.htmlTag || view.element || view.factory,
-    'One of properties htmlTag, factory or element must be set'
-  );
+  if (!view.htmlTag && !view.element && !view.factory)
+    throw new Error('One of properties htmlTag, factory or element must be set');
   if (view.htmlTag)
     invariant(typeof view.htmlTag === 'string', 'htmlTag property must be an string');
   if (view.factory)
