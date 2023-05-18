@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.13](https://github.com/uxland/lit/compare/@uxland/lit-utilities@1.0.0-alpha.12...@uxland/lit-utilities@1.0.0-alpha.13) (2023-05-18)
+
+
+### Bug Fixes
+
+* avoid update 2 times due to propertiesObserver ([95701a6](https://github.com/uxland/lit/commit/95701a684319d9b3d3cfc5b2bdf1c03209116465))
+
+
+
+
+
 # [1.0.0-alpha.12](https://github.com/uxland/lit/compare/@uxland/lit-utilities@1.0.0-alpha.11...@uxland/lit-utilities@1.0.0-alpha.12) (2023-05-18)
 
 **Note:** Version bump only for package @uxland/lit-utilities
