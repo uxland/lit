@@ -1,6 +1,6 @@
 {
   "name": "@uxland/routed-region",
-  "version": "1.0.0-alpha.29",
+  "version": "1.0.0-alpha.30",
   "description": "Routed Region",
   "author": "UXLand <dev@uxland.es>",
   "homepage": "https://github.com/uxland/lit/tree/master/packages/routed-region#readme",
@@ -38,7 +38,7 @@
   },
   "dependencies": {
     "@uxland/redux": "^1.0.2",
-    "@uxland/regions": "^1.0.0-alpha.38",
+    "@uxland/regions": "^1.0.0-alpha.39",
     "@uxland/routing": "^1.0.5",
     "lit": "^2.7.4",
     "ramda": "^0.27.1",

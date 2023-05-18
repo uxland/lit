@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.39](https://github.com/uxland/lit/compare/@uxland/regions@1.0.0-alpha.38...@uxland/regions@1.0.0-alpha.39) (2023-05-18)
+
+
+### Bug Fixes
+
+* correct validate-view to avoid double factory call because of invariant ([64d57b8](https://github.com/uxland/lit/commit/64d57b858a3d00bae8147093c5800c2b664f4a3d))
+
+
+
+
+
 # [1.0.0-alpha.38](https://github.com/uxland/lit/compare/@uxland/regions@1.0.0-alpha.37...@uxland/regions@1.0.0-alpha.38) (2023-05-17)
 
 
