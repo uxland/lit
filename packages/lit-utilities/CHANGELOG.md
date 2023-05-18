@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.11](https://github.com/uxland/lit/compare/@uxland/lit-utilities@1.0.0-alpha.10...@uxland/lit-utilities@1.0.0-alpha.11) (2023-05-17)
+
+
+### Bug Fixes
+
+* dedupe propertiesObserver mixin ([c2629eb](https://github.com/uxland/lit/commit/c2629eb87d13b116353283938f43105783259701))
+* solves typings ([4e774aa](https://github.com/uxland/lit/commit/4e774aaaf294d1e39ef1a84c556ba327e0668678))
+
+
+
+
+
 # [1.0.0-alpha.10](https://github.com/uxland/lit/compare/@uxland/lit-utilities@1.0.0-alpha.9...@uxland/lit-utilities@1.0.0-alpha.10) (2023-05-09)
 
 
