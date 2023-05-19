@@ -1,3 +1,6 @@
+import {Constructor} from '@uxland/utilities/dedupe-mixin';
+import {LitElement} from 'lit';
+
 const appliedClassMixins = new WeakMap();
 
 /** Vefify if the Mixin was previously applyed
@@ -22,8 +25,8 @@ function wasMixinPreviouslyApplied(mixin, superClass) {
  * @param {function} mixin      Mixin to be applyed
  * @returns {object}            Mixed class with mixin applied
  */
-export function dedupeMixin(mixin) {
-  return superClass => {
+export function dedupeMixin<T extends Constructor<LitElement>>(mixin) {
+  return (superClass: T): T => {
     if (wasMixinPreviouslyApplied(mixin, superClass)) {
       return superClass;
     }

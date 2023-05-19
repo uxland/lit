@@ -14,7 +14,7 @@ import {
 import {Constructor} from '@uxland/utilities/dedupe-mixin';
 import {LitElement} from 'lit';
 
-interface LitLocalizationMixin extends LocalizationMixin, LitElement {}
+export interface LitLocalizationMixin extends LocalizationMixin, LitElement {}
 
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 let formats: any = {};
