@@ -1,4 +1,5 @@
 import {subscribe} from '@uxland/event-aggregator';
+import {dedupeMixin} from '@uxland/lit-utilities';
 import {
   FORMATTERS_RESET,
   FORMATTERS_UPDATED,
@@ -14,23 +15,27 @@ import {
 import {Constructor} from '@uxland/utilities/dedupe-mixin';
 import {LitElement} from 'lit';
 
-export interface LitLocalizationMixin extends LocalizationMixin, LitElement {}
+export declare class LitLocalizationMixin implements LocalizationMixin {
+  localize: Localizer;
+  useKeyIfMissing: boolean;
+  formats: any;
+  language: string;
+  locales: Record<string, any>;
+}
 
-// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-let formats: any = {};
+let formats: unknown = {};
 let language = 'en';
-let locales: Record<string, any> = {};
+let locales: Record<string, unknown> = {};
 const useKeyIfMissing = false;
 
-export const litLocaleMixin =
-  <T extends Constructor<LitElement | any>>(factory: LocalizerFactory) =>
-  (superClass: T) => {
-    class localeMixin extends superClass implements LocalizationMixin {
+export const litLocaleMixin = <T extends Constructor<LitElement>>(factory: LocalizerFactory) =>
+  dedupeMixin((superClass: T) => {
+    class localeMixin extends superClass implements LitLocalizationMixin {
       localize: Localizer;
       useKeyIfMissing: boolean = useKeyIfMissing;
-      formats: any = formats;
+      formats: unknown = formats;
       language = language;
-      locales: Record<string, any> = locales;
+      locales: Record<string, unknown> = locales;
       constructor(...args) {
         super(...args);
         subscribe(LOCALES_UPDATED, this.localesChanged.bind(this));
@@ -44,7 +49,7 @@ export const litLocaleMixin =
         this.requestUpdate();
       }
 
-      private localesChanged(newLocales: Record<string, any>): void {
+      private localesChanged(newLocales: Record<string, unknown>): void {
         locales = newLocales;
         this.locales = newLocales;
         //this.localize = factory(language, locales, formats, useKeyIfMissing);
@@ -65,8 +70,8 @@ export const litLocaleMixin =
 
       private buildLocalize(
         language: string,
-        locales: Record<string, any>,
-        formats: any,
+        locales: Record<string, unknown>,
+        formats: unknown,
         useKeyIfMissing: boolean
       ) {
         this.localize = factory(language, locales, formats, useKeyIfMissing);
@@ -74,9 +79,8 @@ export const litLocaleMixin =
       }
     }
     return localeMixin as Constructor<LitLocalizationMixin> & T;
-    //return localeMixin(factory)(superClass) as Constructor<LitLocalizationMixin> & T;
-  };
+  });
 
 export function litLocale<T extends Constructor<LitElement>>(superClass: T) {
-  return litLocaleMixin<T>(localizerFactory)(superClass);
+  return litLocaleMixin<T>(localizerFactory)(superClass) as Constructor<LitLocalizationMixin> & T;
 }
