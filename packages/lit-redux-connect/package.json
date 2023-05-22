@@ -1,6 +1,6 @@
 {
   "name": "@uxland/lit-redux-connect",
-  "version": "3.0.0-alpha.8",
+  "version": "3.0.0-alpha.9",
   "description": "Lit Redux Connect",
   "author": "UXLand <dev@uxland.es>",
   "homepage": "https://github.com/uxland/lit/tree/master/packages/lit-redux-connect#readme",
@@ -38,7 +38,7 @@
   },
   "dependencies": {
     "@uxland/browser-utilities": "^1.0.2",
-    "@uxland/lit-utilities": "^1.0.0-alpha.13",
+    "@uxland/lit-utilities": "^1.0.0-alpha.14",
     "@uxland/redux": "^2.1.1",
     "@uxland/utilities": "^1.0.1",
     "lit": "^2.7.4",

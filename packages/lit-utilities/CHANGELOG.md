@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.14](https://github.com/uxland/lit/compare/@uxland/lit-utilities@1.0.0-alpha.13...@uxland/lit-utilities@1.0.0-alpha.14) (2023-05-22)
+
+
+### Bug Fixes
+
+* update typings in dedupe ([00ffc88](https://github.com/uxland/lit/commit/00ffc881f9335ad63cf2c8687cae9426408eadba))
+
+
+
+
+
 # [1.0.0-alpha.13](https://github.com/uxland/lit/compare/@uxland/lit-utilities@1.0.0-alpha.12...@uxland/lit-utilities@1.0.0-alpha.13) (2023-05-18)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.41](https://github.com/uxland/lit/compare/@uxland/regions@1.0.0-alpha.40...@uxland/regions@1.0.0-alpha.41) (2023-05-22)
+
+
+### Bug Fixes
+
+* solves issues with typings in mixins ([fbe3c39](https://github.com/uxland/lit/commit/fbe3c39e121acfe2d70fe12434e5e53125a2c651))
+
+
+
+
+
 # [1.0.0-alpha.40](https://github.com/uxland/lit/compare/@uxland/regions@1.0.0-alpha.39...@uxland/regions@1.0.0-alpha.40) (2023-05-18)
 
 **Note:** Version bump only for package @uxland/regions

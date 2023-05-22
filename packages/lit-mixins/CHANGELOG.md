@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.31](https://github.com/uxland/lit/compare/@uxland/lit-mixins@1.0.0-alpha.30...@uxland/lit-mixins@1.0.0-alpha.31) (2023-05-22)
+
+
+### Bug Fixes
+
+* solves issues with typings in mixins ([fbe3c39](https://github.com/uxland/lit/commit/fbe3c39e121acfe2d70fe12434e5e53125a2c651))
+* update typings in dedupe ([00ffc88](https://github.com/uxland/lit/commit/00ffc881f9335ad63cf2c8687cae9426408eadba))
+
+
+
+
+
 # [1.0.0-alpha.30](https://github.com/uxland/lit/compare/@uxland/lit-mixins@1.0.0-alpha.29...@uxland/lit-mixins@1.0.0-alpha.30) (2023-05-18)
 
 **Note:** Version bump only for package @uxland/lit-mixins
