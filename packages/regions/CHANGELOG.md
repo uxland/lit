@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.43](https://github.com/uxland/lit/compare/@uxland/regions@1.0.0-alpha.42...@uxland/regions@1.0.0-alpha.43) (2023-05-22)
+
+
+### Bug Fixes
+
+* export region host mixin ([e996fb1](https://github.com/uxland/lit/commit/e996fb199ee31047877c8e440e5f6f7bf9607e62))
+
+
+
+
+
 # [1.0.0-alpha.42](https://github.com/uxland/lit/compare/@uxland/regions@1.0.0-alpha.41...@uxland/regions@1.0.0-alpha.42) (2023-05-22)
 
 
