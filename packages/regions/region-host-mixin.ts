@@ -101,7 +101,7 @@ const handleRegionCreation = (
     ])(args);
 };
 
-const regionHostMixin = <T extends Constructor<LitElement>>(
+export const regionHostMixin = <T extends Constructor<LitElement>>(
   regionManager: IRegionManager,
   adapterRegistry: RegionAdapterRegistry
 ) =>
