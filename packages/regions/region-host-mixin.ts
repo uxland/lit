@@ -1,4 +1,5 @@
 import {AsyncQueue} from '@uxland/browser-utilities/async/async-queue';
+import {dedupeMixin} from '@uxland/lit-utilities';
 import {Constructor} from '@uxland/utilities/dedupe-mixin';
 import {LitElement} from 'lit';
 import T from 'ramda/es/T';
@@ -100,12 +101,11 @@ const handleRegionCreation = (
     ])(args);
 };
 
-const regionHostMixin =
-  <T extends Constructor<LitElement>>(
-    regionManager: IRegionManager,
-    adapterRegistry: RegionAdapterRegistry
-  ) =>
-  (superClass: T) => {
+const regionHostMixin = <T extends Constructor<LitElement>>(
+  regionManager: IRegionManager,
+  adapterRegistry: RegionAdapterRegistry
+) =>
+  dedupeMixin((superClass: T) => {
     class RegionHostMixinClass extends superClass implements RegionHostMixin {
       constructor(...args: any[]) {
         super();
@@ -150,7 +150,7 @@ const regionHostMixin =
       }
     }
     return RegionHostMixinClass as Constructor<RegionHostMixin> & T;
-  };
+  });
 
 regionAdapterRegistry.registerDefaultAdapterFactory(factory);
 
