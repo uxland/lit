@@ -1,36 +1,20 @@
 import {microTask} from '@uxland/browser-utilities/async/micro-task';
-import {connectMixin} from '@uxland/redux/legacy/connect';
+import {ConnectMixin as IConnectMixin} from '@uxland/redux/legacy/connect';
 import {Constructor} from '@uxland/utilities/dedupe-mixin';
 import {LitElement} from 'lit';
-import {Store} from 'redux';
+import {Store, Unsubscribe} from 'redux';
 import {bind} from './bind';
 import {unbind} from './unbind';
 
-// export interface ConnectMixin {
-//   __reduxStoreSubscriptions__: Unsubscribe[];
-// }
+export declare class ConnectMixin implements IConnectMixin {
+  bound: boolean;
+  __reduxStoreSubscriptions__: Unsubscribe[];
+}
 
-// export type Selector<T = any> = (state: any) => T;
-
-// export interface ConnectAddOn {
-//   uxlReduxWatchedProperties: {[key: string]: PropertyWatch};
-//   reduxDefaultStore: Store;
-//   watchProperty: (name: PropertyKey, watch: PropertyWatch) => void;
-// }
-
-// export interface PropertyWatch {
-//   selector: Selector;
-//   store: Store;
-//   name: string;
-// }
-
-// export type ConnectMixinConstructor = ConnectMixin & typeof LitElement;
-export type ConnectMixinFunction = (superClass: typeof LitElement) => Constructor<LitElement>;
-
-export const connect =
-  <T extends Constructor<LitElement | any>>(defaultStore: Store<any, any>) =>
+const connect =
+  <T extends Constructor<LitElement>>(defaultStore: Store<any, any>) =>
   (superClass: T) => {
-    class litConnectMixin extends connectMixin(defaultStore)(superClass) {
+    class ConnectMixinClass extends superClass implements ConnectMixin {
       constructor(...args) {
         super(...args);
         microTask.run(() => {
@@ -41,6 +25,13 @@ export const connect =
         });
       }
 
+      bound: boolean;
+      __reduxStoreSubscriptions__: Unsubscribe[];
+
+      static get reduxDefaultStore(): Store | undefined {
+        return defaultStore;
+      }
+
       disconnectedCallback(): void {
         unbind(this);
         //@ts-ignore
@@ -48,68 +39,28 @@ export const connect =
       }
     }
 
-    return litConnectMixin as Constructor<LitElement> & T;
+    return ConnectMixinClass as Constructor<ConnectMixin> & T;
   };
 
-// export function connect(defaultStore?: Store<any, any>): ConnectMixinFunction {
-//   return dedupeMixin((superClass: typeof LitElement) => {
-//     class connectMixin extends superClass implements ConnectMixin {
-//       __reduxStoreSubscriptions__: Unsubscribe[];
-
-//       private bound: boolean;
-
-//       constructor() {
-//         super();
-//         microTask.run(() => {
-//           if (!this.bound) {
-//             this.bound = true;
-//             bind(this);
-//           }
-//         });
-//       }
-
-//       static get reduxDefaultStore(): Store | undefined {
-//         return defaultStore;
-//       }
-
-//       disconnectedCallback(): void {
-//         unbind(this);
-//         super.disconnectedCallback && super.disconnectedCallback();
-//       }
-//     }
-
-//     return connectMixin;
-//   });
-// }
-
-// export const connect: (defaultStore?: Store<any, any>) => ConnectMixinFunction =
-//   (defaultStore) =>
-//     dedupeMixin((superClass: Constructor<LitElement>) => {
-//       class connectMixin extends superClass implements ConnectMixin {
-//         __reduxStoreSubscriptions__: Unsubscribe[];
-
-//         private bound: boolean;
-
-//         constructor() {
-//           super();
-//           microTask.run(() => {
-//             if (!this.bound) {
-//               this.bound = true;
-//               bind(this);
-//             }
-//           });
-//         }
-
-//         static get reduxDefaultStore(): Store | undefined {
-//           return defaultStore;
-//         }
-
-//         disconnectedCallback(): void {
-//           unbind(this);
-//           super.disconnectedCallback && super.disconnectedCallback();
-//         }
-//       }
-
-//       return connectMixin;
-//     });
+/**
+ * Connect mixin that provides redux functionalities and store access to parent class
+ * @mixin
+ * @memberof LitReduxConnect
+ * @name connect
+ * @since v1.0.0
+ * @param {Store} store Store
+ * @example
+ *
+ * mixin = connect(defaultStore);
+ * BaseClass = class Base {
+ *    baseProp = 'foo';
+ * };
+ * TestClass = class Test extends mixin(BaseClass) {};
+ *
+ * To avoid typescript typings when using with other mixins, it is recommended to declare the mixin function as follows:
+ *
+ * function mixin<T extends Constructor<LitElement>>(superClass: T) {
+ *  return connect(store)(superClass) as Constructor<ConnectMixin> & T;
+ * }
+ */
 export default connect;
