@@ -11,7 +11,7 @@ export declare class ConnectMixin implements IConnectMixin {
   __reduxStoreSubscriptions__: Unsubscribe[];
 }
 
-const connect =
+export const connect =
   <T extends Constructor<LitElement>>(defaultStore: Store<any, any>) =>
   (superClass: T) => {
     class ConnectMixinClass extends superClass implements ConnectMixin {
