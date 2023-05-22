@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-alpha.11](https://github.com/uxland/lit/compare/@uxland/lit-redux-connect@3.0.0-alpha.10...@uxland/lit-redux-connect@3.0.0-alpha.11) (2023-05-22)
+
+
+### Bug Fixes
+
+* add dedupe to connect mixin ([b150038](https://github.com/uxland/lit/commit/b150038c240f6faed74be339c499cb67cacb3589))
+
+
+
+
+
 # [3.0.0-alpha.10](https://github.com/uxland/lit/compare/@uxland/lit-redux-connect@3.0.0-alpha.9...@uxland/lit-redux-connect@3.0.0-alpha.10) (2023-05-22)
 
 
