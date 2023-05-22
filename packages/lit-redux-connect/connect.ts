@@ -1,6 +1,6 @@
 import {microTask} from '@uxland/browser-utilities/async/micro-task';
 import {ConnectMixin as IConnectMixin} from '@uxland/redux/legacy/connect';
-import {Constructor} from '@uxland/utilities/dedupe-mixin';
+import {Constructor, dedupeMixin} from '@uxland/utilities/dedupe-mixin';
 import {LitElement} from 'lit';
 import {Store, Unsubscribe} from 'redux';
 import {bind} from './bind';
@@ -11,9 +11,8 @@ export declare class ConnectMixin implements IConnectMixin {
   __reduxStoreSubscriptions__: Unsubscribe[];
 }
 
-export const connect =
-  <T extends Constructor<LitElement>>(defaultStore: Store<any, any>) =>
-  (superClass: T) => {
+export const connect = <T extends Constructor<LitElement>>(defaultStore: Store<any, any>) =>
+  dedupeMixin((superClass: T) => {
     class ConnectMixinClass extends superClass implements ConnectMixin {
       constructor(...args) {
         super(...args);
@@ -40,7 +39,7 @@ export const connect =
     }
 
     return ConnectMixinClass as Constructor<ConnectMixin> & T;
-  };
+  });
 
 /**
  * Connect mixin that provides redux functionalities and store access to parent class
