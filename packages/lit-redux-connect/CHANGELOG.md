@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-alpha.10](https://github.com/uxland/lit/compare/@uxland/lit-redux-connect@3.0.0-alpha.9...@uxland/lit-redux-connect@3.0.0-alpha.10) (2023-05-22)
+
+
+### Bug Fixes
+
+* correct typings for connect mixin ([1e4ee7b](https://github.com/uxland/lit/commit/1e4ee7bd737ab7a54151b8d152c78822f9a4aeb0))
+* export connect mixin ([061abac](https://github.com/uxland/lit/commit/061abac372dfb02600684e19aa9ebc89e72d5587))
+
+
+
+
+
 # [3.0.0-alpha.9](https://github.com/uxland/lit/compare/@uxland/lit-redux-connect@3.0.0-alpha.8...@uxland/lit-redux-connect@3.0.0-alpha.9) (2023-05-22)
 
 

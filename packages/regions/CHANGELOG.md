@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.42](https://github.com/uxland/lit/compare/@uxland/regions@1.0.0-alpha.41...@uxland/regions@1.0.0-alpha.42) (2023-05-22)
+
+
+### Bug Fixes
+
+* dedupe region host mixin ([08f5bb5](https://github.com/uxland/lit/commit/08f5bb501d82522bac047e3782168db1d62c219b))
+
+
+
+
+
 # [1.0.0-alpha.41](https://github.com/uxland/lit/compare/@uxland/regions@1.0.0-alpha.40...@uxland/regions@1.0.0-alpha.41) (2023-05-22)
 
 

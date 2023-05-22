@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.60](https://github.com/uxland/lit/compare/@uxland/prism@1.0.0-alpha.59...@uxland/prism@1.0.0-alpha.60) (2023-05-22)
+
+
+### Bug Fixes
+
+* correct redux mixin with new typings ([897fb44](https://github.com/uxland/lit/commit/897fb440c937c041fd3c1aa09856bcfd16e4b2ea))
+
+
+
+
+
 # [1.0.0-alpha.59](https://github.com/uxland/lit/compare/@uxland/prism@1.0.0-alpha.58...@uxland/prism@1.0.0-alpha.59) (2023-05-22)
 
 **Note:** Version bump only for package @uxland/prism
