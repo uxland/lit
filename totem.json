@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "node": "forward_to front",
+    "npm": "forward_to front",
+    "npx": "forward_to front",
+    "yarn": "forward_to front",
+    "sh": "forward_to front",
+    "bash": "forward_to front",
+    "git": "forward_to front",
+    "lerna": "run_on front yarn lerna",
+    "shell": "run_on front bash",
+    "fish": "run_on front sh -c 'command -v fish >/dev/null || (apt-get update && apt-get install -y --no-install-recommends fish nano)' && forward_to front"
+  }
+}

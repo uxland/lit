@@ -1,0 +1,23 @@
+#!/usr/bin/env sh
+set -eu
+
+TOTEM_VERSION=0.3.3
+
+# TOTEM-SHIM: Download and run Totem
+TOTEM_BIN="${XDG_CACHE_HOME:-$HOME/.cache}/uxland/totem/$TOTEM_VERSION"
+if [ ! -f "$TOTEM_BIN" ]; then
+    mkdir -p "$(dirname "$TOTEM_BIN")"
+
+    if [ -x "$(command -v docker)" ]; then
+        DOCKER="docker"
+    elif [ -x "$(command -v podman)" ]; then
+        DOCKER="podman"
+    else
+        warning "'docker' command not found"
+        exit 1
+    fi
+    $DOCKER run --rm ghcr.io/uxland/totem:"$TOTEM_VERSION" cat totem > "${TOTEM_BIN}.tmp"
+    mv "${TOTEM_BIN}.tmp" "${TOTEM_BIN}"
+fi
+chmod +x "$TOTEM_BIN"
+exec "$TOTEM_BIN" "$@"

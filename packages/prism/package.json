@@ -1,0 +1,64 @@
+{
+  "name": "@uxland/prism",
+  "version": "1.0.0-alpha.62",
+  "description": "Prism",
+  "author": "UXLand <dev@uxland.es>",
+  "homepage": "https://github.com/uxland/lit/tree/master/packages/prism#readme",
+  "license": "BSD-4-Clause",
+  "main": "index.js",
+  "module": "index.js",
+  "types": "index.d.ts",
+  "files": [
+    "README.md",
+    "package.json",
+    "**/*.js",
+    "**/*.d.ts"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uxland/lit.git"
+  },
+  "scripts": {
+    "build:dts": "tsc --emitDeclarationOnly --noEmit false --declaration --removeComments false --outDir .",
+    "build:clean": "rimraf *.{js,d.ts} app/**/*.{js,d.ts} mixins/**/*.{js,d.ts} options/**/*.{js,d.ts} polymer/**/*.{js,d.ts} state/**/*.{js,d.ts} user/**/*.{js,d.ts} view/**/*.{js,d.ts} tsconfig.tsbuildinfo",
+    "build:cjs": "esbuild src/index.ts --bundle --minify --target=es2018 --outfile=lib/index.js",
+    "build:es": "esbuild app/geo-location/*.ts app/initialized/*.ts app/online/*.ts app/orientation/*.ts app/*.ts mixins/*.ts options/*.ts polymer/*.ts state/*.ts user/*.ts view/*.ts *.ts --minify --format=esm --outdir=.",
+    "build": "npm-run-all --parallel build:es build:dts",
+    "prebuild": "echo nok > .buildstatus",
+    "postbuild": "echo ok > .buildstatus",
+    "readme:coverage": "node_modules/.bin/jest-badges-readme"
+  },
+  "bugs": {
+    "url": "https://github.com/uxland/lit/issues"
+  },
+  "dependencies": {
+    "@uxland/event-aggregator": "^1.0.1",
+    "@uxland/fetch-client": "^1.0.1",
+    "@uxland/lit-redux-connect": "^3.0.0-alpha.11",
+    "@uxland/lit-utilities": "^1.0.0-alpha.14",
+    "@uxland/localization": "^1.0.1",
+    "@uxland/redux": "^1.0.2",
+    "@uxland/regions": "^1.0.0-alpha.43",
+    "@uxland/routed-region": "^1.0.0-alpha.34",
+    "@uxland/routing": "^1.0.5",
+    "@uxland/utilities": "^1.0.1",
+    "lit": "^2.7.4",
+    "ramda": "^0.27.1",
+    "redux": "^4.1.0",
+    "redux-thunk": "^2.3.0",
+    "reselect": "^4.0.0"
+  },
+  "devDependencies": {
+    "@olavoparno/jest-badges-readme": "^1.5.1",
+    "@open-wc/testing": "^3.0.0-next.1",
+    "@web/dev-server-esbuild": "^0.2.12",
+    "@web/test-runner": "^0.13.4",
+    "esbuild": "^0.11.20",
+    "npm-run-all": "^4.1.5",
+    "sinon": "^10.0.0"
+  }
+}

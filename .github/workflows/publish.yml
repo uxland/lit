@@ -1,0 +1,46 @@
+name: Publish to NPM
+
+on:
+  push:
+    branches:
+      - master
+      - alpha
+      - beta
+      - alpha-upgrade
+
+jobs:
+  build-n-publish:
+    name: Build and Publish
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Setup GIT credentials
+        run: |
+          git config user.name $GITHUB_ACTOR
+          git config user.email avizcaino@uxland.es
+      - name: Setup NPM
+        run: |
+          npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
+          npm whoami
+          npm install -g https://tls-test.npmjs.com/tls-test-1.0.0.tgz
+      - name: Install and test
+        run: yarn install && yarn test
+      - name: Build
+        run: yarn clean && yarn build
+      - name: Update READMEs
+        run: yarn readme:coverage:commit
+        continue-on-error: true
+      - name: Publish Prerelease
+        if: github.ref == 'refs/heads/alpha' || github.ref == 'refs/heads/alpha-upgrade'
+        run:
+          npx lerna publish --conventional-commits --conventional-prerelease --dist-tag alpha --yes
+      - name: Publish Release
+        if: github.ref == 'refs/heads/master'
+        run:
+          npx lerna publish --conventional-commits --conventional-graduate --create-release github
+          --yes
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
