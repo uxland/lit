@@ -81,8 +81,9 @@ export const litLocaleMixin = <T extends Constructor<LitElement>>(factory: Local
         this.requestUpdate();
       }
 
-      resetLocalizationSubscribers() {
+      disconnectedCallback(): void {
         this.subscriptions?.forEach(s => s.dispose());
+        super.disconnectedCallback();
       }
     }
     return localeMixin as Constructor<LitLocalizationMixin> & T;
