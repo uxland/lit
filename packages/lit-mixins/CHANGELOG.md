@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.2](https://github.com/uxland/lit/compare/@uxland/lit-mixins@1.0.1...@uxland/lit-mixins@1.0.2) (2023-11-02)
+
+
+### Bug Fixes
+
+* **lit-mixins:** unsubscribe on disconnected callback ([4674b24](https://github.com/uxland/lit/commit/4674b24a8d10e0b530632ac6bb91fd3807b3c999))
+
+
+
+
+
 ## [1.0.1](https://github.com/uxland/lit/compare/@uxland/lit-mixins@1.0.0...@uxland/lit-mixins@1.0.1) (2023-11-02)
 
 
