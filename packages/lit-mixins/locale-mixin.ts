@@ -1,4 +1,4 @@
-import {subscribe} from '@uxland/event-aggregator';
+import {subscribe, Subscription} from '@uxland/event-aggregator';
 import {dedupeMixin} from '@uxland/lit-utilities';
 import {
   FORMATTERS_RESET,
@@ -36,14 +36,17 @@ export const litLocaleMixin = <T extends Constructor<LitElement>>(factory: Local
       formats: unknown = formats;
       language = language;
       locales: Record<string, unknown> = locales;
+      private subscriptions: Subscription[] = [];
       constructor(...args) {
         super(...args);
-        subscribe(LOCALES_UPDATED, this.localesChanged.bind(this));
-        subscribe(LOCALES_RESET, this.localesChanged.bind(this));
-        subscribe(LANGUAGE_UPDATED, this.languageChanged.bind(this));
-        subscribe(LANGUAGE_RESET, this.languageChanged.bind(this));
-        subscribe(FORMATTERS_UPDATED, this.formattersChanged.bind(this));
-        subscribe(FORMATTERS_RESET, this.formattersChanged.bind(this));
+        this.subscriptions.push(
+          subscribe(LOCALES_UPDATED, this.localesChanged.bind(this)),
+          subscribe(LOCALES_RESET, this.localesChanged.bind(this)),
+          subscribe(LANGUAGE_UPDATED, this.languageChanged.bind(this)),
+          subscribe(LANGUAGE_RESET, this.languageChanged.bind(this)),
+          subscribe(FORMATTERS_UPDATED, this.formattersChanged.bind(this)),
+          subscribe(FORMATTERS_RESET, this.formattersChanged.bind(this))
+        );
         //this.localize = factory(language, locales, formats, useKeyIfMissing);
         this.buildLocalize(language, locales, formats, useKeyIfMissing);
         this.requestUpdate();
@@ -76,6 +79,10 @@ export const litLocaleMixin = <T extends Constructor<LitElement>>(factory: Local
       ) {
         this.localize = factory(language, locales, formats, useKeyIfMissing);
         this.requestUpdate();
+      }
+
+      resetLocalizationSubscribers() {
+        this.subscriptions?.forEach(s => s.dispose());
       }
     }
     return localeMixin as Constructor<LitLocalizationMixin> & T;
