@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.1](https://github.com/uxland/lit/compare/@uxland/lit-mixins@1.0.0...@uxland/lit-mixins@1.0.1) (2023-11-02)
+
+
+### Bug Fixes
+
+* **lit-mixins:** add reset localization subscribers functionality ([04b4a35](https://github.com/uxland/lit/commit/04b4a35cfa317372c1658bbd0d21f5594211f606))
+
+
+
+
+
 # [1.0.0](https://github.com/uxland/lit/compare/@uxland/lit-mixins@1.0.0-alpha.33...@uxland/lit-mixins@1.0.0) (2023-08-16)
 
 **Note:** Version bump only for package @uxland/lit-mixins
