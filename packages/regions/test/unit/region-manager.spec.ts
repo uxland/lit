@@ -7,9 +7,7 @@ const mockRegionName = 'mock-region';
 const mockViewName = 'my-view';
 describe('Given an instance of RegionManager', () => {
   const mockRegion: IRegion = <any>{
-    addView: () => {
-      console.log('addview');
-    },
+    addView: () => {},
   };
   const createMockRegion = () => {
     return <any>{

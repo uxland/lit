@@ -1,83 +1,37 @@
-class Base {
-  disconnectedCallback() {
-    console.log('disconnectedCallback');
+import {expect, fixture, html as testHtml, waitUntil} from '@open-wc/testing';
+import {html, LitElement} from 'lit';
+import {spy} from 'sinon';
+import {IRegion, IRegionBehavior, region, regionHost, regionManager} from '../../src/index';
+
+class LegacyHost extends regionHost(LitElement) {
+  @region({name: 'legacy-region', targetId: 'legacy-target'})
+  legacy: IRegion;
+  render() {
+    return html`<div id="legacy-target"></div>`;
   }
-  shadowRoot = {
-    querySelector: () => ({}),
-  };
 }
+customElements.define('legacy-host', LegacyHost);
 
-const regionManager = {add: () => this};
-const adapterRegistry: any = {};
-describe('Given a component that extends RegionHostMixin', () => {
-  beforeEach(() => {
-    jest.resetAllMocks();
-    jest.restoreAllMocks();
-  });
-  it('should create defined regions', () => {
-    /*class Component extends RegionHostMixin<Base>(<any>regionManager, adapterRegistry)(Base) {
-        }
+/**
+ * The creation / attach cases of the original spec are covered by region-host-mixin.spec.ts. Only the
+ * behaviour on disconnect is kept here.
+ */
+describe('Given a component that extends regionHost, when it is disconnected', () => {
+  afterEach(() => regionManager.clear());
 
-        const firstRegion = {name: 'region1', targetId: 'region#1'};
-        const secondRegion = {name: 'region2', targetId: 'region#2'};
-        Component[regionsProperty] = {firstRegion, secondRegion};
-        const target1 = document.createElement('div');
-        const target2 = document.createElement('div');
-
-        const region1 = {};
-        const region2 = {};
-
-        let c = new Component();
-        let regionFactoryStub = sinon.stub(regionFactory, 'regionFactory').withArgs(firstRegion, c, regionManager, adapterRegistry).returns(region1)
-            .withArgs(secondRegion, c, regionManager, adapterRegistry).returns(region2);
-        sinon.stub((<any>c).shadowRoot, 'querySelector').withArgs('region#1').returns(target1).withArgs('region#2').returns(target2);
-        (c as Base).connectedCallback();
-        expect(regionFactoryStub.calledOnceWith(firstRegion, target1, regionManager, adapterRegistry));
-        expect(regionFactoryStub.calledOnceWith(secondRegion, target2, regionManager, adapterRegistry));
-        expect(c['firstRegion']).to.be.equal(region1);
-        expect(c['secondRegion']).to.be.equal(region2);*/
+  it('should remove its regions from the region manager', async () => {
+    const host = await fixture<LegacyHost>(testHtml`<legacy-host></legacy-host>`);
+    await waitUntil(() => host.legacy, 'region not created');
+    expect(regionManager.getRegion('legacy-region')).to.equal(host.legacy);
+    host.remove();
+    expect(regionManager.getRegion('legacy-region')).to.equal(undefined);
   });
-  it('should attach behaviors if any', () => {
-    /* class Component extends RegionHostMixin<Base>(<any>regionManager, adapterRegistry)(Base) {
-        }
-        const firstRegion = {name: 'region1', targetId: 'region#1'};
-        const behaviors = [{attach: sinon.stub()}, {attach: sinon.stub()}];
-        Component[regionsProperty] = {firstRegion};
-        const region1 = {adapter: {behaviors}};
-        sinon.stub(regionFactory, 'regionFactory').returns(region1);
-        let c = new Component();
-        (c as Base).connectedCallback();
-        behaviors.forEach(b => expect(b.attach.calledOnce).to.be.true);*/
-  });
-  it('should remove region from region on disconnected', () => {
-    // class Component extends regionHostMixin(
-    //   <any>regionManager,
-    //   adapterRegistry
-    // )(<any>Base) {}
-    // const firstRegion = { name: "region1", targetId: "region#1" };
-    // const secondRegion = { name: "region2", targetId: "region#2" };
-    // Component[regionsProperty] = { firstRegion, secondRegion };
-    // let c: any = new Component();
-    // c.firstRegion = { regionManager: { remove: jest.fn() } };
-    // c.secondRegion = { regionManager: { remove: jest.fn() } };
-    // (<Base>c).disconnectedCallback();
-    // expect(c.firstRegion.regionManager.remove).toBeCalledTimes(1);
-    // expect(c.secondRegion.regionManager.remove).toBeCalledTimes(1);
-  });
-  it('should dettach behaviors from region on disconnected', () => {
-    // const behaviors = [{ detach: jest.fn() }, { detach: jest.fn() }];
-    // class Component extends regionHostMixin(
-    //   <any>regionManager,
-    //   adapterRegistry
-    // )(<any>Base) {}
-    // const firstRegion = { name: "region1", targetId: "region#1" };
-    // Component[regionsProperty] = { firstRegion };
-    // let c: any = new Component();
-    // c.firstRegion = {
-    //   regionManager: { remove: jest.fn() },
-    //   adapter: { behaviors },
-    // };
-    // (<Base>c).disconnectedCallback();
-    // behaviors.forEach((b) => expect(b.detach).toBeCalledTimes(1));
+  it('should detach the behaviors of its regions', async () => {
+    const host = await fixture<LegacyHost>(testHtml`<legacy-host></legacy-host>`);
+    await waitUntil(() => host.legacy, 'region not created');
+    const detach = spy();
+    host.legacy.adapter.behaviors.push(<IRegionBehavior>{attach: async () => undefined, detach});
+    host.remove();
+    expect(detach.calledOnce).to.equal(true);
   });
 });

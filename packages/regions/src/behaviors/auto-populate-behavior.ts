@@ -1,18 +1,12 @@
-import {nop} from '@uxland/utilities/nop.js';
-import andThen from 'ramda/es/andThen';
-import bind from 'ramda/es/bind';
-import map from 'ramda/es/map';
-import pipe from 'ramda/es/pipe';
-import {IRegion, IRegionBehavior} from '../region.js';
+import type {IRegion, IRegionBehavior} from '../region.js';
+
 export class AutoPopulateBehavior implements IRegionBehavior {
   constructor(private targetRegion: IRegion) {}
+
   async attach(): Promise<unknown> {
     const views = this.targetRegion.regionManager.getRegisteredViews(this.targetRegion.name);
-    return pipe(
-      map<any, Promise<any>>(view => this.targetRegion.addView(view.key, view.view)),
-      bind(Promise.all, Promise),
-      andThen(nop)
-    )(views);
+    await Promise.all(views.map(view => this.targetRegion.addView(view.key, view.view)));
+    return undefined;
   }
 
   detach(): Promise<unknown> {

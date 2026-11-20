@@ -1,120 +1,102 @@
-import {nop} from '@uxland/utilities';
+import {expect} from '@open-wc/testing';
+import {restore, stub} from 'sinon';
 import {SingleActiveAdapter} from '../../../src';
 
 describe('Given an instance of SingleActiveAdapter class', () => {
+  afterEach(() => restore());
+
   describe('and `viewAdded` method is invoked', () => {
     describe('and region has already an active view', () => {
       it('should do nothing', async () => {
-        const region = {
-          activate: jest.fn(),
-          deactivate: jest.fn(),
-          currentActiveViews: [{}],
-        };
+        const region = {activate: stub(), deactivate: stub(), currentActiveViews: [{}]};
         const adapter = new SingleActiveAdapter(<any>{uxlRegion: region});
-        adapter.viewAdded(<any>{}).then(nop);
-        expect(region.activate).not.toBeCalled();
-        expect(region.deactivate).not.toBeCalled();
+        await adapter.viewAdded(<any>{});
+        expect(region.activate.called).to.equal(false);
+        expect(region.deactivate.called).to.equal(false);
       });
     });
     describe('and region has no currently an active view', () => {
-      it('it should activate added view if is default', () => {
-        const region = {
-          activate: jest.fn(),
-          deactivate: jest.fn(),
-          currentActiveViews: [],
-        };
+      it('it should activate added view if is default', async () => {
+        const region = {activate: stub().resolves(), deactivate: stub(), currentActiveViews: []};
         const adapter = new SingleActiveAdapter(<any>{uxlRegion: region});
         const view: any = {isDefault: true};
-        adapter.viewAdded(view).then(nop);
-        expect(region.activate).toBeCalledWith(view);
+        await adapter.viewAdded(view);
+        expect(region.activate.calledWith(view)).to.equal(true);
       });
-      it('should do nothing if added view is not default', () => {
-        const region = {
-          activate: jest.fn(),
-          deactivate: jest.fn(),
-          currentActiveViews: [],
-        };
+      it('should do nothing if added view is not default', async () => {
+        const region = {activate: stub(), deactivate: stub(), currentActiveViews: []};
         const adapter = new SingleActiveAdapter(<any>{uxlRegion: region});
-        adapter.viewAdded(<any>{isDefault: false}).then(nop);
-        expect(region.activate).not.toBeCalled();
-        adapter.viewAdded(<any>{}).then(nop);
-        expect(region.activate).not.toBeCalled();
+        await adapter.viewAdded(<any>{isDefault: false});
+        await adapter.viewAdded(<any>{});
+        expect(region.activate.called).to.equal(false);
       });
     });
   });
   describe('and view is activated', () => {
-    it('should deactivate current activated view', () => {
+    it('should deactivate current activated view', async () => {
       const currentView = {htmlTag: 'my-view'};
       const region = {
-        activate: jest.fn(),
-        deactivate: jest.fn(),
-        currentActiveViews: [currentView],
+        activate: stub(),
+        deactivate: stub().resolves(),
+        currentActiveViews: <any[]>[currentView],
       };
       const adapter = new SingleActiveAdapter(<any>{
         uxlRegion: region,
-        appendChild: jest.fn(),
-        contains: jest.fn(),
+        appendChild: stub(),
+        contains: stub(),
       });
-      adapter.activateView(<any>{});
-      expect(region.deactivate).toBeCalledWith(currentView);
+      await adapter.activateView(<any>{});
+      expect(region.deactivate.calledWith(currentView)).to.equal(true);
       region.currentActiveViews = [];
-      region.deactivate.mockRestore();
-      adapter.activateView(<any>{});
-      expect(region.deactivate).not.toBeCalled();
+      region.deactivate.resetHistory();
+      await adapter.activateView(<any>{});
+      expect(region.deactivate.called).to.equal(false);
     });
-    it('should append view to host', () => {
-      const region = {
-        activate: jest.fn(),
-        deactivate: jest.fn(),
-        currentActiveViews: [],
-      };
+    it('should append view to host', async () => {
       const host = {
-        appendChild: jest.fn(),
-        contains: jest.fn(),
-        uxlRegion: region,
+        appendChild: stub(),
+        contains: stub().returns(false),
+        uxlRegion: {activate: stub(), deactivate: stub(), currentActiveViews: []},
       };
       const adapter = new SingleActiveAdapter(<any>host);
       const view: any = document.createElement('div');
-      adapter.activateView(view);
-      expect(host.appendChild).toBeCalledWith(view);
+      await adapter.activateView(view);
+      expect(host.appendChild.calledWith(view)).to.equal(true);
     });
-    it('should not append view if already contained in host', () => {
-      const region = {
-        activate: jest.fn(),
-        deactivate: jest.fn(),
-        currentActiveViews: [],
-      };
+    it('should not append view if already contained in host', async () => {
       const host = {
-        uxlRegion: region,
-        appendChild: jest.fn(),
-        contains: jest.fn().mockReturnValue(true),
+        uxlRegion: {activate: stub(), deactivate: stub(), currentActiveViews: []},
+        appendChild: stub(),
+        contains: stub().returns(true),
       };
       const adapter = new SingleActiveAdapter(<any>host);
       const view: any = document.createElement('div');
-      adapter.activateView(view);
-      expect(host.appendChild).not.toBeCalledWith(view);
+      await adapter.activateView(view);
+      expect(host.appendChild.called).to.equal(false);
     });
   });
   describe('and view is deactivated', () => {
     it('should remove from host is view definition `removeFromDOMwhenDeactivated is true', async () => {
-      const region = {currentViews: [], viewRemovedFromDom: jest.fn()};
-      const host = {removeChild: jest.fn(), uxlRegion: region};
+      const region = {currentViews: [], currentActiveViews: [], viewRemovedFromDom: stub()};
+      const host = {removeChild: stub(), uxlRegion: region};
       const view: any = document.createElement('div');
       view.view = {removeFromDomWhenDeactivated: true};
       const adapter = new SingleActiveAdapter(<any>host);
       await adapter.deactivateView(view);
-      expect(host.removeChild).toBeCalledWith(view);
+      expect(host.removeChild.calledWith(view)).to.equal(true);
     });
-    /*it('should activate defaultView if any in region', async () => {
-            const view = {isDefault: true};
-            const region = {currentViews: [view], activate: jest.fn()};
-            const adapter = new SingleActiveAdapter(<any>{uxlRegion: region});
-            await adapter.deactivateView(<any>{view: {}});
-            expect(region.activate).toBeCalledWith(view);
-        });*/
-  });
-  afterEach(() => {
-    jest.restoreAllMocks();
-    jest.resetAllMocks();
+    it('should activate defaultView if any in region', async () => {
+      const defaultView = {isDefault: true};
+      const region = {
+        currentViews: [defaultView],
+        currentActiveViews: [],
+        activate: stub().resolves(),
+      };
+      const adapter = new SingleActiveAdapter(<any>{uxlRegion: region});
+      const view: any = document.createElement('div');
+      view.view = {};
+      await adapter.deactivateView(view);
+      expect(region.activate.calledWith(defaultView)).to.equal(true);
+    });
   });
 });

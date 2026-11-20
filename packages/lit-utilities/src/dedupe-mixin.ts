@@ -1,37 +1,12 @@
-import {Constructor} from '@uxland/utilities/dedupe-mixin.js';
-import {LitElement} from 'lit';
+import {type Constructor, dedupeMixin as baseDedupeMixin} from '@uxland/utilities/dedupe-mixin.js';
+import type {LitElement} from 'lit';
 
-const appliedClassMixins = new WeakMap();
-
-/** Vefify if the Mixin was previously applyed
- * @private
- * @param {function} mixin      Mixin being applyed
- * @param {object} superClass   Class receiving the new mixin
- * @returns {boolean}
+/**
+ * Applies a mixin only once per class chain.
+ *
+ * Delegates to `@uxland/utilities` so that every mixin, whether it comes from this package or
+ * from other uxland packages, shares the same registry of applied mixins.
  */
-function wasMixinPreviouslyApplied(mixin, superClass) {
-  let klass = superClass;
-  while (klass) {
-    if (appliedClassMixins.get(klass) === mixin) {
-      return true;
-    }
-    klass = Object.getPrototypeOf(klass);
-  }
-  return false;
-}
-
-/** Apply each mixin in the chain to make sure they are not applied more than once to the final class.
- * @export
- * @param {function} mixin      Mixin to be applyed
- * @returns {object}            Mixed class with mixin applied
- */
-export function dedupeMixin<T extends Constructor<LitElement>>(mixin) {
-  return (superClass: T): T => {
-    if (wasMixinPreviouslyApplied(mixin, superClass)) {
-      return superClass;
-    }
-    const mixedClass = mixin(superClass);
-    appliedClassMixins.set(mixedClass, mixin);
-    return mixedClass;
-  };
+export function dedupeMixin<T extends Constructor<LitElement>>(mixin: any): (superClass: T) => T {
+  return baseDedupeMixin(mixin);
 }

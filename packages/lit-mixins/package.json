@@ -52,7 +52,12 @@
     "@uxland/localization": "^1.0.1",
     "@uxland/routing": "^1.0.5",
     "@uxland/utilities": "^1.0.1",
-    "lit": "^2.7.4",
     "redux": "^4.1.0"
+  },
+  "peerDependencies": {
+    "lit": "^3.0.0"
+  },
+  "devDependencies": {
+    "lit": "^3.3.0"
   }
 }

@@ -1,155 +1,132 @@
 import {AsyncQueue} from '@uxland/browser-utilities/async/async-queue.js';
 import {dedupeMixin} from '@uxland/lit-utilities';
-import {Constructor} from '@uxland/utilities/dedupe-mixin.js';
-import {LitElement} from 'lit';
-import T from 'ramda/es/T';
-import always from 'ramda/es/always';
-import andThen from 'ramda/es/andThen';
-import bind from 'ramda/es/bind';
-import cond from 'ramda/es/cond';
-import forEach from 'ramda/es/forEach';
-import isNil from 'ramda/es/isNil';
-import keys from 'ramda/es/keys';
-import map from 'ramda/es/map';
-import pipe from 'ramda/es/pipe';
-import prop from 'ramda/es/prop';
-import reject from 'ramda/es/reject';
+import type {Constructor} from '@uxland/utilities/dedupe-mixin.js';
+import type {LitElement} from 'lit';
 import {factory} from './adapters/multiple-active-adapter.js';
-import {IRegion, IRegionBehavior, RegionDefinition} from './region.js';
-import {RegionAdapterRegistry, regionAdapterRegistry} from './region-adapter-registry.js';
+import type {IRegion, RegionDefinition} from './region.js';
+import {type RegionAdapterRegistry, regionAdapterRegistry} from './region-adapter-registry.js';
 import {regionsProperty} from './region-decorator.js';
-import {regionFactory} from './region-factory.js';
-import {IRegionManager, regionManager} from './region-manager.js';
+import {findRegionTarget, regionFactory} from './region-factory.js';
+import {type IRegionManager, regionManager} from './region-manager.js';
+
+/** Region definitions keyed by the host property that will hold each created region. */
+export type RegionDefinitions = Record<string, RegionDefinition>;
 
 export declare class RegionHostMixin {
+  /**
+   * Regions this host manages, keyed by the property that will hold each region.
+   *
+   * Defaults to the regions declared with `@region`. Override it to declare regions per instance
+   * (for example from an attribute), and call `refreshRegions()` when the definitions change.
+   */
+  readonly regionDefinitions: RegionDefinitions;
+  /**
+   * Creates the regions whose target element exists and is not created yet, and removes the ones
+   * whose target element is gone. Runs automatically after every update of the host.
+   */
+  refreshRegions(): void;
+  /** Called after a refresh that created at least one region, with the regions just created. */
   regionsCreated(newRegions: IRegion[]): void;
 }
 
-interface RegionDefinitionArgs {
-  key: string;
-  definition: RegionDefinition;
-}
+/** Regions declared with the `@region` decorator on the host's class. */
+export const getDeclaredRegions = (host: object): RegionDefinitions =>
+  ((host.constructor as any)[regionsProperty] as RegionDefinitions) ?? {};
 
-const requiresCreation: (component: LitElement) => (definition: RegionDefinitionArgs) => boolean =
-  component => definition =>
-    pipe(prop(definition.key), isNil)(component);
+const behaviorsOf = (region: IRegion) => region.adapter?.behaviors ?? [];
 
-const requiresDeletion: (component: LitElement) => (definition: RegionDefinitionArgs) => boolean =
-  component => definition =>
-    !requiresCreation(component)(definition) &&
-    isNil(component.shadowRoot.querySelector(`#${definition.definition.targetId}`));
-
-const deleteRegion: (
-  component: LitElement
-) => (definition: RegionDefinitionArgs) => Promise<RegionDefinitionArgs> = component => args => {
-  const region: IRegion = component[args.key];
+const removeRegion = async (host: any, key: string) => {
+  const region: IRegion = host[key];
   region.regionManager.remove(region);
-  const behaviors = region.adapter ? region.adapter.behaviors || [] : [];
-  delete component[args.key];
-  return pipe(
-    map((b: IRegionBehavior) => b.detach),
-    bind(Promise.all, Promise),
-    andThen(() => delete component[args.key]),
-    andThen(always(undefined))
-  )(behaviors) as Promise<RegionDefinitionArgs>;
+  delete host[key];
+  await Promise.all(behaviorsOf(region).map(behavior => behavior.detach()));
 };
 
-const createRegion: (
-  component: LitElement,
-  rm: IRegionManager,
+const createRegion = async (
+  host: any,
+  key: string,
+  definition: RegionDefinition,
+  manager: IRegionManager,
   registry: RegionAdapterRegistry
-) => (definitionArgs: RegionDefinitionArgs) => Promise<RegionDefinitionArgs> =
-  (component, rm, registry) => definitionArgs =>
-    regionFactory(definitionArgs.definition, component, rm, registry)
-      .then(region => {
-        if (region) {
-          component[definitionArgs.key] = region;
-          const behaviors = region.adapter ? region.adapter.behaviors || [] : [];
-          return pipe(
-            map((b: IRegionBehavior) => b.attach()),
-            bind(Promise.all, Promise),
-            andThen(always(region))
-          )(behaviors) as Promise<RegionDefinitionArgs>;
-        } else return undefined;
-      })
-      .catch(always(undefined));
+): Promise<IRegion | undefined> => {
+  const region = await regionFactory(definition, host, manager, registry);
+  if (!region) return undefined;
+  host[key] = region;
+  await Promise.all(behaviorsOf(region).map(behavior => behavior.attach()));
+  return region;
+};
 
-const toRegionDefinitionArgs: (regions: RegionDefinitions) => RegionDefinitionArgs[] = regions =>
-  pipe(
-    keys,
-    map(key => <RegionDefinitionArgs>{key, definition: regions[key]})
-  )(regions);
-
-type RegionDefinitions = {[key: string]: RegionDefinition};
-const getUxlRegions: (item: any) => RegionDefinitions = item =>
-  item.constructor[regionsProperty] || {};
-
-const handleRegionCreation = (
-  component: LitElement,
-  regionManager1: IRegionManager,
+const syncRegion = async (
+  host: any,
+  key: string,
+  definition: RegionDefinition,
+  manager: IRegionManager,
   registry: RegionAdapterRegistry
-) => {
-  const creationRequired = requiresCreation(component);
-  const deletionRequired = requiresDeletion(component);
-  const deletion = deleteRegion(component);
-  const creation = createRegion(component, regionManager1, registry);
-  return (args: RegionDefinitionArgs) =>
-    cond([
-      [creationRequired, creation],
-      [deletionRequired, deletion],
-      [T, always(Promise.resolve(undefined))],
-    ])(args);
+): Promise<IRegion | undefined> => {
+  try {
+    if (host[key] == null) return await createRegion(host, key, definition, manager, registry);
+    if (!findRegionTarget(host, definition.targetId)) await removeRegion(host, key);
+  } catch (error) {
+    console.warn(`region "${definition.name}" could not be synchronised`, error);
+  }
+  return undefined;
 };
 
 export const regionHostMixin = <T extends Constructor<LitElement>>(
-  regionManager: IRegionManager,
+  manager: IRegionManager,
   adapterRegistry: RegionAdapterRegistry
 ) =>
   dedupeMixin((superClass: T) => {
     class RegionHostMixinClass extends superClass implements RegionHostMixin {
+      enqueuer: AsyncQueue;
+
       constructor(...args: any[]) {
-        super();
-        this.enqueuer = new AsyncQueue(this.runRegionCreation.bind(this));
+        super(...args);
+        this.enqueuer = new AsyncQueue(() => this.syncRegions());
       }
-      public enqueuer;
-      protected updated(_changedProperties: Map<PropertyKey, unknown>): void {
-        super.updated(_changedProperties);
-        this.create();
+
+      get regionDefinitions(): RegionDefinitions {
+        return getDeclaredRegions(this);
       }
-      private createRegions(): Promise<any> {
-        const regions = getUxlRegions(this);
-        const handleCreation = handleRegionCreation(this as any, regionManager, adapterRegistry);
-        return pipe(
-          toRegionDefinitionArgs,
-          forEach(handleCreation),
-          bind(Promise.all, Promise),
-          andThen(reject(isNil)),
-          andThen(bind(this.regionsCreated, this))
-        )(regions) as Promise<any>;
+
+      protected updated(changedProperties: Map<PropertyKey, unknown>): void {
+        super.updated(changedProperties);
+        this.refreshRegions();
       }
-      private create() {
+
+      refreshRegions() {
         this.enqueuer.enqueueItem();
       }
-      private runRegionCreation() {
-        return new Promise<any>(resolve => {
-          this.createRegions().then(resolve).catch(resolve);
-        });
+
+      /** @deprecated Use `refreshRegions()`. */
+      create() {
+        this.refreshRegions();
       }
-      regionsCreated(newRegions: IRegion[]) {}
+
+      regionsCreated(_newRegions: IRegion[]) {}
+
+      private async syncRegions() {
+        const results = await Promise.all(
+          Object.entries(this.regionDefinitions).map(([key, definition]) =>
+            syncRegion(this, key, definition, manager, adapterRegistry)
+          )
+        );
+        const created = results.filter((region): region is IRegion => region !== undefined);
+        if (created.length) this.regionsCreated(created);
+      }
+
       disconnectedCallback(): void {
         super.disconnectedCallback();
-        const regions = getUxlRegions(this);
-        Object.keys(regions).forEach(name => {
-          const region = this[name] as IRegion;
+        for (const key of Object.keys(this.regionDefinitions)) {
+          const region = (this as any)[key] as IRegion | undefined;
           if (region) {
             region.regionManager.remove(region);
-            const behaviors = region.adapter ? region.adapter.behaviors || [] : [];
-            behaviors.forEach(b => b.detach());
+            for (const behavior of behaviorsOf(region)) behavior.detach();
           }
-        });
+        }
       }
     }
-    return RegionHostMixinClass as Constructor<RegionHostMixin> & T;
+    return RegionHostMixinClass as unknown as Constructor<RegionHostMixin> & T;
   });
 
 regionAdapterRegistry.registerDefaultAdapterFactory(factory);

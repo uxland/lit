@@ -1,11 +1,37 @@
-# UXL Lit Utilities [![npm version](https://badge.fury.io/js/%40uxland%2Flit-utilities.svg)](https://badge.fury.io/js/%40uxland%2Flit-utilities)
+# @uxland/lit-utilities
 
-| Build Status                                    | Statements                                    | Branches                                  | Functions                                   | Lines                               |
-| ----------------------------------------------- | --------------------------------------------- | ----------------------------------------- | ------------------------------------------- | ----------------------------------- |
-| ![BuildStatus](https://img.shields.io/badge/Build-Passing-brightgreen.svg "Building Status") | ![Statements](https://img.shields.io/badge/Coverage-93.65%25-brightgreen.svg "Make me better!") | ![Branches](https://img.shields.io/badge/Coverage-60%25-red.svg "Make me better!") | ![Functions](https://img.shields.io/badge/Coverage-100%25-brightgreen.svg "Make me better!") | ![Lines](https://img.shields.io/badge/Coverage-93.65%25-brightgreen.svg "Make me better!") |
+Small utilities for [Lit](https://lit.dev) components.
 
-## Installation
+```bash
+npm i @uxland/lit-utilities lit
+```
 
-`npm i @uxland/lit-utilities`
+`lit` (`^3.0.0`) is a peer dependency.
 
-## Usage
+## `@listen(eventName, target?)`
+
+Subscribes a method to an event after every update, and unsubscribes on disconnect. `target` is a
+CSS selector (searched in the shadow root and the light DOM) or an `EventTarget`.
+
+```ts
+class MyElement extends LitElement {
+  @listen('click', '#save')
+  save() {}
+}
+```
+
+## `propertiesObserver(Base)`
+
+Calls `<property>Changed(newValue, oldValue)` whenever a reactive property changes, using the
+property's own `hasChanged` when it declares one.
+
+```ts
+class MyElement extends propertiesObserver(LitElement) {
+  @property() name: string;
+  nameChanged(current: string, previous: string) {}
+}
+```
+
+## `dedupeMixin(mixin)`
+
+Wraps a mixin so it is applied only once per class chain.

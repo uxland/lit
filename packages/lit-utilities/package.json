@@ -47,8 +47,12 @@
     "test": "web-test-runner"
   },
   "dependencies": {
-    "@uxland/utilities": "^1.0.1",
-    "lit": "^2.7.4",
-    "ramda": "^0.27.1"
+    "@uxland/utilities": "^1.0.5"
+  },
+  "peerDependencies": {
+    "lit": "^3.0.0"
+  },
+  "devDependencies": {
+    "lit": "^3.3.0"
   }
 }

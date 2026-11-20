@@ -5,8 +5,12 @@ import {ViewComponent, ViewDefinition} from '../view-definition.js';
 export class AdapterBase implements IRegionAdapter {
   constructor(public host: IRegionHost) {}
 
+  private _behaviors: IRegionBehavior[] | undefined;
+
+  /** Created on first access, once the host's region exists, and reused afterwards. */
   get behaviors(): IRegionBehavior[] {
-    return defaultBehaviorRegistry.behaviors.map(b => new b(this.host.uxlRegion));
+    this._behaviors ??= defaultBehaviorRegistry.behaviors.map(b => new b(this.host.uxlRegion));
+    return this._behaviors;
   }
 
   activateView(view: HTMLElement & ViewComponent): Promise<any> {

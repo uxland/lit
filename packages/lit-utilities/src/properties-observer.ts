@@ -1,24 +1,33 @@
-import {notEqual} from 'lit';
-import defaultTo from 'ramda/es/defaultTo';
-import pipe from 'ramda/es/pipe';
+import type {PropertyDeclaration} from 'lit';
 import {dedupeMixin} from './dedupe-mixin.js';
 
-const getPropertyComponentComparer = (name: PropertyKey, component: any) =>
-  component.constructor._classProperties
-    ? component.constructor._classProperties.get(name).hasChanged
-    : undefined;
-const comparer = pipe(getPropertyComponentComparer, defaultTo(notEqual));
+type HasChanged = (value: unknown, oldValue: unknown) => boolean;
 
+/** Same comparison Lit uses by default: strict inequality, treating NaN as equal to NaN. */
+const notEqual: HasChanged = (value, oldValue) =>
+  // biome-ignore lint/suspicious/noSelfCompare: NaN check
+  oldValue !== value && (oldValue === oldValue || value === value);
+
+const getHasChanged = (
+  component: any,
+  name: PropertyKey,
+  options?: PropertyDeclaration
+): HasChanged =>
+  options?.hasChanged ?? component.constructor.elementProperties?.get(name)?.hasChanged ?? notEqual;
+
+/**
+ * Calls `<property>Changed(newValue, oldValue)` on the element every time a reactive property
+ * changes, using the property's own `hasChanged` when it declares one.
+ */
 export const propertiesObserver = dedupeMixin(superClass => {
   class PropertiesObserver extends superClass {
-    requestUpdate(name, oldValue) {
-      const result = super.requestUpdate
-        ? super.requestUpdate(name, oldValue)
-        : Promise.resolve(null);
-      if (comparer(name, this)(this[name], oldValue)) {
-        if (this[`${String(name)}Changed`]) this[`${String(name)}Changed`](this[name], oldValue);
+    requestUpdate(...args: unknown[]) {
+      const [name, oldValue, options] = args as [PropertyKey, unknown, PropertyDeclaration];
+      const result = super.requestUpdate?.(...args);
+      const self = this as Record<PropertyKey, any>;
+      if (name !== undefined && getHasChanged(this, name, options)(self[name], oldValue)) {
+        self[`${String(name)}Changed`]?.(self[name], oldValue);
       }
-
       return result;
     }
   }

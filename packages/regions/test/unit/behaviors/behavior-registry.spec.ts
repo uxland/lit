@@ -46,7 +46,7 @@ describe('Given an instance of BehaviorRegistry class', () => {
 
       registry.register(MyBehavior);
       registry.register(MyBehavior);
-      expect(registry.behaviors.filter(b => b === MyBehavior).length).to.be(1);
+      expect(registry.behaviors.filter(b => b === MyBehavior).length).to.equal(1);
     });
   });
 });
