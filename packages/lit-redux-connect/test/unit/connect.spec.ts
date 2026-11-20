@@ -1,11 +1,11 @@
 import {assert, expect} from '@open-wc/testing';
 import {html, LitElement} from 'lit';
 import {stub} from 'sinon';
-import {customElement, query} from '../../../../node_modules/lit/decorators.js';
+import {customElement, query} from 'lit/decorators.js';
 import {mount} from '../../../../test/utilities/mount/index';
 import {configureStore} from '../../../../test/utilities/redux-mock-store';
-import connect from '../../connect';
-import {watch} from '../../watch';
+import connect from '../../src/connect';
+import {watch} from '../../src/watch';
 
 //@ts-ignore
 const mockStore = configureStore([])();

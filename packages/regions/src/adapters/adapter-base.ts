@@ -1,0 +1,43 @@
+import {defaultBehaviorRegistry} from '../behaviors/default-registry.js';
+import {IRegionAdapter, IRegionBehavior, IRegionHost} from '../region.js';
+import {ViewComponent, ViewDefinition} from '../view-definition.js';
+
+export class AdapterBase implements IRegionAdapter {
+  constructor(public host: IRegionHost) {}
+
+  private _behaviors: IRegionBehavior[] | undefined;
+
+  /** Created on first access, once the host's region exists, and reused afterwards. */
+  get behaviors(): IRegionBehavior[] {
+    this._behaviors ??= defaultBehaviorRegistry.behaviors.map(b => new b(this.host.uxlRegion));
+    return this._behaviors;
+  }
+
+  activateView(view: HTMLElement & ViewComponent): Promise<any> {
+    if (!this.host.contains(view)) this.addViewToHost(view);
+    view.hidden = false;
+    return Promise.resolve(undefined);
+  }
+
+  deactivateView(view: HTMLElement & ViewComponent): Promise<any> {
+    if (view.view && view.view.removeFromDomWhenDeactivated) {
+      this.removeViewFromHost(view);
+    } else view.hidden = true;
+    return Promise.resolve(null);
+  }
+
+  removeView(view: HTMLElement & ViewComponent) {
+    this.removeViewFromHost(view);
+  }
+
+  viewAdded(view: ViewDefinition) {}
+
+  protected addViewToHost(view: HTMLElement & ViewComponent) {
+    this.host.appendChild(view);
+  }
+
+  protected removeViewFromHost(view: HTMLElement & ViewComponent) {
+    this.host.removeChild(view);
+    this.host.uxlRegion.viewRemovedFromDom(view.view);
+  }
+}
