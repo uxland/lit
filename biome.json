@@ -1,0 +1,77 @@
+{
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  },
+  "files": {
+    "includes": [
+      "packages/**",
+      "*.json",
+      "*.mjs",
+      "!**/dist",
+      "!**/coverage",
+      "!**/*.md",
+      "!packages/regions/test/pending-correction"
+    ]
+  },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineWidth": 100
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "single",
+      "bracketSpacing": false,
+      "arrowParentheses": "asNeeded",
+      "trailingCommas": "es5"
+    },
+    "parser": {
+      "unsafeParameterDecoratorsEnabled": true
+    }
+  },
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": "off"
+      }
+    }
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "suspicious": {
+        "noExplicitAny": "off",
+        "noTsIgnore": "off",
+        "useIterableCallbackReturn": "warn",
+        "noDoubleEquals": "warn",
+        "noProto": "warn",
+        "noEmptyInterface": "off",
+        "noShadowRestrictedNames": "warn"
+      },
+      "style": {
+        "useImportType": "off",
+        "useTemplate": "off",
+        "useShorthandFunctionType": "off"
+      },
+      "complexity": {
+        "useLiteralKeys": "off",
+        "useOptionalChain": "warn",
+        "useArrowFunction": "off"
+      },
+      "correctness": {
+        "noUnusedFunctionParameters": "off",
+        "noUnusedVariables": "warn",
+        "noUnusedImports": "warn"
+      },
+      "performance": {
+        "useDomNodeTextContent": "off",
+        "noAccumulatingSpread": "warn"
+      }
+    }
+  }
+}
